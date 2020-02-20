@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package coom.attendance.notes.controller;
+package com.attendance.notes.controller;
 
 import com.gluonhq.charm.glisten.mvc.View;
 

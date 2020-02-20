@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package coom.attendance.notes.controller;
-
-import com.gluonhq.charm.glisten.mvc.View;
+package com.gluonhq.charm.down.plugins.desktop;
 
 /**
  *
  * @author pc
  */
-public class UploadNotesController extends View {
+public class DesktopService {
     
 }

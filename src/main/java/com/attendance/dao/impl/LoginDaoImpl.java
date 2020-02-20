@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.attendace.dao.impl;
+package com.attendance.dao.impl;
 
-import com.attendace.dao.LoginDao;
+import com.attendance.dao.LoginDao;
 import com.attendance.user.model.User;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;

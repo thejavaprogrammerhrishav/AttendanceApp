@@ -12,9 +12,9 @@ import com.attendance.user.controller.LoginController;
 import com.attendance.user.controller.LoginTypeController;
 import com.attendance.user.controller.ProfileController;
 import com.gluonhq.charm.glisten.mvc.View;
-import coom.attendance.notes.controller.DownloadNotesController;
-import coom.attendance.notes.controller.NotesDashboardController;
-import coom.attendance.notes.controller.UploadNotesController;
+import com.attendance.notes.controller.DownloadNotesController;
+import com.attendance.notes.controller.NotesDashboardController;
+import com.attendance.notes.controller.UploadNotesController;
 
 /**
  *
