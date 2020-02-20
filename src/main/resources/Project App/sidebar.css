@@ -1,0 +1,74 @@
+@font-face {
+     src: url("ABeeZee-Regular.ttf");
+}
+
+.root{
+	-fx-background-color: #fff
+}
+
+.user-info{
+	-fx-background-color: #fff;
+}
+
+.user-info-pane{
+	-fx-border-color: #888;
+	-fx-border-style: solid;
+	-fx-border-width: 0 0 1 0;
+}
+
+.user-info-header-label{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 18px;
+	-fx-font-weight: bold;
+}
+
+.user-info-header-label-sub{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 14px;
+}
+
+.sidebar-action{
+	-fx-effect: none;
+	-fx-background-color: #fff;
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 14px;
+	-fx-text-fill: #000;
+	-fx-alignment: center_left;
+	-fx-padding: 5 5 5 20;
+}
+
+.sidebar-action:hover,
+.sidebar-action:pressed{
+	-fx-background-color: #fff;
+	-fx-effect: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

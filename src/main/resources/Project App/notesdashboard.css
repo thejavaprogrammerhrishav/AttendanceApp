@@ -1,0 +1,159 @@
+@font-face {
+     src: url("ABeeZee-Regular.ttf");
+}
+
+.root{
+	-fx-font-family: 'ABeeZee', sans-serif;
+}
+
+.header{
+	-fx-background-color: #fff;
+	-fx-background-radius: 0 0 20 20;
+}
+
+.header-back,
+.header-back:hover,
+.header-back:pressed{
+	-fx-effect: none;
+	-fx-background-color: transparent;
+	-fx-padding: 0;
+	-fx-min-width: USE_COMPUTED_SIZE;
+	-fx-min-height: USE_COMPUTED_SIZE;
+	-fx-pref-width: USE_COMPUTED_SIZE;
+	-fx-pref-height: USE_COMPUTED_SIZE;
+}
+
+.header-heading{
+	-fx-font-size: 24px;
+	-fx-text-fill: #000;
+}
+.heading-node{
+	-fx-background-radius: 10px;
+}
+
+.heading-node-color{
+	-fx-background-color: rgb(100,40,180);
+}
+
+.heading-node-curve{
+	-fx-background-radius: 10px;
+	-fx-border-radius: 10px;
+}
+
+.heading-node-heading{
+	-fx-font-size: 13px;
+}
+
+.heading-node-body{
+	-fx-font-size: 22px;
+}
+.content-heading{
+	-fx-font-size: 16px;
+	-fx-text-fill: #fff;
+}
+.content-value{
+	-fx-font-size: 12px;
+	-fx-text-fill: #fff;
+}
+
+.text-white{
+	-fx-text-fill: #fff;
+}
+
+.text-black{
+	-fx-text-fill: #000;
+}
+
+
+.main-button,
+.main-button:hover,
+.main-button:pressed,
+.main-button.focused{
+	-fx-effect: none;
+	-fx-background-color: #f4f4f4;
+	-fx-border: none;
+	-fx-padding: 0;
+	-fx-min-width: USE_COMPUTED_SIZE;
+	-fx-min-height: USE_COMPUTED_SIZE;
+	-fx-pref-width: USE_COMPUTED_SIZE;
+	-fx-pref-height: USE_COMPUTED_SIZE;
+}
+
+.border-13{
+	-fx-background-radius: 13px;
+	-fx-border-radius: 13px;
+}
+.search{
+	-fx-background-color: #fff;
+	-fx-border-color: #ccc;
+	-fx-background-radius: 10px;
+	-fx-border-radius: 10px;
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+}
+.txt-field,
+.txt-field:hover,
+.txt-field:pressed,
+.txt-field:focused{
+	-fx-border-color: transparent;
+	-fx-background-color: transparent;
+	-fx-padding: 9 10 9 15;
+	-fx-font-size: 14px;
+}
+.search-button,
+.search-button:hover,
+.search-button:pressed{
+	-fx-effect: none;
+	-fx-background-color: transparent;
+	-fx-pref-height: 36px;
+	-fx-pref-width: 36px;
+	-fx-min-height: 36px;
+	-fx-min-width: 36px;
+}
+.blue,
+.blue:hover,
+.blue:pressed,
+.blue:focused{
+	-fx-background-color: blue;
+}
+.crimson,
+.crimson:hover,
+.crimson:pressed,
+.crimson:focused{
+	-fx-background-color: crimson;
+}
+.green,
+.green:hover,
+.green:pressed,
+.green:focused{
+	-fx-background-color: green;
+}
+
+.red,
+.red:hover,
+.red:pressed,
+.red:focused{
+	-fx-background-color: red;
+}
+
+.action-button{
+	-fx-effect: none;
+	-fx-min-height: USE_COMPUTED_SIZE;
+	-fx-min-width: 150;
+	-fx-pref-height: USE_COMPUTED_SIZE;
+	-fx-pref-width: 150;
+	-fx-font-size: 14px;
+	-fx-padding: 15px 5px;
+	-fx-text-fill: #fff;
+}
+
+.all{
+	-fx-min-height: 60px;
+	-fx-pref-height: 60px;
+	-fx-min-width: 310px;
+	-fx-pref-width: 310px;
+	-fx-alignment: center_left;
+	-fx-font-size: 14px;
+	-fx-padding: 15px 20px;
+	-fx-text-fill: #fff;
+}

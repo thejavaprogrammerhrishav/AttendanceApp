@@ -1,0 +1,177 @@
+@font-face {
+     src: url("ABeeZee-Regular.ttf");
+}
+
+@font-face {
+     src: url("Roboto-Regular.ttf");
+}
+
+@font-face {
+     src: url("Raleway-Regular.ttf");
+}
+.main{
+	-fx-background-color: #fff;
+}
+
+.head{
+	-fx-background-color: #fff;
+}
+
+.head-label {
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+}
+
+.head-c2{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 12px;
+}
+
+
+.head-jfx-button,
+.head-jfx-button:hover,
+.head-jfx-button:pressed{
+	-fx-background-color: #fff;
+	-fx-effect: none;
+	-fx-min-width: 30px;
+	-fx-min-height: 30px;
+	-fx-pref-width: 30px;
+	-fx-pref-height: 30px;
+}
+
+.user-log-scroll,
+.user-log-scroll > .view-port,
+.user-log-scroll > .scroll-bar:horizontal > .track,
+.user-log-scroll > .scroll-bar:horizontal > .increment-button,
+.user-log-scroll > .scroll-bar:horizontal > .increment-button > .increment-arrow,
+.user-log-scroll > .scroll-bar:horizontal > .decrement-button,
+.user-log-scroll > .scroll-bar:horizontal > .track-background,
+.user-log-scroll > .scroll-bar:horizontal > .decrement-button > .decrement-arrow{
+    -fx-background-color: #fff;
+    -fx-fill: #fff;
+    -fx-background-radius: 0;
+}
+.user-log-scroll > .scroll-bar:horizontal > .track,
+.user-log-scroll > .scroll-bar:horizontal > .thumb{
+    -fx-background-color:  #fff;
+    -fx-background-radius: 0;
+    -fx-pref-height: 1px;
+}
+
+.log-scroll,
+.log-scroll > .view-port,
+.log-scroll > .scroll-bar:vertical > .track,
+.log-scroll > .scroll-bar:vertical > .increment-button,
+.log-scroll > .scroll-bar:vertical > .increment-button > .increment-arrow,
+.log-scroll > .scroll-bar:vertical > .decrement-button,
+.log-scroll > .scroll-bar:vertical > .decrement-button > .decrement-arrow,
+.log-scroll > .scroll-bar:vertical > .track-background{
+    -fx-background-color: #fff;
+    -fx-fill: #fff;
+	-fx-pref-width: 1px;
+    -fx-background-radius: 0;
+}
+
+.log-scroll > .scroll-bar:vertical > .thumb{
+    -fx-background-color:  #fff;
+    -fx-background-radius: 0;
+    -fx-pref-width: 1px;
+}
+
+
+.c1{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-weight: bold;
+	-fx-font-size: 16px;
+}
+
+.c2{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 14px;
+}
+
+.jfx-combo-box ,
+.jfx-combo-box > .list-cell:selected > .text {
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 14px;
+     -fx-fill: #000;
+}
+
+.date-time{
+	-fx-background-color: #8a40ff;
+}
+.date-time-label{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-text-fill: #fff;
+	-fx-font-size: 14px;
+}
+.count{
+	-fx-background-color: #fff;
+}
+
+.count-pane{
+	-fx-background-radius: 15px;
+	-fx-effect: dropshadow(three-pass-box, #888, 10, 0, 0, 0); 
+}
+
+.count-c1{
+	-fx-background-color: #d11f61;
+}
+
+.count-c2{
+	-fx-background-color: #ff8000;
+}
+
+.count-c3{
+	-fx-background-color: #8a40ff;
+}
+
+.count-pane-header {
+	-fx-text-fill: #fff;
+	-fx-font-size: 16px;
+}
+
+.count-pane-content{
+	-fx-text-fill: #fff;
+	-fx-font-family: 'Roboto', sans-serif;
+	-fx-font-size: 24px;
+	-fx-font-weight: bold;
+	-fx-alignment: center;
+}
+
+.attendance{
+	-fx-background-color: #fff;
+	-fx-effect: dropshadow(three-pass-box, #999, 10, 0, 0, 0);
+}
+
+.attendance-head{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-weight: bold;
+	-fx-font-size: 18px;
+}
+
+.attendance-sub{
+	-fx-font-family: 'Raleway', sans-serif;
+	-fx-font-size: 13px;
+	-fx-text-fill: #777;
+}
+
+.attendance-actions,
+.attendance-actions:focused,
+.attendance-actions:clicked{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 14px;
+	-fx-text-fill: #fff;
+	-fx-effect: none;
+}
+
+.attendance-att:hover,
+.attendance-att{
+	-fx-background-color: #0034ee;
+}
+
+.attendance-rep:hover,
+.attendance-rep{
+	-fx-background-color: #25ae1f;
+}

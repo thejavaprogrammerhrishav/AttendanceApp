@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="20.0" layoutY="38.0" styleClass="head1" text="Welcome Back, User" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="38.0" />
+            <Label layoutX="20.0" layoutY="74.0" styleClass="head3" text="Department: Ecology &amp; Environmental Science" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="20.0" layoutY="100.0" styleClass="head3" text="User Type: HOD" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="20.0" layoutY="145.0" styleClass="head2" text="Login" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="20.0" layoutY="197.0" styleClass="head3" text="Please login with your credentials to access the features" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <TextField layoutX="20.0" layoutY="251.0" prefHeight="44.0" prefWidth="295.0" promptText="Enter Username" styleClass="txt" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <PasswordField layoutX="20.0" layoutY="317.0" prefHeight="44.0" prefWidth="295.0" promptText="Enter Password" styleClass="pwd" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label alignment="CENTER" layoutX="20.0" layoutY="397.0" styleClass="result" text="You Account Status Is Not Active" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="450.0" prefHeight="50.0" prefWidth="295.0" ripplerFill="BLACK" styleClass="login" text="Login to my account" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="521.0" prefHeight="46.0" prefWidth="295.0" ripplerFill="BLACK" styleClass="back" text="Back" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</View>

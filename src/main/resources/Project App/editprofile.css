@@ -1,0 +1,114 @@
+@font-face {
+     src: url("ABeeZee-Regular.ttf");
+}
+
+@font-face {
+     src: url("Roboto-Regular.ttf");
+}
+
+.root{
+	-fx-font-family: 'ABeeZee', sans-serif;	
+}
+
+.bar{
+	-fx-background-color: purple;
+}
+
+.main-header{
+	-fx-background-color: linear-gradient(to top right, #577cd5 0%, #66226e 92.7% );
+}
+
+.main-header-button{
+	-fx-background-color:transparent;
+	-fx-min-width: USE_COMPUTED_SIZE;
+	-fx-min-height: USE_COMPUTED_SIZE;
+}
+
+.main-header-label{
+	-fx-text-fill: #fff;
+	-fx-font-size: 16px;
+}
+
+.header{
+	-fx-background-color: #0c0094;
+}
+
+.header-main-label{
+	-fx-text-fill: #fff;
+	-fx-font-size: 20px;
+}
+
+.header-main-sub-label{
+	-fx-text-fill: #fff;
+	-fx-font-size: 14px;
+}
+
+.header-buttons,
+.header-buttons:hover,
+.header-buttons:pressed{
+	-fx-background-color: transparent;
+}
+
+.header-button{
+	-fx-border-color: #fff;
+	-fx-border-width: 0 0 2 0;
+	-fx-border-style: solid;
+	-fx-font-size: 14px;
+	-fx-pref-width: 180px;
+	-fx-pref-height: 40px;
+	-fx-text-fill: #fff;
+	
+}
+
+.content{
+	-fx-background-color: #fff;
+}
+
+.content-node,
+.content-node:hover,
+.content-node:pressed{
+	-fx-background-color: #eee;
+}
+
+.content-heading{
+	-fx-font-size: 16px;
+	-fx-text-fill: #000;
+}
+.content-value{
+	-fx-font-size: 12px;
+	-fx-text-fill: #777;
+}
+
+.bg-red,
+.bg-red:hover,
+.bg-red:pressed,
+.bg-red:focused{
+	-fx-background-color: red;
+}
+
+.bg-navy,
+.bg-navy:hover,
+.bg-navy:pressed,
+.bg-navy:focused{
+	-fx-background-color: navy;
+}
+.bg-green,
+.bg-green:hover,
+.bg-green:pressed,
+.bg-green:focused{
+	-fx-background-color: green;
+}
+
+.bg-purple,
+.bg-purple:hover,
+.bg-purple:pressed,
+.bg-purple:focused{
+	-fx-background-color: purple;
+}
+
+.border-10{
+	-fx-background-radius: 10px;
+	-fx-border-radius: 10px;
+}
+
+	

@@ -1,0 +1,126 @@
+@font-face {
+     src: url("ABeeZee-Regular.ttf");
+}
+
+.title{
+	-fx-font-family: 'ABeeZee-Regular',sans-serif;
+	-fx-font-size: 24px;
+	-fx-text-fill: #000;
+}
+
+.title-body{
+	-fx-font-family: 'ABeeZee-Regular',sans-serif;
+	-fx-font-size: 14px;
+	-fx-text-fill: #000;
+}
+
+.type{
+	-fx-pref-width: 80px;
+	-fx-pref-height: 80px;
+	-fx-font-family: 'ABeeZee-Regular',sans-serif;
+	-fx-font-size: 14px;
+	-fx-background-color: #fff;
+	-fx-effect: dropshadow(three-pass-box, #e5e5e5, 10, 0.5, 0, 0);
+	-fx-background-radius: 10px;
+}
+
+.type:hover,
+.type:focused{
+	-fx-background-color: #fff;
+}
+
+.path,
+.path:focused{
+	-fx-font-family: 'ABeeZee-Regular',sans-serif;
+	-fx-font-size: 14px;
+	-fx-background-color: #fff;
+	-fx-border-color: #bbb;
+	-fx-text-fill: #000;
+	-fx-border-width: 1px;
+	-fx-border-style: solid;
+	-fx-effect: none;
+	-fx-padding: 7 10;
+	-fx-prompt-text-fill: #bbb;
+	-fx-background-radius: 7px;
+	-fx-border-radius: 7px;
+}
+
+.button{
+	-fx-font-family: 'ABeeZee-Regular',sans-serif;
+	-fx-font-size: 14px;
+	-fx-background-radius: 7px;
+}
+.upload{
+	-fx-background-color:green;
+	-fx-effect: dropshadow(three-pass-box, #2a9600, 5, 0, 0, 0);
+}
+
+.upload:hover,
+.upload:focused{
+	-fx-background-color:green;
+}
+
+.back{
+	-fx-background-color:red;
+	-fx-effect: dropshadow(three-pass-box, red, 5, 0, 0, 0);
+}
+
+.back:hover,
+.back:focused{
+	-fx-background-color:red;
+}
+
+.back{
+	-fx-background-color:red;
+	-fx-effect: dropshadow(three-pass-box, red, 5, 0, 0, 0);
+}
+
+.back:hover,
+.back:focused{
+	-fx-background-color:red;
+}
+
+.browse{
+	-fx-background-color:#636;
+	-fx-effect: dropshadow(three-pass-box, #636, 5, 0, 0, 0);
+}
+
+.browse:hover,
+.browse:focused{
+	-fx-background-color:#636;
+}
+
+.selected{
+	-fx-background-color: #fff;
+	-fx-effect: dropshadow(three-pass-box, #c3c3c3, 6, 0, 0, 0);
+	-fx-background-radius: 10px;
+
+}
+
+.selected-label{
+	-fx-font-family: 'ABeeZee-Regular',sans-serif;
+	-fx-font-size: 14px;
+	-fx-text-fill: #000;
+}
+
+.path-download,
+.path-download:focused{
+	-fx-font-family: 'ABeeZee-Regular',sans-serif;
+	-fx-font-size: 14px;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-text-fill: #000;
+	-fx-effect: none;
+	-fx-padding: 7 10;
+	-fx-prompt-text-fill: #bbb;
+}
+
+.browse-button,
+.browse-button:hover{
+	-fx-font-family: System;
+	-fx-font-size: 12;
+	-fx-border-radius: 0 10 10 0;
+	-fx-background-radius: 0 10 10 0;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}

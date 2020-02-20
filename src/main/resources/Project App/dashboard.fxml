@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <ScrollPane cache="true" fitToWidth="true" hbarPolicy="NEVER" minViewportHeight="600.0" minViewportWidth="332.0" pannable="true" styleClass="log-scroll">
+         <content>
+            <VBox alignment="TOP_CENTER" prefWidth="335.0" spacing="9.0" styleClass="main">
+               <children>
+                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="46.0" prefWidth="335.0" styleClass="head">
+                     <children>
+                        <Label layoutX="50.0" layoutY="12.0" styleClass="head-label" text="Dashboard" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="12.0" />
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="12.0" layoutY="9.0" styleClass="head-jfx-button" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="9.0">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@menu.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" styleClass="head-jfx-button" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="9.0">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@power-on-semicircle-%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="66.0" prefWidth="335.0" styleClass="date-time">
+                     <children>
+                        <Label layoutX="47.0" layoutY="14.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+                        <Label layoutX="30.0" layoutY="25.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="230.0" prefWidth="335.0" styleClass="content1">
+                     <children>
+                        <Label layoutX="20.0" layoutY="37.0" prefHeight="20.0" prefWidth="160.0" styleClass="c2" text="Acadamic Year" AnchorPane.leftAnchor="20.0" />
+                        <Label layoutX="20.0" layoutY="8.0" prefHeight="20.0" prefWidth="160.0" styleClass="c1" text="Student Enrollment" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="8.0" />
+                        <JFXComboBox layoutX="201.0" layoutY="29.0" prefHeight="29.0" prefWidth="114.0" promptText="Select Year" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" />
+                        <ScrollPane fitToHeight="true" layoutY="68.0" prefHeight="163.0" prefWidth="335.0" styleClass="user-log-scroll" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <content>
+                              <HBox alignment="CENTER" spacing="20.0" styleClass="count">
+                                 <padding>
+                                    <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                                 </padding>
+                                 <children>
+                                    <AnchorPane prefHeight="127.0" prefWidth="245.0">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <children>
+                                          <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="1st Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
+                                          <Label layoutX="20.0" layoutY="54.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="count-pane" />
+                                          <String fx:value="count-c1" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="20.0" layoutY="25.0" prefHeight="127.0" prefWidth="245.0">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <styleClass>
+                                          <String fx:value="count-pane" />
+                                          <String fx:value="count-c2" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="2nd Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
+                                          <Label layoutX="20.0" layoutY="54.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="280.0" layoutY="25.0" prefHeight="127.0" prefWidth="245.0">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <styleClass>
+                                          <String fx:value="count-pane" />
+                                          <String fx:value="count-c3" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="3rd Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
+                                          <Label layoutX="20.0" layoutY="54.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="165.0" prefWidth="306.0" styleClass="attendance">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="15.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@35778-200.png" />
+                                 </image>
+                              </ImageView>
+                              <Label styleClass="attendance-head" text="Student Attendance" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <Label layoutX="15.0" layoutY="55.0" prefHeight="40.0" prefWidth="281.0" styleClass="attendance-sub" text="Take daily student Attendance and generate a report here " wrapText="true" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0" />
+                        <JFXButton layoutX="14.0" layoutY="114.0" prefHeight="34.0" prefWidth="284.0" ripplerFill="TRANSPARENT" text="Daily Attendance" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <styleClass>
+                              <String fx:value="attendance-actions" />
+                              <String fx:value="attendance-att" />
+                           </styleClass>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="13.0" right="13.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <AnchorPane cache="true" cacheHint="SPEED" layoutX="23.0" layoutY="385.0" prefHeight="135.0" prefWidth="307.0" styleClass="attendance">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="15.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@140-1404461_free-icons-png-homework-transparent-png.png" />
+                                 </image>
+                              </ImageView>
+                              <Label styleClass="attendance-head" text="Notes Dashboard" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <Label layoutX="15.0" layoutY="51.0" prefHeight="24.0" prefWidth="279.0" styleClass="attendance-sub" text="Upload and download notes here" wrapText="true" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
+                        <JFXButton layoutX="43.0" layoutY="95.0" prefHeight="34.0" prefWidth="222.0" text="Notes Dashboard" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <styleClass>
+                              <String fx:value="attendance-actions" />
+                              <String fx:value="attendance-att" />
+                           </styleClass>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="13.0" right="13.0" top="10.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</View>

@@ -1,0 +1,73 @@
+@font-face {
+     src: url("Raleway-Regular.ttf");
+}
+
+.root{
+	-fx-background-color: #fff;
+}
+
+.head1{
+	-fx-font-family: 'Raleway', sans-serif;
+	-fx-font-size: 24px;
+	-fx-pref-width: 300;
+	-fx-font-weight: bold;
+}
+
+.head2{
+	-fx-font-family: 'Raleway', sans-serif;
+	-fx-font-size: 36px;
+	-fx-pref-width: 300;
+	-fx-font-weight: bold;
+}
+.head3{
+	-fx-font-family: 'Raleway', sans-serif;
+	-fx-font-size: 14px;
+	-fx-pref-width: 300;
+}
+
+.txt,
+.pwd{
+	-fx-font-family: 'Raleway', sans-serif;
+	-fx-font-size: 15px;
+	-fx-pref-width: 300;
+	-fx-background-color: #fff;
+	-fx-border-color: #e8e8e8;
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+	-fx-padding: 7 13;
+	-fx-background-radius: 10px;
+	-fx-border-radius: 10px;
+}
+
+.txt:focused,
+.pwd:focused{
+	-fx-border-color: #e8e8e8;
+	-fx-border-style: solid;
+	-fx-border-width: 2px;
+}
+
+
+.login,
+.back{
+	-fx-background-radius: 15px;
+	-fx-pref-width: 300;
+	-fx-font-family: 'Raleway', sans-serif;
+	-fx-font-size: 16px;
+	-fx-text-fill: #fff;
+}
+
+.login{
+	-fx-background-color: #302b63;
+}
+.back{
+	-fx-background-color: green;
+}
+
+.result{
+	-fx-font-family: 'Raleway', sans-serif;
+	-fx-font-size: 18px;
+	-fx-pref-width: 300;
+	-fx-font-weight: bold;
+	-fx-text-fill: red;
+}
+	

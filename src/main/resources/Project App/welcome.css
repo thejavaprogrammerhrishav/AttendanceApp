@@ -1,0 +1,49 @@
+@font-face {
+     src: url("ABeeZee-Regular.ttf");
+}
+
+.root{
+	-fx-background-color: linear-gradient(#0f0c29,#302b63,#24243e);
+}
+
+.title{
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 24px;
+	-fx-text-fill: #fff;
+}
+.continue,
+.continue:hover{
+	-fx-background-color: green;
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 16px;
+	-fx-pref-width: 300;
+	-fx-pref-height: 35;
+	-fx-background-radius: 15px;
+}
+
+.separator {
+	-fx-pref-height: 2;
+	-fx-pref-width: 300;
+	-fx-background-color: derive(#302b63,45%);
+}
+
+.settings,
+.settings:hover{
+	-fx-background-color: blue;
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 16px;
+	-fx-pref-width: 140;
+	-fx-pref-height: 35;
+	-fx-text-fill: #fff;
+	-fx-background-radius: 15px;
+}
+.about,
+.about:hover{
+	-fx-background-color: red;
+	-fx-font-family: 'ABeeZee', sans-serif;
+	-fx-font-size: 16px;
+	-fx-pref-width: 140;
+	-fx-pref-height: 35;
+	-fx-text-fill: #fff;
+	-fx-background-radius: 15px;
+}
