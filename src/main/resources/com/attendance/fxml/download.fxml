@@ -41,8 +41,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@upload.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/upload.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -57,21 +56,21 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@File%20Chooser%20Icons/icons8-folder-144.png" />
+                              <Image url="@../images/chooser/icons8-folder-144.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
                </children>
             </AnchorPane>
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="478.0" styleClass="upload" text="Download File" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="536.0" styleClass="back" text="Leave It, Go Back" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="156.0" prefHeight="36.0" prefWidth="295.0" styleClass="browse" text="Browse Notes " AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="478.0" styleClass="upload" text="Download File" textFill="WHITE" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="536.0" styleClass="back" text="Leave It, Go Back" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="156.0" prefHeight="36.0" prefWidth="295.0" styleClass="browse" text="Browse Notes " textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <AnchorPane layoutX="20.0" layoutY="248.0" prefHeight="131.0" prefWidth="295.0" styleClass="selected" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
                      <image>
-                        <Image url="@File%20Chooser%20Icons/icons8-pdf-100.png" />
+                        <Image url="@../images/chooser/icons8-pdf-100.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="83.0" layoutY="20.0" prefWidth="197.0" style="-fx-font-weight: bold;" styleClass="selected-label" text="Data Structure Data Structure Data Structure Data Structure" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="19.0" />

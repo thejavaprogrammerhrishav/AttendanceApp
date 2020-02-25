@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@upload.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/upload.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -56,15 +56,15 @@
                   <TextField layoutX="2.0" prefHeight="40.0" prefWidth="292.0" promptText="Path to the file" styleClass="path-download" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="478.0" styleClass="upload" text="Upoad File" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="536.0" styleClass="back" text="Leave It, Go Back" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="478.0" styleClass="upload" text="Upoad File" textFill="WHITE" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="536.0" styleClass="back" text="Leave It, Go Back" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <FlowPane alignment="CENTER" hgap="20.0" layoutX="20.0" layoutY="155.0" vgap="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <JFXButton contentDisplay="GRAPHIC_ONLY" styleClass="type">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@File%20Chooser%20Icons/icons8-pdf-100.png" />
+                              <Image url="@../images/chooser/icons8-pdf-100.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -73,7 +73,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@File%20Chooser%20Icons/icons8-file-256.png" />
+                              <Image url="@../images/chooser/icons8-file-256.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -82,7 +82,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@File%20Chooser%20Icons/icons8-txt-100.png" />
+                              <Image url="@../images/chooser/icons8-txt-100.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -91,7 +91,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@File%20Chooser%20Icons/icons8-microsoft-word-2019-144.png" />
+                              <Image url="@../images/chooser/icons8-microsoft-word-2019-144.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -100,7 +100,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@File%20Chooser%20Icons/icons8-microsoft-powerpoint-144.png" />
+                              <Image url="@../images/chooser/icons8-microsoft-powerpoint-144.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -109,7 +109,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@File%20Chooser%20Icons/icons8-microsoft-excel-2019-144.png" />
+                              <Image url="@../images/chooser/icons8-microsoft-excel-2019-144.png" />
                            </image>
                         </ImageView>
                      </graphic>

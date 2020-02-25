@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@profile.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/profile.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -56,7 +56,7 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons8_left_30px.png" />
+                              <Image url="@../images/icons8_left_30px.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -73,7 +73,7 @@
                <children>
                   <ImageView fitHeight="83.0" fitWidth="84.0" pickOnBounds="true">
                      <image>
-                        <Image url="@businessman-entrepreneur-working-office-desk_3446-678.jpg" />
+                        <Image url="@../images/icons8_edit_user_male_50px.png" />
                      </image>
                      <VBox.margin>
                         <Insets bottom="10.0" top="15.0" />

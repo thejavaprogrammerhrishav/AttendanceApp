@@ -41,8 +41,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@usertype.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/usertype.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
@@ -52,7 +51,7 @@
                      <graphic>
                         <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons8-go-back-100.png" />
+                              <Image url="@../images/icons8-go-back-100.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -70,7 +69,7 @@
                      <graphic>
                         <ImageView fitHeight="160.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@businessman-entrepreneur-working-office-desk_3446-678.jpg" />
+                              <Image url="@../images/businessman-entrepreneur-working-office-desk_3446-678.jpg" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -79,7 +78,7 @@
                      <graphic>
                         <ImageView fitHeight="160.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@teacher.jpg" />
+                              <Image url="@../images/teacher.jpg" />
                            </image>
                         </ImageView>
                      </graphic>

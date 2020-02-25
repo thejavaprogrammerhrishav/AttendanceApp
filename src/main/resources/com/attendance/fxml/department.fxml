@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<View fx:id="other" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@department.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mymulti.views.OtherPresenter">
+<View fx:id="other" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/department.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mymulti.views.OtherPresenter">
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="630.0" prefWidth="335.0" spacing="10.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
          <children>
@@ -55,7 +55,7 @@
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@icons8-go-back-100.png" />
+                                    <Image url="@../images/icons8-go-back-100.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -76,7 +76,7 @@
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@office_1284-16995.png" />
+                                    <Image url="@../images/office_1284-16995.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -85,7 +85,7 @@
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@office_1284-16995.png" />
+                                    <Image url="@../images/office_1284-16995.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -94,7 +94,7 @@
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@office_1284-16995.png" />
+                                    <Image url="@../images/office_1284-16995.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -103,7 +103,7 @@
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@office_1284-16995.png" />
+                                    <Image url="@../images/office_1284-16995.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -112,7 +112,7 @@
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@office_1284-16995.png" />
+                                    <Image url="@../images/office_1284-16995.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -121,7 +121,7 @@
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@office_1284-16995.png" />
+                                    <Image url="@../images/office_1284-16995.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -130,7 +130,7 @@
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@office_1284-16995.png" />
+                                    <Image url="@../images/office_1284-16995.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -139,97 +139,7 @@
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="10.0" layoutY="550.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="161.0" layoutY="550.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="10.0" layoutY="730.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="161.0" layoutY="730.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="10.0" layoutY="910.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="161.0" layoutY="910.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="10.0" layoutY="1090.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="161.0" layoutY="1090.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="10.0" layoutY="1270.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="161.0" layoutY="1270.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
-                           <graphic>
-                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@office_1284-16995.png" />
+                                    <Image url="@../images/office_1284-16995.png" />
                                  </image>
                               </ImageView>
                            </graphic>

@@ -16,5 +16,12 @@
                 </activity>
 
                 <activity android:name="com.gluonhq.impl.charm.down.plugins.android.PermissionRequestActivity" />
+				
+				<provider android:name="android.support.v4.content.FileProvider"
+						  android:authorites="com.attendance.settings.FileProvider"
+						  android:exported="false"
+						  android:grantUriPermissions="true">
+				<matter-data android:name="android.support.FILE_PROVIDER_PATHS"
+							 android:resource="@xml/file_provider_paths" />
         </application>
 </manifest>

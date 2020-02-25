@@ -46,7 +46,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/dashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <ScrollPane cache="true" fitToWidth="true" hbarPolicy="NEVER" minViewportHeight="600.0" minViewportWidth="332.0" pannable="true" styleClass="log-scroll">
          <content>
@@ -59,7 +59,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@menu.png" />
+                                    <Image url="@../images/menu.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -68,7 +68,7 @@
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@power-on-semicircle-%20(1).png" />
+                                    <Image url="@../images/power-on-semicircle-%20(1).png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -144,7 +144,7 @@
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@35778-200.png" />
+                                    <Image url="@../images/35778-200.png" />
                                  </image>
                               </ImageView>
                               <Label styleClass="attendance-head" text="Student Attendance" />
@@ -171,7 +171,7 @@
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@140-1404461_free-icons-png-homework-transparent-png.png" />
+                                    <Image url="@../images/140-1404461_free-icons-png-homework-transparent-png.png" />
                                  </image>
                               </ImageView>
                               <Label styleClass="attendance-head" text="Notes Dashboard" />

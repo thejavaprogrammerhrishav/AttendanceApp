@@ -42,20 +42,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@welcome.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/welcome.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@login.css" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="87.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@LogoMakr_1wJdNX.png" />
+                  <Image url="@../images/LogoMakr_1wJdNX.png" />
                </image>
                <VBox.margin>
                   <Insets bottom="20.0" top="10.0" />
                </VBox.margin>
             </ImageView>
             <Label styleClass="title" text="Attendance Management System" textAlignment="CENTER" wrapText="true" />
-            <JFXButton prefHeight="35.0" prefWidth="293.0" styleClass="continue" text="Continue">
+            <JFXButton prefHeight="35.0" prefWidth="293.0" styleClass="continue" text="Continue" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="15.0" top="180.0" />
                </VBox.margin>
