@@ -41,13 +41,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/usertype.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/usertype.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
             <VBox>
                <children>
-                  <Button contentDisplay="GRAPHIC_ONLY" minWidth="33.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0" styleClass="icon-button" text="Button">
+                  <Button fx:id="back" contentDisplay="GRAPHIC_ONLY" minWidth="33.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0" styleClass="icon-button" text="Button">
                      <graphic>
                         <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -65,7 +65,7 @@
             </Label>
             <VBox alignment="TOP_CENTER" prefHeight="463.0" prefWidth="295.0" spacing="30.0">
                <children>
-                  <Button contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
+                  <Button fx:id="hod" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
                      <graphic>
                         <ImageView fitHeight="160.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -74,7 +74,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
+                  <Button fx:id="faculty" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
                      <graphic>
                         <ImageView fitHeight="160.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -97,4 +97,4 @@
          </padding>
       </VBox>
    </center>
-</View>
+</fx:root>

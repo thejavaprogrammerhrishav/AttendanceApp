@@ -42,9 +42,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/welcome.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/welcome.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@login.css" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@../files/login.css" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="87.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -55,7 +55,7 @@
                </VBox.margin>
             </ImageView>
             <Label styleClass="title" text="Attendance Management System" textAlignment="CENTER" wrapText="true" />
-            <JFXButton prefHeight="35.0" prefWidth="293.0" styleClass="continue" text="Continue" textFill="WHITE">
+            <JFXButton fx:id="proceed" prefHeight="35.0" prefWidth="293.0" styleClass="continue" text="Continue" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="15.0" top="180.0" />
                </VBox.margin>
@@ -63,8 +63,8 @@
             <Label minHeight="-Infinity" minWidth="-Infinity" styleClass="separator" />
             <HBox alignment="CENTER" prefHeight="58.0" prefWidth="295.0" spacing="15.0">
                <children>
-                  <JFXButton styleClass="settings" text="Settings" />
-                  <JFXButton styleClass="about" text="About Us" />
+                  <JFXButton fx:id="settings" styleClass="settings" text="Settings" />
+                  <JFXButton fx:id="about" styleClass="about" text="About Us" />
                </children>
                <VBox.margin>
                   <Insets />
@@ -76,4 +76,4 @@
          </padding>
       </VBox>
    </center>
-</View>
+</fx:root>

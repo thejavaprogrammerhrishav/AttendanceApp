@@ -10,7 +10,6 @@ import static com.attendance.util.AppView.ATTENDANCE_VIEW;
 import static com.attendance.util.AppView.DASHBOARD_VIEW;
 import static com.attendance.util.AppView.DOWNLOAD_NOTES_VIEW;
 import static com.attendance.util.AppView.EDIT_PROFILE_VIEW;
-import static com.attendance.util.AppView.LOGIN_VIEW;
 import static com.attendance.util.AppView.NOTES_DASHBOARD_VIEW;
 import static com.attendance.util.AppView.PROFILE_VIEW;
 import static com.attendance.util.AppView.SELECT_DEPARTMENT_VIEW;
@@ -19,17 +18,20 @@ import static com.attendance.util.AppView.UPLOAD_NOTES_VIEW;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import javafx.scene.Scene;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * @author pc
  */
 public class Start extends MobileApplication{
+    
+    private static ClassPathXmlApplicationContext app; 
 
     @Override
     public void init() throws Exception {
         addViewFactory(AppView.SPLASH_VIEW, ()->SystemUtils.getResolver().getSplashView());
-        addViewFactory(LOGIN_VIEW, ()->SystemUtils.getResolver().getLoginView());
         addViewFactory(DASHBOARD_VIEW, ()->SystemUtils.getResolver().getDashboardView());
         addViewFactory(NOTES_DASHBOARD_VIEW, ()->SystemUtils.getResolver().getNotesDashboardView());
         addViewFactory(ATTENDANCE_VIEW, ()->SystemUtils.getResolver().getAttendanceView());
@@ -41,6 +43,8 @@ public class Start extends MobileApplication{
         addViewFactory(DOWNLOAD_NOTES_VIEW, ()->SystemUtils.getResolver().getDownloadNotesView());
         
         SystemUtils.setApplication(this);
+        applicationInit();
+        SystemUtils.setContext(app);
         
     }
 
@@ -49,6 +53,12 @@ public class Start extends MobileApplication{
         this.setSwatch(null);
         this.getAppBar().setVisible(false);
         
+    }
+    
+    private void applicationInit() {
+        app = new ClassPathXmlApplicationContext();
+        app.setConfigLocation("/com/attendance/xml/Application.xml");
+        app.refresh();
     }
     
     
