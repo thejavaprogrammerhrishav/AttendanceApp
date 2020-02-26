@@ -13,6 +13,7 @@ import static com.gluonhq.charm.glisten.application.MobileApplication.HOME_VIEW;
  */
 public class AppView {
     public static final String SPLASH_VIEW = HOME_VIEW;
+    public static final String LOGIN_VIEW="Login View";
     public static final String DASHBOARD_VIEW = "Dashboard View";
     public static final String NOTES_DASHBOARD_VIEW = "Notes Dashboard";
     public static final String ATTENDANCE_VIEW = "Attendance View";

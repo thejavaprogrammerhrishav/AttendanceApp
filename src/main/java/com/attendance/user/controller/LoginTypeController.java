@@ -62,11 +62,15 @@ public class LoginTypeController extends View {
     }
     
     private void hod(ActionEvent evt) {
-        
+        SystemUtils.getApplication().removeViewFactory(AppView.LOGIN_VIEW);
+        SystemUtils.getApplication().addViewFactory(AppView.LOGIN_VIEW,()->new LoginController("hod"));
+        SystemUtils.getApplication().switchView(AppView.LOGIN_VIEW);
     }
     
     private void faculty(ActionEvent evt) {
-        
+        SystemUtils.getApplication().removeViewFactory(AppView.LOGIN_VIEW);
+        SystemUtils.getApplication().addViewFactory(AppView.LOGIN_VIEW,()->new LoginController("faculty"));
+        SystemUtils.getApplication().switchView(AppView.LOGIN_VIEW);
     }
 
 }

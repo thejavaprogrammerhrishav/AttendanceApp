@@ -77,6 +77,7 @@ public class LoginController extends View {
         });
         
         service = (LoginService) SystemUtils.getContext().getBean("loginservice");
+        login.setOnAction(this::login);
     }
     
     private void back(ActionEvent evt) {
@@ -100,9 +101,9 @@ public class LoginController extends View {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                int count = 3;
+                byte count = 3;
                 while(count!= 0){
-                    final int abc = count;
+                    final byte abc = count;
                     Platform.runLater(()->status.setText("Dashboard in "+ abc+" Sec."));
                     count--;
                     Thread.sleep(700);
@@ -114,9 +115,4 @@ public class LoginController extends View {
         Thread t = new Thread(task);
         t.start();
     }
-    
-    
-    
-    
-    
 }

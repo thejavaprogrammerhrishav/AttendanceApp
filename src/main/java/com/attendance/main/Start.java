@@ -40,7 +40,7 @@ public class Start extends MobileApplication{
         addViewFactory(SELECT_LOGIN_VIEW, ()->SystemUtils.getResolver().getSelectLoginView());
         addViewFactory(EDIT_PROFILE_VIEW, ()->SystemUtils.getResolver().getEditProfileView());
         addViewFactory(UPLOAD_NOTES_VIEW, ()->SystemUtils.getResolver().getUploadNotesView());
-        addViewFactory(DOWNLOAD_NOTES_VIEW, ()->SystemUtils.getResolver().getDownloadNotesView());
+        addViewFactory(DOWNLOAD_NOTES_VIEW, ()->SystemUtils.getResolver().getDownloadNotesView());        
         
         SystemUtils.setApplication(this);
         applicationInit();

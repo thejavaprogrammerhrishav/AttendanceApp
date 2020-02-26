@@ -25,8 +25,8 @@ public class ViewResolver {
         return new SplashController();
     }
     
-    public View getLoginView() {
-        return new LoginController();
+    public View getLoginView(String type) {
+        return new LoginController(type);
     }
     
     public View getDashboardView() {
