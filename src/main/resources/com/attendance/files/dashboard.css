@@ -19,7 +19,7 @@
 
 .head-label {
 	-fx-font-family: 'ABeeZee', sans-serif;
-	-fx-font-size: 20px;
+	-fx-font-size: 18px;
 	-fx-font-weight: bold;
 }
 
@@ -98,9 +98,7 @@
      -fx-fill: #000;
 }
 
-.date-time{
-	-fx-background-color: #8a40ff;
-}
+
 .date-time-label{
 	-fx-font-family: 'ABeeZee', sans-serif;
 	-fx-text-fill: #fff;
@@ -116,15 +114,15 @@
 }
 
 .count-c1{
-	-fx-background-color: #d11f61;
+	-fx-background-color: linear-gradient(to right bottom, rgba(114,210,39,1) 11.3%, rgba(182,235,141,1) 100.2% );
 }
 
 .count-c2{
-	-fx-background-color: #ff8000;
+	-fx-background-color: linear-gradient(to right bottom, rgba(107,52,255,1) 16.5%, rgba(51,159,247,1) 81% );
 }
 
 .count-c3{
-	-fx-background-color: #8a40ff;
+	-fx-background-color: linear-gradient(to right bottom, rgba(113,14,51,0.83) 15.2%, rgba(217,43,23,0.95) 96.8% );
 }
 
 .count-pane-header {
@@ -142,7 +140,8 @@
 
 .attendance{
 	-fx-background-color: #fff;
-	-fx-effect: dropshadow(three-pass-box, #999, 10, 0, 0, 0);
+	-fx-background-radius: 10px;
+	-fx-effect: dropshadow(three-pass-box, #c3c3c3, 10, 0, 0, 0);
 }
 
 .attendance-head{

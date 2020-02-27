@@ -44,29 +44,28 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <ScrollPane cache="true" fitToWidth="true" hbarPolicy="NEVER" minViewportHeight="600.0" minViewportWidth="332.0" pannable="true" styleClass="log-scroll">
          <content>
-            <VBox alignment="TOP_CENTER" prefWidth="335.0" spacing="9.0" styleClass="main">
+            <AnchorPane>
                <children>
-                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="46.0" prefWidth="335.0" styleClass="head">
+                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="44.0" prefWidth="332.0" styleClass="head" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label layoutX="50.0" layoutY="12.0" styleClass="head-label" text="Dashboard" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="12.0" />
-                        <JFXButton fx:id="list" contentDisplay="GRAPHIC_ONLY" layoutX="12.0" layoutY="9.0" styleClass="head-jfx-button" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="9.0">
+                        <Label layoutX="55.0" layoutY="8.0" prefHeight="30.0" prefWidth="94.0" styleClass="head-label" text="Dashboard" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="8.0" />
+                        <JFXButton fx:id="list" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="8.0" minHeight="23.0" prefHeight="23.0" styleClass="head-jfx-button" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0">
                            <graphic>
-                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/menu.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="logout" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" styleClass="head-jfx-button" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="9.0">
+                        <JFXButton fx:id="logout" contentDisplay="GRAPHIC_ONLY" layoutX="291.0" layoutY="7.0" minHeight="29.0" prefHeight="29.0" styleClass="head-jfx-button" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="7.0">
                            <graphic>
-                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/power-on-semicircle-%20(1).png" />
                                  </image>
@@ -75,13 +74,12 @@
                         </JFXButton>
                      </children>
                   </AnchorPane>
-                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="66.0" prefWidth="335.0" styleClass="date-time">
+                  <AnchorPane cache="true" cacheHint="SPEED" layoutY="53.0" prefHeight="66.0" style="-fx-background-color: linear-gradient(to right bottom, #8A2387,#E94057,#F27121);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Label fx:id="date" layoutX="47.0" layoutY="14.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
-                        <Label fx:id="time" layoutX="30.0" layoutY="25.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="230.0" prefWidth="335.0" styleClass="content1">
+                        <Label layoutX="20.0" layoutY="12.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" />
+                        <Label layoutX="20.0" layoutY="36.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" />
+                     </children></AnchorPane>
+                  <AnchorPane cache="true" cacheHint="SPEED" layoutY="127.0" prefHeight="230.0" prefWidth="335.0" styleClass="content1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
                         <Label layoutX="20.0" layoutY="37.0" prefHeight="20.0" prefWidth="160.0" styleClass="c2" text="Admission Year" AnchorPane.leftAnchor="20.0" />
                         <Label layoutX="20.0" layoutY="8.0" prefHeight="20.0" prefWidth="160.0" styleClass="c1" text="Student Enrollment" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="8.0" />
@@ -138,7 +136,7 @@
                         </ScrollPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="165.0" prefWidth="306.0" styleClass="attendance">
+                  <AnchorPane cache="true" cacheHint="SPEED" layoutX="13.0" layoutY="366.0" prefHeight="165.0" prefWidth="306.0" styleClass="attendance" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
                      <children>
                         <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="15.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
                            <children>
@@ -161,11 +159,8 @@
                            </styleClass>
                         </JFXButton>
                      </children>
-                     <VBox.margin>
-                        <Insets left="13.0" right="13.0" />
-                     </VBox.margin>
                   </AnchorPane>
-                  <AnchorPane cache="true" cacheHint="SPEED" layoutX="23.0" layoutY="385.0" prefHeight="135.0" prefWidth="307.0" styleClass="attendance">
+                  <AnchorPane cache="true" cacheHint="SPEED" layoutX="13.0" layoutY="550.0" prefHeight="135.0" prefWidth="307.0" styleClass="attendance" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
                      <children>
                         <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="15.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
                            <children>
@@ -188,15 +183,9 @@
                            </styleClass>
                         </JFXButton>
                      </children>
-                     <VBox.margin>
-                        <Insets left="13.0" right="13.0" top="10.0" />
-                     </VBox.margin>
                   </AnchorPane>
                </children>
-               <padding>
-                  <Insets bottom="10.0" top="10.0" />
-               </padding>
-            </VBox>
+            </AnchorPane>
          </content>
       </ScrollPane>
    </center>

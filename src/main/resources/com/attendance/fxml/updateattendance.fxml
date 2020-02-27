@@ -34,12 +34,10 @@
 
 <?import com.gluonhq.charm.glisten.mvc.View?>
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -69,30 +67,6 @@
       <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" styleClass="log-scroll" BorderPane.alignment="CENTER">
          <content>
             <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" hgap="20.0" prefHeight="402.0" prefWidth="332.0" vgap="20.0">
-               <children>
-                  <AnchorPane prefHeight="146.0" prefWidth="136.0" style="-fx-background-color: #609;">
-                     <children>
-                        <Label layoutX="7.0" layoutY="7.0" prefHeight="72.0" prefWidth="119.0" style="-fx-font-size: 15; -fx-text-fill: white;" text="Hrishav Dhawaj Purkayastha" wrapText="true" />
-                        <Label alignment="CENTER" layoutX="8.0" layoutY="78.0" prefHeight="22.0" prefWidth="115.0" style="-fx-text-fill: White; -fx-font-size: 12;" styleClass="-fx-t" text="1324" />
-                        <JFXCheckBox layoutX="15.0" layoutY="114.0" prefHeight="18.0" prefWidth="44.0" text="P" textFill="WHITE" unCheckedColor="WHITE" />
-                        <JFXCheckBox layoutX="80.0" layoutY="114.0" selected="true" style="-fx-font-size: 12;" text="A" textFill="WHITE" unCheckedColor="WHITE" />
-                     </children>
-                     <effect>
-                        <DropShadow color="#8026ff" height="35.83" radius="17.415" width="35.83" />
-                     </effect>
-                  </AnchorPane>
-                  <AnchorPane layoutX="108.0" layoutY="20.0" prefHeight="146.0" prefWidth="136.0" style="-fx-background-color: #609;">
-                     <children>
-                        <Label layoutX="7.0" layoutY="7.0" prefHeight="72.0" prefWidth="119.0" style="-fx-font-size: 15; -fx-text-fill: white;" text="Hrishav Dhawaj Purkayastha" wrapText="true" />
-                        <Label alignment="CENTER" layoutX="8.0" layoutY="78.0" prefHeight="22.0" prefWidth="115.0" style="-fx-text-fill: White; -fx-font-size: 12;" styleClass="-fx-t" text="1324" />
-                        <JFXCheckBox layoutX="15.0" layoutY="114.0" prefHeight="18.0" prefWidth="44.0" text="P" textFill="WHITE" unCheckedColor="WHITE" />
-                        <JFXCheckBox layoutX="80.0" layoutY="114.0" selected="true" style="-fx-font-size: 12;" text="A" textFill="WHITE" unCheckedColor="WHITE" />
-                     </children>
-                     <effect>
-                        <DropShadow color="#8026ff" height="35.83" radius="17.415" width="35.83" />
-                     </effect>
-                  </AnchorPane>
-               </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
