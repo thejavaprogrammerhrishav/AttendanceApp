@@ -1,0 +1,65 @@
+@font-face {
+     src: url("ABeeZee-Regular.ttf");
+}
+
+@font-face {
+     src: url("Roboto-Regular.ttf");
+}
+
+@font-face {
+     src: url("Raleway-Regular.ttf");
+}
+
+.txt{
+	-fx-font-family: 'AbeeZee', arial;
+	-fx-font-size: 14px;
+	-fx-pref-width: 300;
+	-fx-background-color: #fff;
+	-fx-border-color: #e8e8e8;
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+	-fx-padding: 4px 9px;
+	-fx-background-radius: 7px;
+	-fx-border-radius: 7px;
+}
+
+.txt:focused{
+	-fx-border-color: #e8e8e8;
+	-fx-border-style: solid;
+	-fx-border-width: 2px;
+}
+
+
+.load,
+.back{
+	-fx-background-radius: 7px;
+	-fx-font-family: 'AbeeZee', arial;
+	-fx-text-fill: #fff;
+}
+
+.load{
+	-fx-background-color: #302b63;
+}
+.back{
+	-fx-background-color: green;
+}
+
+.log-scroll,
+.log-scroll > .view-port,
+.log-scroll > .scroll-bar:vertical > .track,
+.log-scroll > .scroll-bar:vertical > .increment-button,
+.log-scroll > .scroll-bar:vertical > .increment-button > .increment-arrow,
+.log-scroll > .scroll-bar:vertical > .decrement-button,
+.log-scroll > .scroll-bar:vertical > .decrement-button > .decrement-arrow,
+.log-scroll > .scroll-bar:vertical > .track-background{
+    -fx-background-color: #fff;
+    -fx-fill: #fff;
+	-fx-pref-width: 1px;
+    -fx-background-radius: 0;
+}
+
+.log-scroll > .scroll-bar:vertical > .thumb{
+    -fx-background-color:  #fff;
+    -fx-background-radius: 0;
+    -fx-pref-width: 1px;
+}
