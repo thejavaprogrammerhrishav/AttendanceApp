@@ -53,12 +53,12 @@ public class LoginTypeController extends View {
         hod.setOnAction(this::hod);
         faculty.setOnAction(this::faculty);
         this.addEventHandler(MobileApplication.MobileEvent.BACK_BUTTON_PRESSED, e->{
-            SystemUtils.getApplication().switchView(AppView.SPLASH_VIEW);
+            SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW);
         });
     }
     
     private void back(ActionEvent evt){
-        SystemUtils.getApplication().switchView(AppView.SPLASH_VIEW);
+        SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW);
     }
     
     private void hod(ActionEvent evt) {

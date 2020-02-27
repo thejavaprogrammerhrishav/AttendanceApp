@@ -78,6 +78,9 @@ public class LoginController extends View {
         
         service = (LoginService) SystemUtils.getContext().getBean("loginservice");
         login.setOnAction(this::login);
+        
+        department.setText("Department: " + SystemUtils.getDepartment());
+        usertype.setText("User Type: " + type);
     }
     
     private void back(ActionEvent evt) {

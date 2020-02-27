@@ -54,7 +54,7 @@ public class SplashController extends View {
     }
     
     private void proceed(ActionEvent evt) {
-        SystemUtils.getApplication().switchView(AppView.SELECT_LOGIN_VIEW);
+        SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW);
     }
     
     private void settings(ActionEvent evt) {

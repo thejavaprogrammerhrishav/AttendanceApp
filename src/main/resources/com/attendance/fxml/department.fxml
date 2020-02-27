@@ -43,15 +43,15 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<View fx:id="other" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/department.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mymulti.views.OtherPresenter">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="335.0" stylesheets="@../files/department.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mymulti.views.OtherPresenter">
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="630.0" prefWidth="335.0" spacing="10.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefWidth="335.0" spacing="10.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
          <children>
             <VBox spacing="10.0">
                <children>
                   <VBox>
                      <children>
-                        <Button contentDisplay="GRAPHIC_ONLY" minWidth="33.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0" styleClass="icon-button" text="Button">
+                        <Button fx:id="back" contentDisplay="GRAPHIC_ONLY" minWidth="33.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0" styleClass="icon-button" text="Button">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -68,11 +68,11 @@
                   <Insets left="20.0" />
                </padding>
             </VBox>
-            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefViewportHeight="1514.0" prefViewportWidth="320.0" styleClass="user-log-scroll">
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="695.0" prefViewportHeight="1514.0" prefViewportWidth="320.0" prefWidth="335.0" styleClass="user-log-scroll">
                <content>
                   <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="20.0" prefWrapLength="200.0" style="-fx-background-color: #fff;" vgap="20.0">
                      <children>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
+                        <Button fx:id="anthropology" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" styleClass="main" text="Anthropology">
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -81,7 +81,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
+                        <Button fx:id="assamese" contentDisplay="TOP" graphicTextGap="10.0" layoutX="109.0" layoutY="30.0" mnemonicParsing="false" styleClass="main" text="Assamese">
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -90,7 +90,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
+                        <Button fx:id="bengali" contentDisplay="TOP" graphicTextGap="10.0" layoutX="187.0" layoutY="30.0" mnemonicParsing="false" styleClass="main" text="Bengali">
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -99,7 +99,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="161.0" layoutY="10.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
+                        <Button fx:id="biotechnology" contentDisplay="TOP" graphicTextGap="10.0" layoutX="109.0" layoutY="200.0" mnemonicParsing="false" styleClass="main" text="Biotechnology">
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -108,7 +108,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="10.0" layoutY="190.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
+                        <Button fx:id="botany" contentDisplay="TOP" graphicTextGap="10.0" layoutX="187.0" layoutY="200.0" mnemonicParsing="false" styleClass="main" text="Botany">
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -117,7 +117,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="161.0" layoutY="190.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
+                        <Button fx:id="computerscience" contentDisplay="TOP" graphicTextGap="10.0" layoutX="183.0" layoutY="710.0" mnemonicParsing="false" styleClass="main" text="Computer Science">
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -126,7 +126,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="10.0" layoutY="370.0" mnemonicParsing="false" styleClass="main" text="HOD Login">
+                        <Button fx:id="bussiness" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="370.0" mnemonicParsing="false" prefWidth="300.0" styleClass="main" text="Business Administration">
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -135,7 +135,160 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="10.0" layoutX="161.0" layoutY="370.0" mnemonicParsing="false" styleClass="main" text="Faculty Login">
+                        <Button fx:id="chemistry" contentDisplay="TOP" graphicTextGap="10.0" layoutX="74.0" layoutY="540.0" mnemonicParsing="false" styleClass="main" text="Chemistry">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="commerce" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="710.0" mnemonicParsing="false" styleClass="main" text="Commerce">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="ecology" contentDisplay="TOP" graphicTextGap="10.0" layoutX="97.0" layoutY="880.0" mnemonicParsing="false" prefWidth="300.0" styleClass="main" text="Ecology &amp; Environmental Sc.">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="economics" contentDisplay="TOP" graphicTextGap="10.0" layoutX="56.0" layoutY="1050.0" mnemonicParsing="false" styleClass="main" text="Economics">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="english" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="1220.0" mnemonicParsing="false" styleClass="main" text="English">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="geology" contentDisplay="TOP" graphicTextGap="10.0" layoutX="183.0" layoutY="1220.0" mnemonicParsing="false" styleClass="main" text="Geology">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="hindi" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="1390.0" mnemonicParsing="false" styleClass="main" text="Hindi">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="history" contentDisplay="TOP" graphicTextGap="10.0" layoutX="183.0" layoutY="1390.0" mnemonicParsing="false" styleClass="main" text="History">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="mathematics" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="1560.0" mnemonicParsing="false" styleClass="main" text="Mathematics">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="manipuri" contentDisplay="TOP" graphicTextGap="10.0" layoutX="183.0" layoutY="1560.0" mnemonicParsing="false" styleClass="main" text="Manipuri">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="zoology" contentDisplay="TOP" graphicTextGap="10.0" layoutX="183.0" layoutY="2410.0" mnemonicParsing="false" styleClass="main" text="Zoology">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="mass" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="1730.0" mnemonicParsing="false" prefWidth="300.0" styleClass="main" text="Mass Communication">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="persian" contentDisplay="TOP" graphicTextGap="10.0" layoutX="84.0" layoutY="1900.0" mnemonicParsing="false" styleClass="main" text="Persian">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="philosophy" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="2070.0" mnemonicParsing="false" styleClass="main" text="Philosophy">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="physics" contentDisplay="TOP" graphicTextGap="10.0" layoutX="183.0" layoutY="2070.0" mnemonicParsing="false" styleClass="main" text="Physics">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="political" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="2240.0" mnemonicParsing="false" styleClass="main" text="Political Science">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="sanskrit" contentDisplay="TOP" graphicTextGap="10.0" layoutX="182.0" layoutY="2240.0" mnemonicParsing="false" styleClass="main" text="Sanskrit">
+                           <graphic>
+                              <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/office_1284-16995.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="statistics" contentDisplay="TOP" graphicTextGap="10.0" layoutX="105.0" layoutY="2410.0" mnemonicParsing="false" styleClass="main" text="Statistics">
                            <graphic>
                               <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -157,4 +310,4 @@
          </padding>
       </VBox>
    </center>
-</View>
+</fx:root>
