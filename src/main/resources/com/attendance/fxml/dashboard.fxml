@@ -43,145 +43,192 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <ScrollPane cache="true" fitToWidth="true" hbarPolicy="NEVER" minViewportHeight="600.0" minViewportWidth="332.0" pannable="true" styleClass="log-scroll">
+      <ScrollPane cache="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="412.0" prefWidth="335.0" styleClass="log-scroll">
          <content>
-            <AnchorPane>
+            <AnchorPane prefHeight="986.0" prefWidth="333.0" style="-fx-background-color: #f0f0f0;">
                <children>
-                  <AnchorPane cache="true" cacheHint="SPEED" prefHeight="44.0" prefWidth="332.0" styleClass="head" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox layoutY="13.0" prefHeight="268.0" prefWidth="314.0" spacing="15.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                      <children>
-                        <Label layoutX="55.0" layoutY="8.0" prefHeight="30.0" prefWidth="94.0" styleClass="head-label" text="Dashboard" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="8.0" />
-                        <JFXButton fx:id="list" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="8.0" minHeight="23.0" prefHeight="23.0" styleClass="head-jfx-button" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="8.0">
+                        <AnchorPane prefHeight="70.0" prefWidth="294.0">
+                           <children>
+                              <Label layoutX="15.0" layoutY="38.0" prefHeight="20.0" prefWidth="118.0" styleClass="c2" text="Admission Year" AnchorPane.leftAnchor="15.0" />
+                              <Label layoutX="15.0" layoutY="8.0" prefHeight="20.0" prefWidth="160.0" styleClass="c1" text="Student Enrollment" AnchorPane.leftAnchor="15.0" />
+                              <JFXComboBox fx:id="year" layoutX="160.0" layoutY="30.0" prefHeight="29.0" prefWidth="99.0" promptText="Select Year" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="10.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="163.0" prefWidth="710.0">
+                           <children>
+                              <ScrollPane fitToHeight="true" layoutY="-1.0" prefHeight="163.0" prefWidth="294.0" styleClass="user-log-scroll" vbarPolicy="NEVER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <content>
+                                    <HBox alignment="CENTER" spacing="20.0" styleClass="count">
+                                       <padding>
+                                          <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                                       </padding>
+                                       <children>
+                                          <AnchorPane prefHeight="119.0" prefWidth="182.0">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <children>
+                                                <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="1st Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
+                                                <Label fx:id="first" layoutX="20.0" layoutY="54.0" prefHeight="66.0" prefWidth="136.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="50.0" />
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="count-pane" />
+                                                <String fx:value="count-c1" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="20.0" layoutY="25.0" prefHeight="119.0" prefWidth="182.0">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <styleClass>
+                                                <String fx:value="count-pane" />
+                                                <String fx:value="count-c2" />
+                                             </styleClass>
+                                             <children>
+                                                <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="2nd Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
+                                                <Label fx:id="second" layoutX="20.0" layoutY="54.0" prefHeight="66.0" prefWidth="136.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="280.0" layoutY="25.0" prefHeight="119.0" prefWidth="182.0">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <styleClass>
+                                                <String fx:value="count-pane" />
+                                                <String fx:value="count-c3" />
+                                             </styleClass>
+                                             <children>
+                                                <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="3rd Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
+                                                <Label fx:id="third" layoutX="20.0" layoutY="54.0" prefHeight="66.0" prefWidth="136.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </HBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <AnchorPane layoutX="10.0" layoutY="294.0" prefHeight="66.0" prefWidth="314.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <children>
+                        <Label layoutX="66.0" layoutY="15.0" style="-fx-font-size: 16px;" text="Student Details" />
+                        <Label layoutX="68.0" layoutY="37.0" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="View Details of Students" />
+                        <JFXButton layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
                            <graphic>
-                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/menu.png" />
+                                    <Image url="@../images/icons8_forward_50px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton fx:id="logout" contentDisplay="GRAPHIC_ONLY" layoutX="291.0" layoutY="7.0" minHeight="29.0" prefHeight="29.0" styleClass="head-jfx-button" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="7.0">
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="16.0">
+                           <image>
+                              <Image url="@../images/icons8-man-student-100.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="371.0" prefHeight="66.0" prefWidth="314.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <children>
+                        <Label layoutX="66.0" layoutY="15.0" style="-fx-font-size: 16px;" text="Faculty Details" />
+                        <Label layoutX="67.0" layoutY="37.0" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="View Details of Faculties" />
+                        <JFXButton layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
                            <graphic>
-                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/power-on-semicircle-%20(1).png" />
+                                    <Image url="@../images/icons8_forward_50px.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </JFXButton>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="16.0">
+                           <image>
+                              <Image url="@../images/icons8-teacher-100.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane cache="true" cacheHint="SPEED" layoutY="53.0" prefHeight="66.0" style="-fx-background-color: linear-gradient(to right bottom, #8A2387,#E94057,#F27121);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <AnchorPane layoutX="10.0" layoutY="450.0" prefHeight="158.0" prefWidth="312.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                      <children>
-                        <Label layoutX="20.0" layoutY="12.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" />
-                        <Label layoutX="20.0" layoutY="36.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" />
-                     </children></AnchorPane>
-                  <AnchorPane cache="true" cacheHint="SPEED" layoutY="127.0" prefHeight="230.0" prefWidth="335.0" styleClass="content1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <children>
-                        <Label layoutX="20.0" layoutY="37.0" prefHeight="20.0" prefWidth="160.0" styleClass="c2" text="Admission Year" AnchorPane.leftAnchor="20.0" />
-                        <Label layoutX="20.0" layoutY="8.0" prefHeight="20.0" prefWidth="160.0" styleClass="c1" text="Student Enrollment" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="8.0" />
-                        <JFXComboBox fx:id="year" layoutX="201.0" layoutY="29.0" prefHeight="29.0" prefWidth="114.0" promptText="Select Year" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" />
-                        <ScrollPane fitToHeight="true" layoutY="68.0" prefHeight="163.0" prefWidth="335.0" styleClass="user-log-scroll" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                           <content>
-                              <HBox alignment="CENTER" spacing="20.0" styleClass="count">
-                                 <padding>
-                                    <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
-                                 </padding>
-                                 <children>
-                                    <AnchorPane prefHeight="127.0" prefWidth="245.0">
-                                       <effect>
-                                          <DropShadow />
-                                       </effect>
-                                       <children>
-                                          <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="1st Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
-                                          <Label fx:id="first" layoutX="20.0" layoutY="54.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
-                                       </children>
-                                       <styleClass>
-                                          <String fx:value="count-pane" />
-                                          <String fx:value="count-c1" />
-                                       </styleClass>
-                                    </AnchorPane>
-                                    <AnchorPane layoutX="20.0" layoutY="25.0" prefHeight="127.0" prefWidth="245.0">
-                                       <effect>
-                                          <DropShadow />
-                                       </effect>
-                                       <styleClass>
-                                          <String fx:value="count-pane" />
-                                          <String fx:value="count-c2" />
-                                       </styleClass>
-                                       <children>
-                                          <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="2nd Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
-                                          <Label fx:id="second" layoutX="20.0" layoutY="54.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane layoutX="280.0" layoutY="25.0" prefHeight="127.0" prefWidth="245.0">
-                                       <effect>
-                                          <DropShadow />
-                                       </effect>
-                                       <styleClass>
-                                          <String fx:value="count-pane" />
-                                          <String fx:value="count-c3" />
-                                       </styleClass>
-                                       <children>
-                                          <Label layoutX="109.0" layoutY="21.0" styleClass="count-pane-header" text="3rd Year" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="21.0" />
-                                          <Label fx:id="third" layoutX="20.0" layoutY="54.0" styleClass="count-pane-content" text="36209" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </HBox>
-                           </content>
-                        </ScrollPane>
+                        <Label layoutX="66.0" layoutY="23.0" style="-fx-font-size: 16px;" text="Daily Attendance" />
+                        <Label layoutX="18.0" layoutY="59.0" prefHeight="31.0" prefWidth="286.0" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="Update Daily Attendance of Classes Taken Thoughout The Day" wrapText="true" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="25.0" />
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="17.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0">
+                           <image>
+                              <Image url="@../images/icons8-attendance-100.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="122.0" layoutY="110.0" prefHeight="34.0" prefWidth="176.0" style="-fx-padding: 0; -fx-font-size: 14; -fx-background-color: linear-gradient(to right bottom, #ff00cc,#333399);" text="Update Attendance" AnchorPane.rightAnchor="15.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane cache="true" cacheHint="SPEED" layoutX="13.0" layoutY="366.0" prefHeight="165.0" prefWidth="306.0" styleClass="attendance" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
+                  <AnchorPane layoutX="10.0" layoutY="622.0" prefHeight="158.0" prefWidth="312.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                      <children>
-                        <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="15.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                        <Label layoutX="19.0" layoutY="24.0" style="-fx-font-size: 16px;" text="Study Notes" />
+                        <Label layoutX="18.0" layoutY="53.0" prefHeight="31.0" prefWidth="229.0" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="Explore the list of notes available on the server for students" wrapText="true" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="80.0" />
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="237.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="13.0">
+                           <image>
+                              <Image url="@../images/icons8-book-shelf-100.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="18.0" layoutY="109.0" prefHeight="34.0" prefWidth="109.0" style="-fx-padding: 0; -fx-font-size: 14; -fx-background-color: linear-gradient(to right bottom, #ff00cc,#333399);" text="Explore" />
+                     </children>
+                  </AnchorPane>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="792.0" prefHeight="88.0" prefWidth="312.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <children>
+                        <AnchorPane prefHeight="100.0" prefWidth="158.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/35778-200.png" />
+                                    <Image url="@../images/icons8-upload-to-ftp-100.png" />
                                  </image>
                               </ImageView>
-                              <Label styleClass="attendance-head" text="Student Attendance" />
+                              <Label layoutX="53.0" layoutY="20.0" style="-fx-font-size: 15;" text="New Notes?" />
+                              <JFXButton layoutX="38.0" layoutY="65.0" style="-fx-background-color: #fff; -fx-text-fill: #000; -fx-pref-width: 85; -fx-font-size: 11; -fx-pref-height: 30; -fx-min-height: 20;" styleClass="head-jfx-button" text="Upload Now" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
                            </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </HBox>
-                        <Label layoutX="15.0" layoutY="55.0" prefHeight="40.0" prefWidth="281.0" styleClass="attendance-sub" text="Take daily student Attendance and generate a report here " wrapText="true" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0" />
-                        <JFXButton fx:id="attendance" layoutX="14.0" layoutY="114.0" prefHeight="34.0" prefWidth="284.0" ripplerFill="TRANSPARENT" text="Daily Attendance" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
-                           <styleClass>
-                              <String fx:value="attendance-actions" />
-                              <String fx:value="attendance-att" />
-                           </styleClass>
-                        </JFXButton>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane cache="true" cacheHint="SPEED" layoutX="13.0" layoutY="550.0" prefHeight="135.0" prefWidth="307.0" styleClass="attendance" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
-                     <children>
-                        <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="15.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="158.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/140-1404461_free-icons-png-homework-transparent-png.png" />
+                                    <Image url="@../images/icons8-download-from-ftp-100.png" />
                                  </image>
                               </ImageView>
-                              <Label styleClass="attendance-head" text="Notes Dashboard" />
+                              <Label layoutX="50.0" layoutY="20.0" style="-fx-font-size: 15;" text="Need Notes?" />
+                              <JFXButton layoutX="38.0" layoutY="65.0" style="-fx-background-color: #fff; -fx-text-fill: #000; -fx-pref-width: 85; -fx-font-size: 11; -fx-pref-height: 30; -fx-min-height: 20;" styleClass="head-jfx-button" text="Download Now" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
                            </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </HBox>
-                        <Label layoutX="15.0" layoutY="51.0" prefHeight="24.0" prefWidth="279.0" styleClass="attendance-sub" text="Upload and download notes here" wrapText="true" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
-                        <JFXButton fx:id="notes" layoutX="43.0" layoutY="95.0" prefHeight="34.0" prefWidth="222.0" text="Notes Dashboard" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
-                           <styleClass>
-                              <String fx:value="attendance-actions" />
-                              <String fx:value="attendance-att" />
-                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <AnchorPane layoutX="10.0" layoutY="899.0" prefHeight="66.0" prefWidth="314.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <children>
+                        <Label layoutX="66.0" layoutY="15.0" style="-fx-font-size: 16px;" text="Class Details" />
+                        <Label layoutX="67.0" layoutY="37.0" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="Track Details of Classes Taken " />
+                        <JFXButton layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8_forward_50px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="16.0">
+                           <image>
+                              <Image url="@../images/icons8-training-100.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
@@ -189,4 +236,75 @@
          </content>
       </ScrollPane>
    </center>
+   <top>
+      <AnchorPane prefHeight="124.0" prefWidth="335.0" style="-fx-background-color: linear-gradient(to right bottom, #0f0c29,#302b63,#24243e);" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane cache="true" cacheHint="SPEED" prefHeight="44.0" prefWidth="332.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="9.0" minHeight="15.0" prefHeight="30.0" prefWidth="111.0" style="-fx-text-fill: #fff; -fx-font-size: 20;" text="Dashboard" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="9.0" />
+                  <JFXButton fx:id="logout" contentDisplay="GRAPHIC_ONLY" layoutX="289.0" layoutY="7.0" minHeight="15.0" prefHeight="30.0" styleClass="head-jfx-button" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="7.0">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-shutdown-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane cache="true" cacheHint="SPEED" layoutY="58.0" prefHeight="66.0" style="-fx-background-color: linear-gradient(to right bottom, #8A2387,#E94057,#F27121);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label layoutX="20.0" layoutY="12.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" />
+                  <Label layoutX="20.0" layoutY="36.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="37.0" prefWidth="335.0" spacing="50.0" style="-fx-border-color: #999 transparent transparent transparent;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-home-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-activity-history-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="69.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-blocked-account-male-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="128.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-settings-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
 </fx:root>

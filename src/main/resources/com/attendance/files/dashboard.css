@@ -32,7 +32,7 @@
 .head-jfx-button,
 .head-jfx-button:hover,
 .head-jfx-button:pressed{
-	-fx-background-color: #fff;
+	-fx-background-color: transparent;
 	-fx-effect: none;
 	-fx-min-width: 30px;
 	-fx-min-height: 30px;
