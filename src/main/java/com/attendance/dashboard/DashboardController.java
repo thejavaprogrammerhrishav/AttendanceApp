@@ -5,6 +5,7 @@
  */
 package com.attendance.dashboard;
 
+import com.attendance.student.service.StudentService;
 import com.attendance.user.service.LoginService;
 import com.attendance.util.AppView;
 import com.attendance.util.Fxml;
@@ -30,19 +31,7 @@ import org.joda.time.format.DateTimeFormat;
 public class DashboardController extends View {
 
     @FXML
-    private JFXButton list;
-
-    @FXML
-    private JFXButton logout;
-
-    @FXML
-    private Label date;
-
-    @FXML
-    private Label time;
-
-    @FXML
-    private JFXComboBox<?> year;
+    private JFXComboBox<String> year;
 
     @FXML
     private Label first;
@@ -54,11 +43,48 @@ public class DashboardController extends View {
     private Label third;
 
     @FXML
-    private JFXButton attendance;
+    private JFXButton student;
+
+    @FXML
+    private JFXButton faculty;
+
+    @FXML
+    private JFXButton update;
 
     @FXML
     private JFXButton notes;
 
+    @FXML
+    private JFXButton upload;
+
+    @FXML
+    private JFXButton download;
+
+    @FXML
+    private JFXButton classdetails;
+
+    @FXML
+    private JFXButton logout;
+
+    @FXML
+    private Label date;
+
+    @FXML
+    private Label time;
+
+    @FXML
+    private JFXButton home;
+
+    @FXML
+    private JFXButton activity;
+
+    @FXML
+    private JFXButton account;
+
+    @FXML
+    private JFXButton settings;
+
+    private StudentService studentservice;
     private LoginService service;
     private FXMLLoader fxml;
 
@@ -76,9 +102,11 @@ public class DashboardController extends View {
     @FXML
     private void initialize() {
         logout.setOnAction(e -> SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW));
-        service = (LoginService) SystemUtils.getContext().getBean("loginserive");
+        service = (LoginService) SystemUtils.getContext().getBean("loginservice");
+        studentservice = (StudentService) SystemUtils.getContext().getBean("studentservice");
         date.setText("Date: " + DateTime.now().toString(DateTimeFormat.forPattern("EEEEE, dd MMMMM yyyy")));
         timer();
+        counter();
     }
 
     private void timer() {
@@ -86,8 +114,8 @@ public class DashboardController extends View {
             @Override
             protected Void call() throws Exception {
                 while (true) {
-                    Platform.runLater(()->{
-                        time.setText("Time: "+ DateTime.now().toString("hh : mm : ss a"));
+                    Platform.runLater(() -> {
+                        time.setText("Time: " + DateTime.now().toString("hh : mm : ss a"));
                     });
                     Thread.sleep(995);
                 }
@@ -96,13 +124,27 @@ public class DashboardController extends View {
         Thread t = new Thread(task);
         t.start();
     }
-    
+
     private void counter() {
-       year.getSelectionModel().selectedItemProperty().addListener((ol,o,n)->{
-           if(n!=null) {
-               
-           }
-       });
+        year.getItems().setAll("All");
+        year.getItems().addAll(studentservice.findAllYear());
+        year.getSelectionModel().selectedItemProperty().addListener((ol, o, n) -> {
+            if (n != null) {
+                int c1=0,c2=0,c3=0;
+                if (n.equals("All")) {
+                    c1 = studentservice.countStudents("1st", SystemUtils.getDepartment());
+                    c2 = studentservice.countStudents("2nd", SystemUtils.getDepartment());
+                    c3 = studentservice.countStudents("3rd", SystemUtils.getDepartment());
+                } else {
+                    c1 = studentservice.countStudents("1st", Integer.parseInt(n), SystemUtils.getDepartment());
+                    c2 = studentservice.countStudents("2nd", Integer.parseInt(n), SystemUtils.getDepartment());
+                    c3 = studentservice.countStudents("3rd", Integer.parseInt(n), SystemUtils.getDepartment());
+                }
+                first.setText("" + c1);
+                second.setText(""+c2);
+                third.setText(""+c3);
+            }
+        });
     }
 
 }

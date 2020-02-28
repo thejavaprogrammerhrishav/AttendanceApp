@@ -58,4 +58,12 @@ public class Fxml {
     public static FXMLLoader getDownloadNotesFxml() {
         return new FXMLLoader(Fxml.class.getResource(path+"download.fxml"));
     }
+    
+    public static FXMLLoader getFileChooserFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"filechooser.fxml"));
+    }
+    
+    public static FXMLLoader getFileChooserNodeFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"filechoosernode.fxml"));
+    }
 }

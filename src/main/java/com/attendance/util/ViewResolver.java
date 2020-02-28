@@ -6,6 +6,7 @@
 package com.attendance.util;
 
 import com.attendance.dashboard.DashboardController;
+import com.attendance.file.chooser.controller.FileChooserController;
 import com.attendance.splash.SplashController;
 import com.attendance.user.controller.EditProfileController;
 import com.attendance.user.controller.LoginController;
@@ -63,5 +64,9 @@ public class ViewResolver {
     
     public View getDownloadNotesView() {
         return new DownloadNotesController();
+    }
+    
+    public View getFileChooserView() {
+        return new FileChooserController();
     }
 }

@@ -47,7 +47,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <ScrollPane cache="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="412.0" prefWidth="335.0" styleClass="log-scroll">
          <content>
@@ -125,7 +125,7 @@
                      <children>
                         <Label layoutX="66.0" layoutY="15.0" style="-fx-font-size: 16px;" text="Student Details" />
                         <Label layoutX="68.0" layoutY="37.0" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="View Details of Students" />
-                        <JFXButton layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
+                        <JFXButton fx:id="student" layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -145,7 +145,7 @@
                      <children>
                         <Label layoutX="66.0" layoutY="15.0" style="-fx-font-size: 16px;" text="Faculty Details" />
                         <Label layoutX="67.0" layoutY="37.0" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="View Details of Faculties" />
-                        <JFXButton layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
+                        <JFXButton fx:id="faculty" layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -170,7 +170,7 @@
                               <Image url="@../images/icons8-attendance-100.png" />
                            </image>
                         </ImageView>
-                        <JFXButton layoutX="122.0" layoutY="110.0" prefHeight="34.0" prefWidth="176.0" style="-fx-padding: 0; -fx-font-size: 14; -fx-background-color: linear-gradient(to right bottom, #ff00cc,#333399);" text="Update Attendance" AnchorPane.rightAnchor="15.0" />
+                        <JFXButton fx:id="update" layoutX="122.0" layoutY="110.0" prefHeight="34.0" prefWidth="176.0" style="-fx-padding: 0; -fx-font-size: 14; -fx-background-color: linear-gradient(to right bottom, #ff00cc,#333399);" text="Update Attendance" AnchorPane.rightAnchor="15.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="10.0" layoutY="622.0" prefHeight="158.0" prefWidth="312.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
@@ -182,7 +182,7 @@
                               <Image url="@../images/icons8-book-shelf-100.png" />
                            </image>
                         </ImageView>
-                        <JFXButton layoutX="18.0" layoutY="109.0" prefHeight="34.0" prefWidth="109.0" style="-fx-padding: 0; -fx-font-size: 14; -fx-background-color: linear-gradient(to right bottom, #ff00cc,#333399);" text="Explore" />
+                        <JFXButton fx:id="notes" layoutX="18.0" layoutY="109.0" prefHeight="34.0" prefWidth="109.0" style="-fx-padding: 0; -fx-font-size: 14; -fx-background-color: linear-gradient(to right bottom, #ff00cc,#333399);" text="Explore" />
                      </children>
                   </AnchorPane>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="792.0" prefHeight="88.0" prefWidth="312.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
@@ -195,7 +195,7 @@
                                  </image>
                               </ImageView>
                               <Label layoutX="53.0" layoutY="20.0" style="-fx-font-size: 15;" text="New Notes?" />
-                              <JFXButton layoutX="38.0" layoutY="65.0" style="-fx-background-color: #fff; -fx-text-fill: #000; -fx-pref-width: 85; -fx-font-size: 11; -fx-pref-height: 30; -fx-min-height: 20;" styleClass="head-jfx-button" text="Upload Now" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                              <JFXButton fx:id="upload" layoutX="38.0" layoutY="65.0" style="-fx-background-color: #fff; -fx-text-fill: #000; -fx-pref-width: 85; -fx-font-size: 11; -fx-pref-height: 30; -fx-min-height: 20;" styleClass="head-jfx-button" text="Upload Now" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="158.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;" HBox.hgrow="ALWAYS">
@@ -206,7 +206,7 @@
                                  </image>
                               </ImageView>
                               <Label layoutX="50.0" layoutY="20.0" style="-fx-font-size: 15;" text="Need Notes?" />
-                              <JFXButton layoutX="38.0" layoutY="65.0" style="-fx-background-color: #fff; -fx-text-fill: #000; -fx-pref-width: 85; -fx-font-size: 11; -fx-pref-height: 30; -fx-min-height: 20;" styleClass="head-jfx-button" text="Download Now" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                              <JFXButton fx:id="download" layoutX="38.0" layoutY="65.0" style="-fx-background-color: #fff; -fx-text-fill: #000; -fx-pref-width: 85; -fx-font-size: 11; -fx-pref-height: 30; -fx-min-height: 20;" styleClass="head-jfx-button" text="Download Now" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -215,7 +215,7 @@
                      <children>
                         <Label layoutX="66.0" layoutY="15.0" style="-fx-font-size: 16px;" text="Class Details" />
                         <Label layoutX="67.0" layoutY="37.0" style="-fx-font-size: 12px; -fx-text-fill: #666;" text="Track Details of Classes Taken " />
-                        <JFXButton layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
+                        <JFXButton fx:id="classdetails" layoutX="269.0" layoutY="16.0" style="-fx-padding: 0;" styleClass="head-jfx-button" AnchorPane.rightAnchor="15.0">
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -255,8 +255,8 @@
             </AnchorPane>
             <AnchorPane cache="true" cacheHint="SPEED" layoutY="58.0" prefHeight="66.0" style="-fx-background-color: linear-gradient(to right bottom, #8A2387,#E94057,#F27121);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label layoutX="20.0" layoutY="12.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" />
-                  <Label layoutX="20.0" layoutY="36.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" />
+                  <Label fx:id="date" layoutX="20.0" layoutY="12.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" />
+                  <Label fx:id="time" layoutX="20.0" layoutY="36.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" />
                </children>
             </AnchorPane>
          </children>
@@ -265,7 +265,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="37.0" prefWidth="335.0" spacing="50.0" style="-fx-border-color: #999 transparent transparent transparent;" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton contentDisplay="GRAPHIC_ONLY" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
+            <JFXButton fx:id="home" contentDisplay="GRAPHIC_ONLY" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -274,7 +274,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
+            <JFXButton fx:id="activity" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -283,7 +283,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="69.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
+            <JFXButton fx:id="account" contentDisplay="GRAPHIC_ONLY" layoutX="69.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -292,7 +292,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="128.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
+            <JFXButton fx:id="settings" contentDisplay="GRAPHIC_ONLY" layoutX="128.0" layoutY="10.0" style="-fx-pref-height: 35; -fx-pref-width: 35; -fx-padding: 0;" styleClass="head-jfx-button" HBox.hgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
