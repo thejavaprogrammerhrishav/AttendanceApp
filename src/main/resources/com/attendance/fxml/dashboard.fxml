@@ -45,9 +45,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <ScrollPane cache="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="412.0" prefWidth="335.0" styleClass="log-scroll">
          <content>
@@ -237,7 +238,7 @@
       </ScrollPane>
    </center>
    <top>
-      <AnchorPane prefHeight="124.0" prefWidth="335.0" style="-fx-background-color: linear-gradient(to right bottom, #0f0c29,#302b63,#24243e);" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="113.0" prefWidth="335.0" style="-fx-background-color: linear-gradient(to right bottom, #0f0c29,#302b63,#24243e);" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane cache="true" cacheHint="SPEED" prefHeight="44.0" prefWidth="332.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
                <children>
@@ -253,12 +254,12 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <AnchorPane cache="true" cacheHint="SPEED" layoutY="58.0" prefHeight="66.0" style="-fx-background-color: linear-gradient(to right bottom, #8A2387,#E94057,#F27121);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Pane layoutX="14.0" layoutY="49.0" prefHeight="59.0" prefWidth="335.0" style="-fx-background-color: linear-gradient(to right bottom, #8A2387,#E94057,#F27121);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label fx:id="date" layoutX="20.0" layoutY="12.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" />
-                  <Label fx:id="time" layoutX="20.0" layoutY="36.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" />
+                  <Label fx:id="date" layoutX="20.0" layoutY="10.0" styleClass="date-time-label" text="Date: Thursday, 23 September 2019" />
+                  <Label fx:id="time" layoutX="20.0" layoutY="32.0" styleClass="date-time-label" text="Time: 23 : 05 : 25 AM" />
                </children>
-            </AnchorPane>
+            </Pane>
          </children>
       </AnchorPane>
    </top>
