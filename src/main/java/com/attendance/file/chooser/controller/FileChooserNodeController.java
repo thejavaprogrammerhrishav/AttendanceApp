@@ -8,11 +8,15 @@ package com.attendance.file.chooser.controller;
 import com.attendance.util.Fxml;
 import com.attendance.util.ImageUtils;
 import com.attendance.util.ImageUtils.Icons;
+import com.attendance.util.SystemUtils;
 import com.sun.imageio.plugins.common.ImageUtil;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -60,13 +64,23 @@ public class FileChooserNodeController extends AnchorPane{
         File f = new File(this.path);
         if(f.isDirectory()) {
             image.setImage(ImageUtils.getImage(Icons.FOLDER));
+            name.setText(f.getName());
         }
         size.setText("");
         date.setText("");
         
         image.setOnMouseClicked(e->{
-            
+            FileChooserController.stack.push(f.getName());
+            controller.refreshList(FileChooserController.stack.stream().collect(Collectors.joining("\\")));
         });
+        
+        if(!f.isDirectory()) {
+            String ext = f.getAbsolutePath().substring(f.getAbsolutePath().lastIndexOf("."));
+            name.setText(f.getName());
+            image.setImage(ImageUtils.getImage(Icons.valueOf(ext.toUpperCase())));
+            size.setText(SystemUtils.getFileSize(f));
+            date.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date(f.lastModified())));
+        }
      }
     
     
