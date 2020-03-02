@@ -9,6 +9,7 @@ import com.attendance.util.Fxml;
 import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.DirectoryService;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.File;
@@ -48,11 +49,14 @@ public class FileChooserController extends View {
 
     @FXML
     private VBox list;
+    
+    private SidePopupView view;
 
     private FXMLLoader fxml;
     private DirectoryService service;
     public static Stack<String> stack = new Stack<>();
     private List<String> roots;
+    private boolean showhidden;
 
     public FileChooserController() {
         fxml = Fxml.getFileChooserFxml();
@@ -82,7 +86,13 @@ public class FileChooserController extends View {
         File f = new File(path);
         File[] files = f.listFiles();
         list.getChildren().clear();
-        List<File> fl = Arrays.asList(files);
+        List<File> filelist = Arrays.asList(files);
+        List<File> fl ;
+        if(showhidden) {
+            fl = filelist.stream().filter(p->!p.isHidden()).collect(Collectors.toList());
+        }else {
+            fl = new ArrayList<>(filelist);
+        }
         
         fl.stream().filter(p->p.isDirectory()).forEach(c->{
             FileChooserNodeController fcc = new FileChooserNodeController(this, c.getAbsolutePath());
@@ -93,6 +103,10 @@ public class FileChooserController extends View {
             FileChooserNodeController fcc = new FileChooserNodeController(this, c.getAbsolutePath());
             list.getChildren().add(fcc);
         });
+        
+        
     }
+    
+    //private void filter()
 
 }
