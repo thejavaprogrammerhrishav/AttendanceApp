@@ -71,7 +71,7 @@ public class FileChooserNodeController extends AnchorPane{
         
         image.setOnMouseClicked(e->{
             FileChooserController.stack.push(f.getName());
-            controller.refreshList(FileChooserController.stack.stream().collect(Collectors.joining("\\")));
+            controller.refreshList();
         });
         
         if(!f.isDirectory()) {
@@ -83,6 +83,16 @@ public class FileChooserNodeController extends AnchorPane{
         }
      }
     
+    public String getName(){
+        return name.getText();
+    }
     
+    public Long lastmodified() {
+        return new File(path).lastModified();
+    }
+    
+    public Long getsize() {
+        return new File(path).length();
+    }
     
 }

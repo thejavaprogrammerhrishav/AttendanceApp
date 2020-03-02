@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/attendance.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/attendance.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane BorderPane.alignment="CENTER">
          <children>
@@ -51,51 +51,51 @@
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="78.0" prefHeight="36.0" prefWidth="295.0" spacing="34.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Acadamic Year" />
-                  <JFXComboBox prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
+                  <JFXComboBox fx:id="academicyear" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="128.0" prefHeight="35.0" spacing="34.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Year" />
-                  <JFXComboBox prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
+                  <JFXComboBox fx:id="year" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="175.0" prefHeight="35.0" spacing="34.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Course Type" />
-                  <JFXComboBox prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
+                  <JFXComboBox fx:id="coursetype" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="229.0" prefHeight="30.0" spacing="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <Label prefHeight="18.0" prefWidth="63.0" style="-fx-font-size: 14;" text="Date" />
-                  <Label prefHeight="18.0" prefWidth="215.0" style="-fx-font-size: 14;" text="Monday, 23 September 2051" />
+                  <Label fx:id="date" prefHeight="18.0" prefWidth="215.0" style="-fx-font-size: 14;" text="Monday, 23 September 2051" />
                </children>
             </HBox>
             <HBox layoutX="20.0" layoutY="271.0" prefHeight="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <Label prefHeight="18.0" prefWidth="74.0" style="-fx-font-size: 14;" text="Dept. " />
-                  <Label style="-fx-font-size: 14;" text="Ecology &amp; Enviromental Science" />
+                  <Label fx:id="department" style="-fx-font-size: 14;" text="Ecology &amp; Enviromental Science" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="303.0" prefHeight="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <Label prefWidth="100.0" style="-fx-font-size: 14;" text="Faculty Name" />
-                  <Label style="-fx-font-size: 14;" text="Debashish Naath" />
+                  <Label fx:id="faculty" style="-fx-font-size: 14;" text="Debashish Naath" />
                </children>
             </HBox>
             <Label layoutX="20.0" layoutY="356.0" prefWidth="100.0" style="-fx-font-size: 14;" text="Subject Taught" />
-            <TextField layoutX="20.0" layoutY="381.0" prefHeight="34.0" prefWidth="295.0" promptText="Enter Subject Taught In Class" styleClass="txt" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <TextField fx:id="subject" layoutX="20.0" layoutY="381.0" prefHeight="34.0" prefWidth="295.0" promptText="Enter Subject Taught In Class" styleClass="txt" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="436.0" prefHeight="35.0" spacing="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
                   <Label prefWidth="100.0" style="-fx-font-size: 14;" text="Class Time" />
-                  <JFXTimePicker prefHeight="23.0" prefWidth="183.0" HBox.hgrow="ALWAYS" />
+                  <JFXTimePicker fx:id="classtime" prefHeight="23.0" prefWidth="183.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="20.0" layoutY="512.0" prefHeight="42.0" prefWidth="295.0" spacing="20.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <JFXButton prefHeight="33.0" prefWidth="150.0" style="-fx-font-size: 14;" styleClass="load" text="Load" />
-                  <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="120.0" style="-fx-font-size: 14;" styleClass="back" text="Back">
+                  <JFXButton fx:id="load" prefHeight="33.0" prefWidth="150.0" style="-fx-font-size: 14;" styleClass="load" text="Load" />
+                  <JFXButton fx:id="back" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="120.0" style="-fx-font-size: 14;" styleClass="back" text="Back">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -105,4 +105,4 @@
          </children>
       </AnchorPane>
    </center>
-</View>
+</fx:root>

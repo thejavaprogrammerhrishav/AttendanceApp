@@ -66,4 +66,16 @@ public class Fxml {
     public static FXMLLoader getFileChooserNodeFxml() {
         return new FXMLLoader(Fxml.class.getResource(path+"filechoosernode.fxml"));
     }
+    
+    public static FXMLLoader getFileChooserOrderFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"order.fxml"));
+    }
+    
+    public static FXMLLoader getFileChooserOtherFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"other.fxml"));
+    }
+    
+    public static FXMLLoader getFileChooserViewFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"view.fxml"));
+    }
 }

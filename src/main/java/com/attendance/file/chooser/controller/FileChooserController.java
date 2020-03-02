@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 import java.util.logging.Level;
@@ -49,14 +50,18 @@ public class FileChooserController extends View {
 
     @FXML
     private VBox list;
-    
+
     private SidePopupView view;
 
     private FXMLLoader fxml;
     private DirectoryService service;
     public static Stack<String> stack = new Stack<>();
+    
+    public static String viewmode = "all";
+    public static String order = "name";
+    public static boolean hidden = false
+            ;
     private List<String> roots;
-    private boolean showhidden;
 
     public FileChooserController() {
         fxml = Fxml.getFileChooserFxml();
@@ -78,35 +83,82 @@ public class FileChooserController extends View {
         });
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, e -> {
             stack.pop();
-            refreshList(stack.stream().collect(Collectors.joining("\\")));
+            refreshList();
         });
     }
 
-    public void refreshList(String path) {
+    public void refreshList() {
+        refreshList(stack.stream().collect(Collectors.joining("\\")), false, "All", "Name");
+    }
+
+    public void refreshList(String path, boolean showhidden, String vm, String s) {
         File f = new File(path);
         File[] files = f.listFiles();
         list.getChildren().clear();
         List<File> filelist = Arrays.asList(files);
-        List<File> fl ;
-        if(showhidden) {
-            fl = filelist.stream().filter(p->!p.isHidden()).collect(Collectors.toList());
-        }else {
+        List<File> fl;
+        if (showhidden) {
             fl = new ArrayList<>(filelist);
+            hidden = true;
+        } else {
+            fl = filelist.stream().filter(p -> !p.isHidden()).collect(Collectors.toList());
+            hidden =  false;
         }
-        
-        fl.stream().filter(p->p.isDirectory()).forEach(c->{
-            FileChooserNodeController fcc = new FileChooserNodeController(this, c.getAbsolutePath());
-            list.getChildren().add(fcc);
-        });
-        
-        fl.stream().filter(p->!p.isDirectory()).forEach(c->{
-            FileChooserNodeController fcc = new FileChooserNodeController(this, c.getAbsolutePath());
-            list.getChildren().add(fcc);
-        });
-        
-        
+        if (vm.equalsIgnoreCase("All")) {
+            List<FileChooserNodeController> collect = fl.stream().map(m -> {
+                FileChooserNodeController fc = new FileChooserNodeController(this, getPath());
+                return fc;
+            }).collect(Collectors.toList());
+            load(collect);
+            viewmode = "all";
+        } else if (vm.equalsIgnoreCase("Folder")) {
+            List<FileChooserNodeController> collect = fl.stream().filter(p -> p.isDirectory()).map(m -> {
+                FileChooserNodeController fc = new FileChooserNodeController(this, getPath());
+                return fc;
+            }).collect(Collectors.toList());
+            load(collect);
+            viewmode = "folder";
+        } else {
+            List<FileChooserNodeController> collect = fl.stream().filter(p -> !p.isDirectory()).map(m -> {
+                FileChooserNodeController fc = new FileChooserNodeController(this, getPath());
+                return fc;
+            }).collect(Collectors.toList());
+            load(collect);
+            viewmode = "file";
+        }
+
+        if (s.equalsIgnoreCase("Name")) {
+            List<FileChooserNodeController> collect = list.getChildren().stream().map(m -> (FileChooserNodeController) m).collect(Collectors.toList());
+            Collections.sort(collect, (s1,s2)->s1.getName().compareTo(s2.getName()));
+            load(collect);
+            order = "name";
+        } else if (s.equalsIgnoreCase("Modified")) {
+            List<FileChooserNodeController> collect = list.getChildren().stream().map(m -> (FileChooserNodeController) m).collect(Collectors.toList());
+            Collections.sort(collect, (s1,s2)->s1.lastmodified().compareTo(s2.lastmodified()));
+            load(collect);
+            order = "modified";
+        } else {
+            List<FileChooserNodeController> collect = list.getChildren().stream().map(m -> (FileChooserNodeController) m).collect(Collectors.toList());
+            Collections.sort(collect, (s1,s2)->s1.getsize().compareTo(s2.getsize()));
+            load(collect);
+            order = "size";
+        }
+
     }
-    
-    //private void filter()
+
+    private void load(List<FileChooserNodeController> list) {
+        this.list.getChildren().clear();
+        this.list.getChildren().setAll(list);
+    }
+
+    public String getPath() {
+        return stack.stream().collect(Collectors.joining("\\"));
+    }
+
+    private void filter(String vm, String s) {
+        if (vm.equalsIgnoreCase("all")) {
+
+        }
+    }
 
 }
