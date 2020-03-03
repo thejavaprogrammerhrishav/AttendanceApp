@@ -22,8 +22,10 @@ import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Side;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
@@ -56,11 +58,10 @@ public class FileChooserController extends View {
     private FXMLLoader fxml;
     private DirectoryService service;
     public static Stack<String> stack = new Stack<>();
-    
+
     public static String viewmode = "all";
     public static String order = "name";
-    public static boolean hidden = false
-            ;
+    public static boolean hidden = false;
     private List<String> roots;
 
     public FileChooserController() {
@@ -85,6 +86,10 @@ public class FileChooserController extends View {
             stack.pop();
             refreshList();
         });
+
+        option.setOnAction(this::option);
+        show.setOnAction(this::show);
+        filter.setOnAction(this::filter);
     }
 
     public void refreshList() {
@@ -102,7 +107,7 @@ public class FileChooserController extends View {
             hidden = true;
         } else {
             fl = filelist.stream().filter(p -> !p.isHidden()).collect(Collectors.toList());
-            hidden =  false;
+            hidden = false;
         }
         if (vm.equalsIgnoreCase("All")) {
             List<FileChooserNodeController> collect = fl.stream().map(m -> {
@@ -129,17 +134,17 @@ public class FileChooserController extends View {
 
         if (s.equalsIgnoreCase("Name")) {
             List<FileChooserNodeController> collect = list.getChildren().stream().map(m -> (FileChooserNodeController) m).collect(Collectors.toList());
-            Collections.sort(collect, (s1,s2)->s1.getName().compareTo(s2.getName()));
+            Collections.sort(collect, (s1, s2) -> s1.getName().compareTo(s2.getName()));
             load(collect);
             order = "name";
         } else if (s.equalsIgnoreCase("Modified")) {
             List<FileChooserNodeController> collect = list.getChildren().stream().map(m -> (FileChooserNodeController) m).collect(Collectors.toList());
-            Collections.sort(collect, (s1,s2)->s1.lastmodified().compareTo(s2.lastmodified()));
+            Collections.sort(collect, (s1, s2) -> s1.lastmodified().compareTo(s2.lastmodified()));
             load(collect);
             order = "modified";
         } else {
             List<FileChooserNodeController> collect = list.getChildren().stream().map(m -> (FileChooserNodeController) m).collect(Collectors.toList());
-            Collections.sort(collect, (s1,s2)->s1.getsize().compareTo(s2.getsize()));
+            Collections.sort(collect, (s1, s2) -> s1.getsize().compareTo(s2.getsize()));
             load(collect);
             order = "size";
         }
@@ -155,10 +160,23 @@ public class FileChooserController extends View {
         return stack.stream().collect(Collectors.joining("\\"));
     }
 
-    private void filter(String vm, String s) {
-        if (vm.equalsIgnoreCase("all")) {
+    public void add(String path) {
+        FileChooserNodeController node = new FileChooserNodeController(this, path);
+        this.list.getChildren().add(node);
+    }
 
-        }
+    private void option(ActionEvent evt) {
+        view = new SidePopupView(new FileChooserOtherController(this), Side.RIGHT, true);
+    }
+
+    private void filter(ActionEvent evt) {
+        view = new SidePopupView(new FileChooserOrderController(this), Side.RIGHT, true);
+
+    }
+
+    private void show(ActionEvent evt) {
+        view = new SidePopupView(new FileChooserViewController(this), Side.RIGHT, true);
+
     }
 
 }

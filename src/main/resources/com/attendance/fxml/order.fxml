@@ -73,7 +73,6 @@
                         <Insets />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton fx:id="type" layoutX="10.0" layoutY="110.0" prefHeight="35.0" prefWidth="239.0" style="-fx-alignment: center_left; -fx-padding: 7.25 7.25 7.25 20; -fx-font-size: 15;" text="Order by type" />
                </children>
                <padding>
                   <Insets top="10.0" />

@@ -5,14 +5,14 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root prefHeight="146.0" prefWidth="136.0" style="-fx-background-color: #609;" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="146.0" prefWidth="136.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="name" layoutX="7.0" layoutY="7.0" prefHeight="72.0" prefWidth="119.0" style="-fx-font-size: 15; -fx-text-fill: white;" text="Hrishav Dhawaj Purkayastha" wrapText="true" />
-      <Label fx:id="rollno" alignment="CENTER" layoutX="8.0" layoutY="78.0" prefHeight="22.0" prefWidth="115.0" style="-fx-text-fill: White; -fx-font-size: 12;" styleClass="-fx-t" text="1324" />
-      <JFXCheckBox fx:id="present" layoutX="15.0" layoutY="114.0" prefHeight="18.0" prefWidth="44.0" text="P" textFill="WHITE" unCheckedColor="WHITE" />
-      <JFXCheckBox fx:id="absent" layoutX="80.0" layoutY="114.0" selected="true" style="-fx-font-size: 12;" text="A" textFill="WHITE" unCheckedColor="WHITE" />
+      <Label fx:id="name" layoutX="7.0" layoutY="7.0" prefHeight="72.0" prefWidth="119.0" style="-fx-font-size: 15; -fx-text-fill: #000;" text="Hrishav Dhawaj Purkayastha" wrapText="true" />
+      <Label fx:id="rollno" alignment="CENTER" layoutX="8.0" layoutY="78.0" prefHeight="22.0" prefWidth="115.0" style="-fx-text-fill: #000; -fx-font-size: 12;" styleClass="-fx-t" text="1324" />
+      <JFXCheckBox fx:id="present" layoutX="15.0" layoutY="114.0" prefHeight="18.0" prefWidth="44.0" text="P" unCheckedColor="BLACK" />
+      <JFXCheckBox fx:id="absent" layoutX="80.0" layoutY="114.0" selected="true" style="-fx-font-size: 12;" text="A" unCheckedColor="BLACK" />
    </children>
    <effect>
-      <DropShadow color="#8026ff" height="35.83" radius="17.415" width="35.83" />
+      <DropShadow color="#a8a8a8" height="35.83" radius="17.415" width="35.83" />
    </effect>
-</fx:root>
+</AnchorPane>

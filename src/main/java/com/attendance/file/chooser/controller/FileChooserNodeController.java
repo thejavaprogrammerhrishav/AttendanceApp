@@ -71,7 +71,9 @@ public class FileChooserNodeController extends AnchorPane{
         
         image.setOnMouseClicked(e->{
             FileChooserController.stack.push(f.getName());
-            controller.refreshList();
+            if(new File(controller.getPath()).exists()) {
+                controller.refreshList();
+            }
         });
         
         if(!f.isDirectory()) {

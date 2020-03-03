@@ -5,6 +5,7 @@
  */
 package com.attendance.file.chooser.controller;
 
+import com.attendance.extra.NewFolderController;
 import com.attendance.util.Fxml;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -54,7 +55,8 @@ public class FileChooserOtherController extends View {
     }
 
     private void create(ActionEvent evt) {
-        
+        String newPath = controller.getPath()+"\\"+NewFolderController.show();
+        controller.add(newPath);
     }
 
     private void refresh(ActionEvent evt) {

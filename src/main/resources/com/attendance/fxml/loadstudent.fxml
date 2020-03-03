@@ -45,50 +45,50 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/attendance.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane style="-fx-background-color: linear-gradient(rgba(122,35,52,1) 27.5%, rgba(62,9,27,1) 92.7% );" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="20.0" layoutY="28.0" style="-fx-font-size: 24;" text="Load Students" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="28.0" />
+            <Label layoutX="20.0" layoutY="28.0" style="-fx-font-size: 24;" text="Load Students" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="28.0" />
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="78.0" prefHeight="36.0" prefWidth="295.0" spacing="34.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Acadamic Year" />
-                  <JFXComboBox fx:id="academicyear" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
+                  <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Acadamic Year" textFill="WHITE" />
+                  <JFXComboBox fx:id="academicyear" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" unFocusColor="WHITE" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="128.0" prefHeight="35.0" spacing="34.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Year" />
-                  <JFXComboBox fx:id="year" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
+                  <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Year" textFill="WHITE" />
+                  <JFXComboBox fx:id="year" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" unFocusColor="WHITE" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="175.0" prefHeight="35.0" spacing="34.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Course Type" />
-                  <JFXComboBox fx:id="coursetype" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" HBox.hgrow="ALWAYS" />
+                  <Label prefWidth="150.0" style="-fx-font-size: 14;" text="Select Course Type" textFill="WHITE" />
+                  <JFXComboBox fx:id="coursetype" prefHeight="28.0" prefWidth="110.0" style="-fx-font-size: 14;" unFocusColor="WHITE" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="229.0" prefHeight="30.0" spacing="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label prefHeight="18.0" prefWidth="63.0" style="-fx-font-size: 14;" text="Date" />
-                  <Label fx:id="date" prefHeight="18.0" prefWidth="215.0" style="-fx-font-size: 14;" text="Monday, 23 September 2051" />
+                  <Label prefHeight="18.0" prefWidth="63.0" style="-fx-font-size: 14;" text="Date" textFill="WHITE" />
+                  <Label fx:id="date" prefHeight="18.0" prefWidth="215.0" style="-fx-font-size: 14;" text="Monday, 23 September 2051" textFill="WHITE" />
                </children>
             </HBox>
             <HBox layoutX="20.0" layoutY="271.0" prefHeight="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label prefHeight="18.0" prefWidth="74.0" style="-fx-font-size: 14;" text="Dept. " />
-                  <Label fx:id="department" style="-fx-font-size: 14;" text="Ecology &amp; Enviromental Science" />
+                  <Label prefHeight="18.0" prefWidth="74.0" style="-fx-font-size: 14;" text="Dept. " textFill="WHITE" />
+                  <Label fx:id="department" style="-fx-font-size: 14;" text="Ecology &amp; Enviromental Science" textFill="WHITE" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="303.0" prefHeight="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label prefWidth="100.0" style="-fx-font-size: 14;" text="Faculty Name" />
-                  <Label fx:id="faculty" style="-fx-font-size: 14;" text="Debashish Naath" />
+                  <Label prefWidth="100.0" style="-fx-font-size: 14;" text="Faculty Name" textFill="WHITE" />
+                  <Label fx:id="faculty" style="-fx-font-size: 14;" text="Debashish Naath" textFill="WHITE" />
                </children>
             </HBox>
-            <Label layoutX="20.0" layoutY="356.0" prefWidth="100.0" style="-fx-font-size: 14;" text="Subject Taught" />
+            <Label layoutX="20.0" layoutY="356.0" prefWidth="100.0" style="-fx-font-size: 14;" text="Subject Taught" textFill="WHITE" />
             <TextField fx:id="subject" layoutX="20.0" layoutY="381.0" prefHeight="34.0" prefWidth="295.0" promptText="Enter Subject Taught In Class" styleClass="txt" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="436.0" prefHeight="35.0" spacing="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label prefWidth="100.0" style="-fx-font-size: 14;" text="Class Time" />
+                  <Label prefWidth="100.0" style="-fx-font-size: 14;" text="Class Time" textFill="WHITE" />
                   <JFXTimePicker fx:id="classtime" prefHeight="23.0" prefWidth="183.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>

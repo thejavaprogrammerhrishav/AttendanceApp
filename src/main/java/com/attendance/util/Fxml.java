@@ -78,4 +78,20 @@ public class Fxml {
     public static FXMLLoader getFileChooserViewFxml() {
         return new FXMLLoader(Fxml.class.getResource(path+"view.fxml"));
     }
+    
+    public static FXMLLoader getNewFolderFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"newfolder.fxml"));
+    }
+    
+    public static FXMLLoader getUpdateAttendanceFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"updateattendance.fxml"));
+    }
+    
+    public static FXMLLoader getAttendanceNodeFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"attendancenode.fxml"));
+    }
+    
+    public static FXMLLoader getLoadStudentFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"loadstudent.fxml"));
+    }
 }
