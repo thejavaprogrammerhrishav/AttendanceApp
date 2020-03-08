@@ -5,7 +5,7 @@
  */
 package com.attendance.studentattendance.service;
 
-import com.attendance.studentattendance.model.ClassDetails;
+import com.attendance.student.attendance.model.ClassDetails;
 import com.attendance.util.ExceptionDialog;
 import java.util.List;
 import javafx.scene.Parent;

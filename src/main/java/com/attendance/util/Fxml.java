@@ -46,10 +46,6 @@ public class Fxml {
     public static FXMLLoader getSelectLoginFxml() {
         return new FXMLLoader(Fxml.class.getResource(path + "usertype.fxml"));
     }
-
-    public static FXMLLoader getEditProfileFxml() {
-        return new FXMLLoader(Fxml.class.getResource(path + "editprofile.fxml"));
-    }
     
     public static FXMLLoader getUploadNotesFxml() {
         return new FXMLLoader(Fxml.class.getResource(path+"uploadnotes.fxml"));
@@ -94,4 +90,61 @@ public class Fxml {
     public static FXMLLoader getLoadStudentFxml() {
         return new FXMLLoader(Fxml.class.getResource(path+"loadstudent.fxml"));
     }
+    
+    public static FXMLLoader getEditProfileFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"editmyprofile.fxml"));
+    }
+    
+    public static FXMLLoader getLoginActivityNodeFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"loginactivitynode.fxml"));
+    }
+    
+    public static FXMLLoader getMyProfileFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"myprofile.fxml"));
+    }
+    
+    public static FXMLLoader getResetPasswordFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"resetyourpassword.fxml"));
+    }
+    
+    public static FXMLLoader getLoginActivityFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"loginactivity.fxml"));
+    }
+    
+    public static FXMLLoader getViewStudentsFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"viewstudents.fxml"));
+    }
+    
+    public static FXMLLoader getViewStudentsFilterFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"viewstudentsfilter.fxml"));
+    }
+    
+    public static FXMLLoader getResetPasswordResultFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"resetpasswordresult.fxml"));
+    }
+    
+    public static FXMLLoader getViewFacultyFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"viewfaculty.fxml"));
+    }
+    
+    public static FXMLLoader getViewStudentListFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"viewstudentslist.fxml"));
+    }
+    
+    public static FXMLLoader getViewStudentsListFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"viewstudentslist.fxml"));
+    }
+    
+    public static FXMLLoader getViewStudentsDetailsFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"viewstudentsdetails.fxml"));
+    }
+    
+    public static FXMLLoader getVIewFacultyDetailsFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"viewfacultydetails.fxml"));
+    }
+    
+    public static FXMLLoader getSecurityQuestionsFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"securityquestions.fxml"));
+    }
+    
 }

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(rgba(70,66,159,1) 0%, rgba(187,43,107,1) 92% ); -fx-font-family: arial;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="114.0" layoutY="38.0" prefHeight="38.0" prefWidth="187.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="Edit My Profile" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="34.0" />
+            <TextField fx:id="name" layoutX="20.0" layoutY="140.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="45.0" />
+            <Label layoutX="20.0" layoutY="121.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Name" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
+            <TextField fx:id="contact" layoutX="20.0" layoutY="200.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="45.0" />
+            <Label layoutX="20.0" layoutY="180.0" prefHeight="18.0" prefWidth="124.0" style="-fx-text-fill: white;" text="Contact Number" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
+            <TextField fx:id="username" layoutX="20.0" layoutY="372.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="45.0" />
+            <Label layoutX="20.0" layoutY="352.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Username" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
+            <HBox layoutX="20.0" layoutY="310.0" prefHeight="18.0" prefWidth="295.0" spacing="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Gender">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font></Label>
+                  <CheckBox fx:id="male" mnemonicParsing="false" style="-fx-text-fill: white;" text="Male">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font></CheckBox>
+                  <CheckBox fx:id="female" mnemonicParsing="false" style="-fx-text-fill: white;" text="Female">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font></CheckBox>
+               </children>
+            </HBox>
+            <Label layoutX="20.0" layoutY="239.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Email Id" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
+            <TextField fx:id="email" layoutX="20.0" layoutY="259.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="45.0" />
+            <Label fx:id="usertype" layoutX="20.0" layoutY="413.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Usertype" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
+            <HBox alignment="CENTER" layoutX="82.9000015258789" layoutY="520.0" prefHeight="32.0" prefWidth="299.0" spacing="35.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <JFXButton fx:id="update" buttonType="RAISED" prefHeight="32.0" prefWidth="131.0" style="-fx-background-color: navy;" text="Update" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="back" buttonType="RAISED" prefHeight="32.0" prefWidth="113.0" style="-fx-background-color: purple;" text="Back" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <ImageView fx:id="image" fitHeight="73.0" fitWidth="73.0" layoutX="21.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="24.0">
+               <image>
+                  <Image url="@../images/avatar-icon-png-8%20(2).jpg" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="editname" contentDisplay="GRAPHIC_ONLY" layoutX="290.0" layoutY="140.0" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button" AnchorPane.rightAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="editcontact" contentDisplay="GRAPHIC_ONLY" layoutX="288.0" layoutY="201.0" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button" AnchorPane.rightAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="editemail" contentDisplay="GRAPHIC_ONLY" layoutX="283.0" layoutY="260.0" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button" AnchorPane.rightAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="editusername" contentDisplay="GRAPHIC_ONLY" layoutX="283.0" layoutY="373.0" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button" AnchorPane.rightAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="editimage" contentDisplay="GRAPHIC_ONLY" layoutX="72.0" layoutY="74.0" prefHeight="30.0" prefWidth="30.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <Label layoutX="18.0" layoutY="443.0" prefHeight="32.0" prefWidth="274.0" style="-fx-text-fill: black;" />
+         </children>
+      </AnchorPane>
+   </center>
+</fx:root>

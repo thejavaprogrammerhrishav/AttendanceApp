@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="321.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="name" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="301.0" style="-fx-font-size: 16;" text="Student's Name" />
+      <Label layoutX="12.0" layoutY="33.0" prefHeight="17.0" prefWidth="35.0" text="Year :" />
+      <Label layoutX="115.0" layoutY="33.0" prefHeight="17.0" prefWidth="96.0" text="Academic Year :" />
+      <Label fx:id="year" layoutX="52.0" layoutY="33.0" prefHeight="17.0" prefWidth="46.0" text="2000" />
+      <Label fx:id="academicyear" layoutX="212.0" layoutY="33.0" prefHeight="17.0" prefWidth="82.0" text="3rd sem" />
+   </children>
+</fx:root>
