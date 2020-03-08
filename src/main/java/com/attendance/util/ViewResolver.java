@@ -16,6 +16,7 @@ import com.gluonhq.charm.glisten.mvc.View;
 import com.attendance.notes.controller.DownloadNotesController;
 import com.attendance.notes.controller.NotesDashboardController;
 import com.attendance.notes.controller.UploadNotesController;
+import com.attendance.student.attendance.LoadStudentController;
 
 /**
  *
@@ -39,7 +40,7 @@ public class ViewResolver {
     }
     
     public View getAttendanceView() {
-        return new AttendanceController();
+        return new LoadStudentController();
     }
     
     public View getProfileView() {
