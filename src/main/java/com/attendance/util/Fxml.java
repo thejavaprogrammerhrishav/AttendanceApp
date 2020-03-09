@@ -31,10 +31,6 @@ public class Fxml {
         return new FXMLLoader(Fxml.class.getResource(path + "notesdashboard.fxml"));
     }
 
-    public static FXMLLoader getAttendanceFxml() {
-        return new FXMLLoader(Fxml.class.getResource(path + ""));
-    }
-
     public static FXMLLoader getProfileFxml() {
         return new FXMLLoader(Fxml.class.getResource(path + "profile.fxml"));
     }
@@ -145,6 +141,10 @@ public class Fxml {
     
     public static FXMLLoader getSecurityQuestionsFxml() {
         return new FXMLLoader(Fxml.class.getResource(path+"securityquestions.fxml"));
+    }
+    
+    public static FXMLLoader getImageChooserFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"imagechooser.fxml"));
     }
     
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="335.0" spacing="50.0" type="HBox" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton fx:id="takephoto" contentDisplay="TOP" graphicTextGap="13.0" prefHeight="119.0" prefWidth="129.0" text="Capture Photo">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="71.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-camera-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="gallery" contentDisplay="TOP" graphicTextGap="13.0" layoutX="113.0" layoutY="35.0" prefHeight="119.0" prefWidth="129.0" text="Gallery">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="71.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-photo-gallery-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</fx:root>

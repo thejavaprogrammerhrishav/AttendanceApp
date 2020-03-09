@@ -5,7 +5,7 @@
  */
 package com.attendance.studentattendance.dao;
 
-import com.attendance.studentattendance.model.ClassDetails;
+import com.attendance.student.attendance.model.ClassDetails;
 import java.util.List;
 
 /**

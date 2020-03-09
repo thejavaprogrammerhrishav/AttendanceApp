@@ -65,7 +65,7 @@ public class FileChooserOtherController extends View {
 
     private void dontshow(ActionEvent evt) {
         boolean b;
-        if(FileChooserController.hidden == true){
+        if(FileChooserController.hidden){
             b = false;
         }else{
             b = true;

@@ -5,8 +5,9 @@
  */
 package com.attendance.studentattendance.dao.impl;
 
+
+import com.attendance.student.attendance.model.ClassDetails;
 import com.attendance.studentattendance.dao.ClassDetailsDao;
-import com.attendance.studentattendance.model.ClassDetails;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate4.HibernateTemplate;

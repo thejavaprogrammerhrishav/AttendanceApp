@@ -5,6 +5,7 @@
  */
 package com.attendance.user.controller;
 
+import com.attendance.image.chooser.ImageChooserController;
 import com.attendance.user.model.PersonalDetails;
 import com.attendance.user.model.User;
 import com.attendance.user.service.LoginService;
@@ -160,7 +161,16 @@ public class EditProfileController extends View{
     }
     
     private void loadimage(ActionEvent evt) {
+        Image img=image.getImage();
         
+        Image newimg=ImageChooserController.show();
+        
+        if(newimg!=null){
+            image.setImage(newimg);
+        }
+        else{
+            image.setImage(img);
+        }
     } 
     
     private void update(ActionEvent evt) {

@@ -5,8 +5,8 @@
  */
 package com.attendance.service.impl;
 
+import com.attendance.student.attendance.model.ClassDetails;
 import com.attendance.studentattendance.dao.ClassDetailsDao;
-import com.attendance.studentattendance.model.ClassDetails;
 import com.attendance.studentattendance.service.AttendanceService;
 import com.attendance.util.ExceptionConverter;
 import com.attendance.util.ExceptionDialog;

@@ -50,7 +50,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-font-family: 'AbeeZee', arial;" stylesheets="@../files/dashboard.css" type="View" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <ScrollPane cache="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="412.0" prefWidth="335.0" styleClass="log-scroll">
+      <ScrollPane cache="true" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="412.0" prefWidth="335.0" styleClass="user-log-scroll">
          <content>
             <AnchorPane prefHeight="986.0" prefWidth="333.0" style="-fx-background-color: #f0f0f0;">
                <children>

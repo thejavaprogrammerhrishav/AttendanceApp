@@ -5,9 +5,9 @@
  */
 package com.attendance.service.impl;
 
-import com.attendance.login.dao.Login;
-import com.attendance.login.service.LoginService;
-import com.attendance.login.user.model.User;
+import com.attendance.user.dao.Login;
+import com.attendance.user.model.User;
+import com.attendance.user.service.LoginService;
 import com.attendance.util.ExceptionConverter;
 import com.attendance.util.ExceptionDialog;
 import java.util.ArrayList;

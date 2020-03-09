@@ -58,11 +58,11 @@ public class FileChooserViewController extends View {
     }
 
     private void showfolder(ActionEvent evt) {
-        controller.refreshList(controller.getPath(), FileChooserController.hidden, "all", FileChooserController.order);
+        controller.refreshList(controller.getPath(), FileChooserController.hidden, "folder", FileChooserController.order);
     }
 
     private void showfiles(ActionEvent evt) {
-        controller.refreshList(controller.getPath(), FileChooserController.hidden, "all", FileChooserController.order);
+        controller.refreshList(controller.getPath(), FileChooserController.hidden, "file", FileChooserController.order);
     }
 
 }
