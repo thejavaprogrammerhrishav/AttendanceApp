@@ -7,8 +7,16 @@ package com.attendance.util;
 
 import com.attendance.user.model.User;
 import com.gluonhq.charm.glisten.application.MobileApplication;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
+import javax.imageio.ImageIO;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -91,6 +99,17 @@ public class SystemUtils {
 
         }
         return frt.format(size) + " "+ unit;
+    }
+    
+     public static byte[] getByteArrayFromImage(Image img) {
+        BufferedImage image = SwingFXUtils.fromFXImage(img, null);
+        ByteArrayOutputStream bout = new ByteArrayOutputStream();
+        try {
+            ImageIO.write(image, "png", bout);
+        } catch (IOException ex) {
+            Logger.getLogger(SystemUtils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return bout.toByteArray();
     }
 
 }

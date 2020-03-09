@@ -32,12 +32,12 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -50,17 +50,14 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(rgba(70,66,159,1) 0%, rgba(187,43,107,1) 92% ); -fx-font-family: arial;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="114.0" layoutY="38.0" prefHeight="38.0" prefWidth="187.0" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: white;" text="Edit My Profile" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="34.0" />
-            <TextField fx:id="name" layoutX="20.0" layoutY="140.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="45.0" />
             <Label layoutX="20.0" layoutY="121.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Name" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
                <font>
                   <Font name="Arial" size="14.0" />
                </font></Label>
-            <TextField fx:id="contact" layoutX="20.0" layoutY="200.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="45.0" />
             <Label layoutX="20.0" layoutY="180.0" prefHeight="18.0" prefWidth="124.0" style="-fx-text-fill: white;" text="Contact Number" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
                <font>
                   <Font name="Arial" size="14.0" />
                </font></Label>
-            <TextField fx:id="username" layoutX="20.0" layoutY="372.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="45.0" />
             <Label layoutX="20.0" layoutY="352.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Username" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
                <font>
                   <Font name="Arial" size="14.0" />
@@ -88,8 +85,7 @@
                <font>
                   <Font name="Arial" size="14.0" />
                </font></Label>
-            <TextField fx:id="email" layoutX="20.0" layoutY="259.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="45.0" />
-            <Label fx:id="usertype" layoutX="20.0" layoutY="413.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Usertype" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
+            <Label layoutX="20.0" layoutY="413.0" prefHeight="18.0" prefWidth="76.0" style="-fx-text-fill: white;" text="Usertype" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="60.0">
                <font>
                   <Font name="Arial" size="14.0" />
                </font></Label>
@@ -118,38 +114,62 @@
                   <Image url="@../images/avatar-icon-png-8%20(2).jpg" />
                </image>
             </ImageView>
-            <JFXButton fx:id="editname" contentDisplay="GRAPHIC_ONLY" layoutX="290.0" layoutY="140.0" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button" AnchorPane.rightAnchor="20.0">
-               <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
-                     </image>
-                  </ImageView>
-               </graphic></JFXButton>
-            <JFXButton fx:id="editcontact" contentDisplay="GRAPHIC_ONLY" layoutX="288.0" layoutY="201.0" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button" AnchorPane.rightAnchor="20.0">
-               <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
-                     </image>
-                  </ImageView>
-               </graphic></JFXButton>
-            <JFXButton fx:id="editemail" contentDisplay="GRAPHIC_ONLY" layoutX="283.0" layoutY="260.0" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button" AnchorPane.rightAnchor="20.0">
-               <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
-                     </image>
-                  </ImageView>
-               </graphic></JFXButton>
-            <JFXButton fx:id="editusername" contentDisplay="GRAPHIC_ONLY" layoutX="283.0" layoutY="373.0" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button" AnchorPane.rightAnchor="20.0">
-               <graphic>
-                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
-                     </image>
-                  </ImageView>
-               </graphic></JFXButton>
+            <HBox layoutX="19.0" layoutY="136.89999389648438" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <TextField fx:id="name" prefHeight="26.0" prefWidth="270.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="editname" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox layoutX="19.0" layoutY="197.89999389648438" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <TextField fx:id="contact" prefHeight="26.0" prefWidth="270.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="editcontact" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox layoutX="20.0" layoutY="256.8999938964844" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <TextField fx:id="email" prefHeight="26.0" prefWidth="270.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="editemail" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox layoutX="19.0" layoutY="369.8999938964844" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <TextField fx:id="username" prefHeight="26.0" prefWidth="270.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="editusername" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/4ec5f6e716f0557299b9deed9d09e225.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
             <JFXButton fx:id="editimage" contentDisplay="GRAPHIC_ONLY" layoutX="72.0" layoutY="74.0" prefHeight="30.0" prefWidth="30.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -158,7 +178,7 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <Label layoutX="18.0" layoutY="443.0" prefHeight="32.0" prefWidth="274.0" style="-fx-text-fill: black;" />
+            <Label fx:id="usertype" layoutX="18.0" layoutY="443.0" prefHeight="32.0" prefWidth="274.0" style="-fx-text-fill: black;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
          </children>
       </AnchorPane>
    </center>

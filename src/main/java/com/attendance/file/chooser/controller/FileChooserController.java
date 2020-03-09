@@ -9,6 +9,7 @@ import com.attendance.util.Fxml;
 import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.DirectoryService;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.Dialog;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -53,18 +55,29 @@ public class FileChooserController extends View {
     @FXML
     private VBox list;
 
+    @FXML
+    private JFXButton proceed;
+
+    @FXML
+    private JFXButton cancel;
+
     private SidePopupView view;
 
     private FXMLLoader fxml;
     private DirectoryService service;
     public static Stack<String> stack = new Stack<>();
+    public static String selectedpath = "";
 
     public static String viewmode = "all";
     public static String order = "name";
     public static boolean hidden = false;
+    public static String type;
     private List<String> roots;
 
-    public FileChooserController() {
+    public static Dialog<String> dialog;
+
+    protected FileChooserController(String type) {
+        FileChooserController.type = type;
         fxml = Fxml.getFileChooserFxml();
         fxml.setController(this);
         fxml.setRoot(this);
@@ -101,6 +114,9 @@ public class FileChooserController extends View {
         File[] files = f.listFiles();
         list.getChildren().clear();
         List<File> filelist = Arrays.asList(files);
+        if(type.equalsIgnoreCase("directory")) {
+            filelist = filelist.stream().filter(ff->ff.isDirectory()).collect(Collectors.toList());
+        }
         List<File> fl;
         if (showhidden) {
             fl = new ArrayList<>(filelist);
@@ -167,16 +183,32 @@ public class FileChooserController extends View {
 
     private void option(ActionEvent evt) {
         view = new SidePopupView(new FileChooserOtherController(this), Side.RIGHT, true);
+        view.show();
     }
 
     private void filter(ActionEvent evt) {
         view = new SidePopupView(new FileChooserOrderController(this), Side.RIGHT, true);
-
+        view.show();
     }
 
     private void show(ActionEvent evt) {
         view = new SidePopupView(new FileChooserViewController(this), Side.RIGHT, true);
-
+        view.show();
     }
 
+    private void proceed(ActionEvent evt) {
+        dialog.setResult(getPath());
+    }
+    
+    private void cancel(ActionEvent evt) {
+        dialog.setResult("");
+    }
+    
+    
+    public static String show(String type) {
+        dialog = new Dialog<>(true);
+        dialog.setContent(new FileChooserController(type));
+        Optional<String> res = dialog.showAndWait();
+        return res.get();
+    }
 }

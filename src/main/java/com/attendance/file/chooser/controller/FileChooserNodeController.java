@@ -27,8 +27,8 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author pc
  */
-public class FileChooserNodeController extends AnchorPane{
-    
+public class FileChooserNodeController extends AnchorPane {
+
     @FXML
     private ImageView image;
 
@@ -40,12 +40,12 @@ public class FileChooserNodeController extends AnchorPane{
 
     @FXML
     private Label date;
-    
+
     private FXMLLoader fxml;
-    
+
     private FileChooserController controller;
     private String path;
-    
+
     public FileChooserNodeController(FileChooserController controller, String path) {
         this.controller = controller;
         this.path = path;
@@ -58,43 +58,46 @@ public class FileChooserNodeController extends AnchorPane{
             Logger.getLogger(FileChooserNodeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     private void initialize() {
         File f = new File(this.path);
-        if(f.isDirectory()) {
+        if (f.isDirectory()) {
             image.setImage(ImageUtils.getImage(Icons.FOLDER));
             name.setText(f.getName());
         }
         size.setText("");
         date.setText("");
-        
-        image.setOnMouseClicked(e->{
-            FileChooserController.stack.push(f.getName());
-            if(new File(controller.getPath()).exists()) {
-                controller.refreshList();
+
+        image.setOnMouseClicked(e -> {
+            FileChooserController.selectedpath = controller.getPath()+"\\"+f.getName();
+            if (f.isDirectory()) {
+                FileChooserController.stack.push(f.getName());
+                if (new File(controller.getPath()).exists()) {
+                    controller.refreshList();
+                }
             }
         });
-        
-        if(!f.isDirectory()) {
+
+        if (!f.isDirectory()) {
             String ext = f.getAbsolutePath().substring(f.getAbsolutePath().lastIndexOf("."));
             name.setText(f.getName());
             image.setImage(ImageUtils.getImage(Icons.valueOf(ext.toUpperCase())));
             size.setText(SystemUtils.getFileSize(f));
             date.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date(f.lastModified())));
         }
-     }
-    
-    public String getName(){
+    }
+
+    public String getName() {
         return name.getText();
     }
-    
+
     public Long lastmodified() {
         return new File(path).lastModified();
     }
-    
+
     public Long getsize() {
         return new File(path).length();
     }
-    
+
 }
