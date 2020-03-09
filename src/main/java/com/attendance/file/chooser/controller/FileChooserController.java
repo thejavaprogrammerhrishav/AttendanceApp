@@ -73,10 +73,12 @@ public class FileChooserController extends View {
     public static boolean hidden = false;
     public static String type;
     private List<String> roots;
+    private String filetype;
 
     public static Dialog<String> dialog;
 
-    protected FileChooserController(String type) {
+    protected FileChooserController(String type, String filetype) {
+        this.filetype = filetype;
         FileChooserController.type = type;
         fxml = Fxml.getFileChooserFxml();
         fxml.setController(this);
@@ -110,12 +112,18 @@ public class FileChooserController extends View {
     }
 
     public void refreshList(String path, boolean showhidden, String vm, String s) {
+        String ext;
         File f = new File(path);
         File[] files = f.listFiles();
         list.getChildren().clear();
         List<File> filelist = Arrays.asList(files);
-        if(type.equalsIgnoreCase("directory")) {
-            filelist = filelist.stream().filter(ff->ff.isDirectory()).collect(Collectors.toList());
+        if (filetype.equalsIgnoreCase("all")) {
+            ext = "all";
+        } else {
+            ext = filetype;
+        }
+        if (type.equalsIgnoreCase("directory")) {
+            filelist = filelist.stream().filter(ff -> ff.isDirectory()).collect(Collectors.toList());
         }
         List<File> fl;
         if (showhidden) {
@@ -126,7 +134,13 @@ public class FileChooserController extends View {
             hidden = false;
         }
         if (vm.equalsIgnoreCase("All")) {
-            List<FileChooserNodeController> collect = fl.stream().map(m -> {
+            List<FileChooserNodeController> collect = fl.stream().filter(ff -> {
+                if (ext.equals("all")) {
+                    return true;
+                } else {
+                    return ff.getAbsolutePath().endsWith(ext);
+                }
+            }).map(m -> {
                 FileChooserNodeController fc = new FileChooserNodeController(this, getPath());
                 return fc;
             }).collect(Collectors.toList());
@@ -140,7 +154,13 @@ public class FileChooserController extends View {
             load(collect);
             viewmode = "folder";
         } else {
-            List<FileChooserNodeController> collect = fl.stream().filter(p -> !p.isDirectory()).map(m -> {
+            List<FileChooserNodeController> collect = fl.stream().filter(p -> !p.isDirectory()).filter(ff -> {
+                if (ext.equals("all")) {
+                    return true;
+                } else {
+                    return ff.getAbsolutePath().endsWith(ext);
+                }
+            }).map(m -> {
                 FileChooserNodeController fc = new FileChooserNodeController(this, getPath());
                 return fc;
             }).collect(Collectors.toList());
@@ -198,16 +218,17 @@ public class FileChooserController extends View {
 
     private void proceed(ActionEvent evt) {
         dialog.setResult(getPath());
+        dialog.hide();
     }
-    
+
     private void cancel(ActionEvent evt) {
         dialog.setResult("");
+        dialog.hide();
     }
-    
-    
-    public static String show(String type) {
+
+    public static String show(String type, String filetype) {
         dialog = new Dialog<>(true);
-        dialog.setContent(new FileChooserController(type));
+        dialog.setContent(new FileChooserController(type, filetype));
         Optional<String> res = dialog.showAndWait();
         return res.get();
     }
