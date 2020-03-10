@@ -16,7 +16,6 @@
 .head2{
 	-fx-font-family: 'Raleway', sans-serif;
 	-fx-font-size: 36px;
-	-fx-pref-width: 300;
 	-fx-font-weight: bold;
 }
 .head3{

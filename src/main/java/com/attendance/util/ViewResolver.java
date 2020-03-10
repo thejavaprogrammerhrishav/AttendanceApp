@@ -6,8 +6,10 @@
 package com.attendance.util;
 
 import com.attendance.dashboard.DashboardController;
+import com.attendance.faculty.controller.ViewFacultyListController;
 import com.attendance.file.chooser.controller.FileChooserController;
 import com.attendance.file.chooser.controller.util.FileChooserUtils;
+import com.attendance.loginactivity.controller.LoginActivityController;
 import com.attendance.splash.SplashController;
 import com.attendance.user.controller.EditProfileController;
 import com.attendance.user.controller.LoginController;
@@ -18,6 +20,7 @@ import com.attendance.notes.controller.DownloadNotesController;
 import com.attendance.notes.controller.NotesDashboardController;
 import com.attendance.notes.controller.UploadNotesController;
 import com.attendance.student.attendance.LoadStudentController;
+import com.attendance.student.controller.ViewStudentsController;
 
 /**
  *
@@ -67,5 +70,17 @@ public class ViewResolver {
     
     public View getDownloadNotesView() {
         return new DownloadNotesController();
+    }
+    
+    public View getLoginActivityView() {
+        return new LoginActivityController();
+    }
+    
+    public View getStudentDetailsView() {
+        return new ViewStudentsController();
+    }
+    
+    public View getFacultyDetailsView() {
+        return new ViewFacultyListController();
     }
 }

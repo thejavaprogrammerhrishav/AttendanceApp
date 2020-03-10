@@ -24,4 +24,7 @@ public class AppView {
     public static final String UPLOAD_NOTES_VIEW = "Upload Notes";
     public static final String DOWNLOAD_NOTES_VIEW = "Download Notes";
     public static final String FILE_CHOOSER_VIEW = "File Chooser";
+    public static final String LOGIN_ACTIVITY_VIEW = "Login Activity";
+    public static final String STUDENT_DETAILS_VIEW = "Student Details";
+    public static final String FACULTY_DETAILS_VIEW = "Faculty Details";
 }

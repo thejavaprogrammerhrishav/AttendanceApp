@@ -147,4 +147,8 @@ public class Fxml {
         return new FXMLLoader(Fxml.class.getResource(path+"imagechooser.fxml"));
     }
     
+    public static FXMLLoader getViewFacultyNodeFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"viewfacultylist.fxml"));
+    }
+    
 }

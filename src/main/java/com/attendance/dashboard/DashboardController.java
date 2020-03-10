@@ -107,6 +107,18 @@ public class DashboardController extends View {
         date.setText("Date: " + DateTime.now().toString(DateTimeFormat.forPattern("EEEEE, dd MMMMM yyyy")));
         timer();
         counter();
+        account.setOnAction(e->{
+            SystemUtils.getApplication().switchView(AppView.PROFILE_VIEW);
+        });
+        activity.setOnAction(e->{
+            SystemUtils.getApplication().switchView(AppView.LOGIN_ACTIVITY_VIEW);
+        });
+        student.setOnAction(e->{
+            SystemUtils.getApplication().switchView(AppView.STUDENT_DETAILS_VIEW);
+        });
+        faculty.setOnAction(e->{
+            SystemUtils.getApplication().switchView(AppView.FACULTY_DETAILS_VIEW);
+        });
     }
 
     private void timer() {
