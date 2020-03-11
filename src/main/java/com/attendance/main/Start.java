@@ -11,9 +11,12 @@ import static com.attendance.util.AppView.DASHBOARD_VIEW;
 import static com.attendance.util.AppView.DOWNLOAD_NOTES_VIEW;
 import static com.attendance.util.AppView.EDIT_PROFILE_VIEW;
 import static com.attendance.util.AppView.FACULTY_DETAILS_VIEW;
+import static com.attendance.util.AppView.FORGOT_PASSWORD_VIEW;
 import static com.attendance.util.AppView.LOGIN_ACTIVITY_VIEW;
 import static com.attendance.util.AppView.NOTES_DASHBOARD_VIEW;
 import static com.attendance.util.AppView.PROFILE_VIEW;
+import static com.attendance.util.AppView.RESET_PASSWORD_VIEW;
+import static com.attendance.util.AppView.SECURITY_QUESTION_VIEW;
 import static com.attendance.util.AppView.SELECT_DEPARTMENT_VIEW;
 import static com.attendance.util.AppView.SELECT_LOGIN_VIEW;
 import static com.attendance.util.AppView.STUDENT_DETAILS_VIEW;
@@ -46,6 +49,9 @@ public class Start extends MobileApplication{
         addViewFactory(LOGIN_ACTIVITY_VIEW, ()->SystemUtils.getResolver().getLoginActivityView()); 
         addViewFactory(STUDENT_DETAILS_VIEW, ()->SystemUtils.getResolver().getStudentDetailsView()); 
         addViewFactory(FACULTY_DETAILS_VIEW, ()->SystemUtils.getResolver().getFacultyDetailsView()); 
+        addViewFactory(FORGOT_PASSWORD_VIEW, ()->SystemUtils.getResolver().getForgotPasswordView()); 
+        addViewFactory(SECURITY_QUESTION_VIEW, ()->SystemUtils.getResolver().getSecurityQuestionView()); 
+        addViewFactory(RESET_PASSWORD_VIEW, ()->SystemUtils.getResolver().getResetPasswordView()); 
         
         SystemUtils.setApplication(this);
         applicationInit();

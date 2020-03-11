@@ -27,4 +27,7 @@ public class AppView {
     public static final String LOGIN_ACTIVITY_VIEW = "Login Activity";
     public static final String STUDENT_DETAILS_VIEW = "Student Details";
     public static final String FACULTY_DETAILS_VIEW = "Faculty Details";
+    public static final String FORGOT_PASSWORD_VIEW = "Forgot Password";
+    public static final String SECURITY_QUESTION_VIEW = "Security Question View";
+    public static final String RESET_PASSWORD_VIEW = "Reset Password";
 }

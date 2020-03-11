@@ -88,6 +88,7 @@ public class LoginController extends View {
     }
     
     private void login(ActionEvent evt){
+        SystemUtils.setType(type);
         boolean log = service.login(username.getText(), password.getText(), type);
         if(log) {
             status.setText("Login Success");

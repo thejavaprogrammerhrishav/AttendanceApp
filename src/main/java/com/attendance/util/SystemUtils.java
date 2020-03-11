@@ -34,6 +34,7 @@ public class SystemUtils {
     private static ClassPathXmlApplicationContext context;
     private static User user;
     private static String department;
+    private static String type;
 
     public static void init() {
         if (resolver == null) {
@@ -111,5 +112,15 @@ public class SystemUtils {
         }
         return bout.toByteArray();
     }
+
+    public static void setType(String type) {
+        SystemUtils.type = type;
+    }
+
+    public static String getType() {
+        return type;
+    }
+     
+     
 
 }

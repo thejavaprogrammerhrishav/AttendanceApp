@@ -151,4 +151,8 @@ public class Fxml {
         return new FXMLLoader(Fxml.class.getResource(path+"viewfacultylist.fxml"));
     }
     
+    public static FXMLLoader getForgotPassword1Fxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"forgotpassword.fxml"));
+    }
+    
 }

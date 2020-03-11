@@ -7,8 +7,9 @@ package com.attendance.util;
 
 import com.attendance.dashboard.DashboardController;
 import com.attendance.faculty.controller.ViewFacultyListController;
-import com.attendance.file.chooser.controller.FileChooserController;
-import com.attendance.file.chooser.controller.util.FileChooserUtils;
+import com.attendance.login.forgot.ForgotPassword1Controller;
+import com.attendance.login.forgot.ResetPasswordController;
+import com.attendance.login.forgot.SecurityQuestionsController;
 import com.attendance.loginactivity.controller.LoginActivityController;
 import com.attendance.splash.SplashController;
 import com.attendance.user.controller.EditProfileController;
@@ -83,4 +84,17 @@ public class ViewResolver {
     public View getFacultyDetailsView() {
         return new ViewFacultyListController();
     }
+    
+    public View getForgotPasswordView() {
+        return new ForgotPassword1Controller();
+    }
+    
+    public View getSecurityQuestionView() {
+        return new SecurityQuestionsController();
+    }
+    
+    public View getResetPasswordView() {
+        return new ResetPasswordController();
+    }
+    
 }

@@ -5,7 +5,12 @@
  */
 package com.attendance.login.forgot;
 
+import com.attendance.user.model.SecurityQuestion;
+import com.attendance.util.AppView;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.application.MobileApplication;
+import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -15,6 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -67,13 +73,30 @@ public class SecurityQuestionsController extends View {
             Logger.getLogger(SecurityQuestionsController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     private void initialize() {
         question1.getItems().setAll(getQuestions1());
         question2.getItems().setAll(getQuestion2());
         question3.getItems().setAll(getQuestion3());
-        
+
+        question1.setDisable(true);
+        question2.setDisable(true);
+        question3.setDisable(true);
+
+        department.setText(SystemUtils.getDepartment());
+        faculty.setText(SystemUtils.getUser().getType());
+
+        this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, this::back);
+        if (SystemUtils.getUser().hasSecurityQuestion()) {
+            question1.getSelectionModel().select(SystemUtils.getUser().getSecurityquestion().getQuestion1());
+            question2.getSelectionModel().select(SystemUtils.getUser().getSecurityquestion().getQuestion2());
+            question3.getSelectionModel().select(SystemUtils.getUser().getSecurityquestion().getQuestion3());
+
+        }
+
+        proceed.setOnAction(this::proceed);
+
     }
 
     private List<String> getQuestions1() {
@@ -145,4 +168,19 @@ public class SecurityQuestionsController extends View {
                 " What is your favourate dish?");
     }
 
+    private void back(MobileEvent evt) {
+        SystemUtils.getApplication().switchView(AppView.FORGOT_PASSWORD_VIEW);
+    }
+
+    private void proceed(ActionEvent evt) {
+        SecurityQuestion sec = SystemUtils.getUser().getSecurityquestion();
+        boolean b1 = ans1.getText().equals(sec.getAnswer1());
+        boolean b2 = ans2.getText().equals(sec.getAnswer2());
+        boolean b3 = ans3.getText().equals(sec.getAnswer3());
+        
+        if(b1 && b2 && b3) {
+            SystemUtils.getApplication().switchView(AppView.RESET_PASSWORD_VIEW);
+        }
+
+    }
 }
