@@ -8,6 +8,7 @@ package com.attendance.file.chooser.controller;
 import com.attendance.util.Fxml;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,9 +34,11 @@ public class FileChooserViewController extends View {
     private FXMLLoader fxml;
 
     private FileChooserController controller;
+    private Runnable r;
 
-    public FileChooserViewController(FileChooserController controller) {
+    public FileChooserViewController(FileChooserController controller, Runnable r) {
         this.controller = controller;
+        this.r=r;
         fxml = Fxml.getFileChooserViewFxml();
         fxml.setController(this);
         fxml.setRoot(this);
@@ -54,15 +57,21 @@ public class FileChooserViewController extends View {
     }
 
     private void all(ActionEvent evt) {
-        controller.refreshList(controller.getPath(), FileChooserController.hidden, "all", FileChooserController.order);
+        FileChooserController.viewmode = "all";
+        controller.refresh(new File(controller.path()));
+        r.run();
     }
 
     private void showfolder(ActionEvent evt) {
-        controller.refreshList(controller.getPath(), FileChooserController.hidden, "folder", FileChooserController.order);
+        FileChooserController.viewmode = "folder";
+        controller.refresh(new File(controller.path()));
+        r.run();
     }
 
     private void showfiles(ActionEvent evt) {
-        controller.refreshList(controller.getPath(), FileChooserController.hidden, "file", FileChooserController.order);
+        FileChooserController.viewmode = "file";
+        controller.refresh(new File(controller.path()));
+        r.run();
     }
 
 }

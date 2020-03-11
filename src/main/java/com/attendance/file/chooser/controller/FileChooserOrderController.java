@@ -33,9 +33,11 @@ public class FileChooserOrderController extends View {
     private FXMLLoader fxml;
 
     private FileChooserController controller;
+    private Runnable r;
 
-    public FileChooserOrderController(FileChooserController controller) {
+    public FileChooserOrderController(FileChooserController controller,Runnable r) {
         this.controller = controller;
+        this.r=r;
         fxml = Fxml.getFileChooserOrderFxml();
         fxml.setController(this);
         fxml.setRoot(this);
@@ -54,15 +56,18 @@ public class FileChooserOrderController extends View {
     }
 
     private void name(ActionEvent evt) {
-        controller.refreshList(controller.getPath(), FileChooserController.hidden, FileChooserController.viewmode, "name");
+        controller.order("name");
+        r.run();
     }
 
     private void modified(ActionEvent evt) {
-        controller.refreshList(controller.getPath(), FileChooserController.hidden, FileChooserController.viewmode, "modified");
+       controller.order("lastmodified");
+        r.run();
     }
 
     private void size(ActionEvent evt) {
-        controller.refreshList(controller.getPath(), FileChooserController.hidden, FileChooserController.viewmode, "size");
+       controller.order("size");
+        r.run();
     }
 
 }

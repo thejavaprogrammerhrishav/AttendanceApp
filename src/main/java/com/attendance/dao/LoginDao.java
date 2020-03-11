@@ -39,4 +39,5 @@ public interface LoginDao {
     public abstract List<User> findByStatus(String status);
     
     public abstract List<User> findByStatusAndDepartment(String status, String department);
+    
 }

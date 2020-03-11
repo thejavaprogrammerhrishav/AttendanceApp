@@ -5,10 +5,10 @@
  */
 package com.attendance.file.chooser.controller;
 
-import com.attendance.extra.NewFolderController;
 import com.attendance.util.Fxml;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,9 +34,11 @@ public class FileChooserOtherController extends View {
     private FXMLLoader fxml;
 
     private FileChooserController controller;
+    private Runnable r;
 
-    public FileChooserOtherController(FileChooserController controller) {
+    public FileChooserOtherController(FileChooserController controller, Runnable r) {
         this.controller = controller;
+        this.r = r;
         fxml = Fxml.getFileChooserOtherFxml();
         fxml.setController(this);
         fxml.setRoot(this);
@@ -52,26 +54,34 @@ public class FileChooserOtherController extends View {
         create.setOnAction(this::create);
         refresh.setOnAction(this::refresh);
         dontshow.setOnAction(this::dontshow);
+
+        if (FileChooserController.hidden) {
+            dontshow.setText("Don't Show Hidden Folders");
+        } else {
+            dontshow.setText("Show Hidden Folders");
+        }
     }
 
     private void create(ActionEvent evt) {
-        String newPath = controller.getPath()+"\\"+NewFolderController.show();
-        controller.add(newPath);
+        
     }
 
     private void refresh(ActionEvent evt) {
-        controller.refreshList();
+        controller.refresh(new File(controller.path()));
+        r.run();
     }
 
     private void dontshow(ActionEvent evt) {
-        boolean b;
-        if(FileChooserController.hidden){
-            b = false;
-        }else{
-            b = true;
+        boolean b = FileChooserController.hidden;
+        if (b) {
+            FileChooserController.hidden = false;
+            controller.refresh(new File(controller.path()));
+            r.run();
+        } else {
+            FileChooserController.hidden = true;
+            controller.refresh(new File(controller.path()));
+            r.run();
         }
-        controller.refreshList(controller.getPath(),b, FileChooserController.viewmode, FileChooserController.order);
-
     }
 
 }

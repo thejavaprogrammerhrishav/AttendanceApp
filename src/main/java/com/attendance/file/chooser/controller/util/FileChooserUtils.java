@@ -26,13 +26,13 @@ public class FileChooserUtils {
     public static final List<String> AUDIO_FORMATS=new ArrayList<>(Arrays.asList("mp3","m4a","wav"));
     
     public static boolean validate(String path,int type){
-        String ext=path.substring(path.lastIndexOf("."));
+        String ext=path.substring(path.lastIndexOf(".")+1);
         switch(type){
             case IMAGE: return IMAGE_FORMATS.stream().filter(f->f.toLowerCase().equals(ext.toLowerCase())).collect(Collectors.toList()).size()!=0;
             case VIDEO: return VIDEO_FORMATS.stream().filter(f->f.toLowerCase().equals(ext.toLowerCase())).collect(Collectors.toList()).size()!=0;
             case AUDIO: return AUDIO_FORMATS.stream().filter(f->f.toLowerCase().equals(ext.toLowerCase())).collect(Collectors.toList()).size()!=0;
             case PDF: return ext.toLowerCase().equals("pdf");
-            default: return true;   
+            default: return false;   
         }
     }
     
