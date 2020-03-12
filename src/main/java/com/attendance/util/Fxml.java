@@ -155,4 +155,15 @@ public class Fxml {
         return new FXMLLoader(Fxml.class.getResource(path+"forgotpassword.fxml"));
     }
     
+    public static FXMLLoader getBrowseNotesFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"browsenotes.fxml"));
+    }
+    
+    public static FXMLLoader getNotesNodeFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"notesnode.fxml"));
+    }
+    
+    public static FXMLLoader getNotesFilterFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"notesfiler.fxml"));
+    }
 }

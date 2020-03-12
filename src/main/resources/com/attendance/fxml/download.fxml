@@ -41,7 +41,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/upload.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/upload.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -51,35 +51,35 @@
             <Label layoutX="20.0" layoutY="212.0" style="-fx-font-size: 16px;" styleClass="title-body" text="Selected File" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <AnchorPane layoutX="20.0" layoutY="404.0" prefHeight="40.0" styleClass="selected" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <TextField layoutX="2.0" prefHeight="35.0" prefWidth="237.0" promptText="Path to the file" styleClass="path-download" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="242.0" layoutY="-1.0" prefHeight="37.0" prefWidth="54.0" styleClass="browse-button" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TextField fx:id="path" layoutX="2.0" prefHeight="35.0" prefWidth="237.0" promptText="Path to the file" styleClass="path-download" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <JFXButton fx:id="pathbrowse" contentDisplay="GRAPHIC_ONLY" layoutX="242.0" layoutY="-1.0" prefHeight="37.0" prefWidth="54.0" styleClass="browse-button" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/chooser/icons8-folder-144.png" />
+                              <Image url="@../images/chooser/folder.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
                </children>
             </AnchorPane>
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="478.0" styleClass="upload" text="Download File" textFill="WHITE" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="536.0" styleClass="back" text="Leave It, Go Back" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="156.0" prefHeight="36.0" prefWidth="295.0" styleClass="browse" text="Browse Notes " textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="download" buttonType="RAISED" layoutX="20.0" layoutY="478.0" styleClass="upload" text="Download File" textFill="WHITE" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="back" buttonType="RAISED" layoutX="20.0" layoutY="536.0" styleClass="back" text="Leave It, Go Back" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="browse" buttonType="RAISED" layoutX="20.0" layoutY="156.0" prefHeight="36.0" prefWidth="295.0" styleClass="browse" text="Browse Notes " textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <AnchorPane layoutX="20.0" layoutY="248.0" prefHeight="131.0" prefWidth="295.0" styleClass="selected" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                  <ImageView fx:id="image" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
                      <image>
                         <Image url="@../images/chooser/icons8-pdf-100.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="83.0" layoutY="20.0" prefWidth="197.0" style="-fx-font-weight: bold;" styleClass="selected-label" text="Data Structure Data Structure Data Structure Data Structure" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="19.0" />
-                  <Label layoutX="15.0" layoutY="71.0" prefHeight="20.0" prefWidth="84.0" styleClass="selected-label" text="192.68 MB" wrapText="true" AnchorPane.leftAnchor="15.0" />
-                  <Label alignment="CENTER" layoutX="125.0" layoutY="71.0" prefHeight="20.0" prefWidth="150.0" styleClass="selected-label" text="23 - 08 - 2020" wrapText="true" AnchorPane.rightAnchor="20.0" />
-                  <Label layoutX="15.0" layoutY="99.0" prefHeight="20.0" prefWidth="267.0" styleClass="selected-label" text="By : Hrishav Dhawaj Purkayastha" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                  <Label fx:id="name" layoutX="83.0" layoutY="20.0" prefWidth="197.0" style="-fx-font-weight: bold;" styleClass="selected-label" text="Data Structure Data Structure Data Structure Data Structure" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="19.0" />
+                  <Label fx:id="size" layoutX="15.0" layoutY="71.0" prefHeight="20.0" prefWidth="84.0" styleClass="selected-label" text="192.68 MB" wrapText="true" AnchorPane.leftAnchor="15.0" />
+                  <Label fx:id="date" alignment="CENTER" layoutX="125.0" layoutY="71.0" prefHeight="20.0" prefWidth="150.0" styleClass="selected-label" text="23 - 08 - 2020" wrapText="true" AnchorPane.rightAnchor="20.0" />
+                  <Label fx:id="by" layoutX="15.0" layoutY="99.0" prefHeight="20.0" prefWidth="267.0" styleClass="selected-label" text="By : Hrishav Dhawaj Purkayastha" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
    </center>
-</View>
+</fx:root>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root prefHeight="131.0" prefWidth="300.0" styleClass="selected" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="image" fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <image>
+            <Image url="@../images/chooser/icons8-pdf-100.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="name" layoutX="83.0" layoutY="20.0" prefWidth="197.0" style="-fx-font-weight: bold;" styleClass="selected-label" text="Data Structure Data Structure Data Structure Data Structure" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="19.0" />
+      <Label fx:id="size" layoutX="15.0" layoutY="71.0" prefHeight="20.0" prefWidth="84.0" styleClass="selected-label" text="192.68 MB" wrapText="true" AnchorPane.leftAnchor="15.0" />
+      <Label fx:id="date" alignment="CENTER" layoutX="88.0" layoutY="71.0" prefHeight="20.0" prefWidth="150.0" styleClass="selected-label" text="23 - 08 - 2020" wrapText="true" AnchorPane.rightAnchor="62.0" />
+      <Label fx:id="by" layoutX="15.0" layoutY="99.0" prefHeight="20.0" prefWidth="267.0" styleClass="selected-label" text="By : Hrishav Dhawaj Purkayastha" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <JFXButton fx:id="proceed" contentDisplay="GRAPHIC_ONLY" layoutX="245.0" layoutY="61.0" prefHeight="65.0" prefWidth="46.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_forward_50px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</fx:root>

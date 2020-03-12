@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/upload.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/upload.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -53,63 +53,63 @@
             <Label layoutX="20.0" layoutY="368.0" style="-fx-font-size: 16px;" styleClass="title-body" text="Selected File" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <AnchorPane layoutX="20.0" layoutY="404.0" prefHeight="40.0" styleClass="selected" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <TextField layoutX="2.0" prefHeight="40.0" prefWidth="292.0" promptText="Path to the file" styleClass="path-download" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <TextField fx:id="path" layoutX="2.0" prefHeight="40.0" prefWidth="292.0" promptText="Path to the file" styleClass="path-download" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="478.0" styleClass="upload" text="Upoad File" textFill="WHITE" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="536.0" styleClass="back" text="Leave It, Go Back" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="upload" buttonType="RAISED" layoutX="20.0" layoutY="478.0" styleClass="upload" text="Upoad File" textFill="WHITE" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="back" buttonType="RAISED" layoutX="20.0" layoutY="536.0" styleClass="back" text="Leave It, Go Back" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <FlowPane alignment="CENTER" hgap="20.0" layoutX="20.0" layoutY="155.0" vgap="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" styleClass="type">
+                  <JFXButton fx:id="pdf" contentDisplay="GRAPHIC_ONLY" styleClass="type">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/chooser/icons8-pdf-100.png" />
+                              <Image url="@../images/chooser/pdf.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="20.0" styleClass="type">
+                  <JFXButton fx:id="file" contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="20.0" styleClass="type">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/chooser/icons8-file-256.png" />
+                              <Image url="@../images/chooser/file.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="120.0" layoutY="20.0" styleClass="type">
+                  <JFXButton fx:id="txt" contentDisplay="GRAPHIC_ONLY" layoutX="120.0" layoutY="20.0" styleClass="type">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/chooser/icons8-txt-100.png" />
+                              <Image url="@../images/chooser/txt.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="120.0" styleClass="type">
+                  <JFXButton fx:id="ward" contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="120.0" styleClass="type">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/chooser/icons8-microsoft-word-2019-144.png" />
+                              <Image url="@../images/chooser/doc.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="118.0" layoutY="120.0" styleClass="type">
+                  <JFXButton fx:id="ppt" contentDisplay="GRAPHIC_ONLY" layoutX="118.0" layoutY="120.0" styleClass="type">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/chooser/icons8-microsoft-powerpoint-144.png" />
+                              <Image url="@../images/chooser/ppt.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="168.0" layoutY="120.0" styleClass="type">
+                  <JFXButton fx:id="excel" contentDisplay="GRAPHIC_ONLY" layoutX="168.0" layoutY="120.0" styleClass="type">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/chooser/icons8-microsoft-excel-2019-144.png" />
+                              <Image url="@../images/chooser/excel.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -122,4 +122,4 @@
          </children>
       </AnchorPane>
    </center>
-</View>
+</fx:root>
