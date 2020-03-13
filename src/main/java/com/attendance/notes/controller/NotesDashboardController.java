@@ -9,6 +9,7 @@ import com.attendance.file.chooser.controller.util.FileChooserUtils;
 import static com.attendance.file.chooser.controller.util.FileChooserUtils.IMAGE_FORMATS;
 import com.attendance.notes.model.Notes;
 import com.attendance.notes.service.NotesService;
+import com.attendance.util.AppView;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.control.TextField;
@@ -19,6 +20,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -52,7 +54,7 @@ public class NotesDashboardController extends View {
     private JFXButton upload;
 
     @FXML
-    private ImageView download;
+    private JFXButton download;
 
     @FXML
     private JFXButton view;
@@ -76,26 +78,45 @@ public class NotesDashboardController extends View {
         service = (NotesService) SystemUtils.getContext().getBean("notesservice");
         user.setText("User: " + SystemUtils.getUser().getDetails().getName());
         department.setText("Department: " + SystemUtils.getDepartment());
+        download.setOnAction(this::download);
+        upload.setOnAction(this::upload);
+        view.setOnAction(this::view);
 
     }
 
     private void count() {
         List<Notes> all = service.findAll();
         long imgs = all.stream().filter(f -> {
-            try{
-            String name = f.getFileName();
-            String ext = name.substring(name.lastIndexOf(".") + 1);
-            return IMAGE_FORMATS.contains(ext);
-            }catch(ArrayIndexOutOfBoundsException e) {
+            try {
+                String name = f.getFileName();
+                String ext = name.substring(name.lastIndexOf(".") + 1);
+                return IMAGE_FORMATS.contains(ext);
+            } catch (ArrayIndexOutOfBoundsException e) {
                 return false;
             }
 
         }).collect(Collectors.toList()).size();
-        
+
         long docs = all.size() - imgs;
-        
-        doc.setText(""+docs);
-        img.setText(""+imgs);
+
+        doc.setText("" + docs);
+        img.setText("" + imgs);
+    }
+
+    private void download(ActionEvent evt) {
+        DownloadNotesController.parent = "notes dashboard";
+        SystemUtils.getApplication().switchView(AppView.DOWNLOAD_NOTES_VIEW);
+    }
+
+    private void upload(ActionEvent evt) {
+        UploadNotesController.parent = "notes dashboard";
+        SystemUtils.getApplication().switchView(AppView.UPLOAD_NOTES_VIEW);
+    }
+
+    private void view(ActionEvent evt) {
+        SystemUtils.getApplication().removeViewFactory("download notes");
+        SystemUtils.getApplication().addViewFactory("download notes", () -> new NotesController(c -> {}, 0));
+        SystemUtils.getApplication().switchView("download notes");
     }
 
 }

@@ -175,9 +175,9 @@
                         <String fx:value="blue" />
                      </styleClass>
                   </JFXButton>
-                  <JFXButton contentDisplay="TOP" graphicTextGap="13.0" layoutX="10.0" layoutY="10.0" text="Download Notes" HBox.hgrow="ALWAYS">
+                  <JFXButton fx:id="download" contentDisplay="TOP" graphicTextGap="13.0" layoutX="10.0" layoutY="10.0" text="Download Notes" HBox.hgrow="ALWAYS">
                      <graphic>
-                        <ImageView fx:id="download" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/icons8_download_40px.png" />
                            </image>
