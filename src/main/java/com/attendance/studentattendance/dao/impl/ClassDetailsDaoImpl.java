@@ -186,6 +186,11 @@ public class ClassDetailsDaoImpl implements ClassDetailsDao {
         System.out.println("c="+c);
         return (p==1) && (c>0);
     }
+
+    @Override
+    public List<ClassDetails> findAllFiltered() {
+           return hibernateTemplate.findByNamedParam("select new com.attendance.student.attendance.model.MyClassDetails(classId,facultyName,subjectTaught,date,time,semester,year,paper,academicyear,department,coursetype) from ClassDetails", paramName, this);
+    }
     
     
 }

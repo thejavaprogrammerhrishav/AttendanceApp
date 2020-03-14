@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="72.0" prefWidth="335.0" style="-fx-background-color: rgba(0,0,0,0.65);" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="back" contentDisplay="GRAPHIC_ONLY" layoutX="41.0" layoutY="35.0" style="-fx-padding: 0; -fx-min-width: 30; -fx-min-height: 30; -fx-background-color: #666666;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="25.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-go-back-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <Label layoutX="73.0" layoutY="30.0" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: white;" text="Filters" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="25.0" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="487.0" prefWidth="335.0" style="-fx-background-color: linear-gradient(  rgba(0,0,0,0.65) 12.9%, rgba(0,0,0,1) 145.4% );" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="21.0" layoutY="470.0" spacing="35.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0">
+               <children>
+                  <JFXButton fx:id="apply" buttonType="RAISED" contentDisplay="CENTER" prefHeight="32.0" prefWidth="130.0" style="-fx-background-color: red;" text="Apply" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="clear" buttonType="RAISED" contentDisplay="CENTER" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: green;" text="Clear" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font></JFXButton>
+               </children>
+            </HBox>
+            <CheckBox fx:id="filterbyname" layoutX="20.0" layoutY="3.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="Filter By Name" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <CheckBox fx:id="filterbyacayear" layoutX="20.0" layoutY="81.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="298.0" text="Filter By Academic Year" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <CheckBox fx:id="filterbysemester" layoutX="20.0" layoutY="168.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="144.0" text="Filter By Semester" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="171.0" />
+            <CheckBox fx:id="filterbyyear" layoutX="20.0" layoutY="218.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" text="Filter By Year" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="171.0" />
+            <CheckBox fx:id="filterbyctype" layoutX="20.0" layoutY="374.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="159.0" text="Filter By Course Type" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="152.0" />
+            <JFXComboBox fx:id="academicyear" focusColor="#9b9b9e" labelFloat="true" layoutX="22.0" layoutY="118.0" prefHeight="29.0" prefWidth="293.0" promptText="Select Academic Year" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="20.0" />
+            <JFXComboBox fx:id="semester" focusColor="#9b9b9e" labelFloat="true" layoutX="180.0" layoutY="167.0" prefHeight="29.0" prefWidth="135.0" promptText="Select Semester" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="20.0" />
+            <JFXComboBox fx:id="facultyname" focusColor="#9b9b9e" labelFloat="true" layoutX="22.0" layoutY="39.0" prefHeight="29.0" prefWidth="293.0" promptText="Select Faculty Name" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="20.0" />
+            <JFXComboBox fx:id="year" focusColor="#9b9b9e" labelFloat="true" layoutX="180.0" layoutY="217.0" prefHeight="29.0" prefWidth="135.0" promptText="Select Year" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="20.0" />
+            <CheckBox fx:id="filterbypaper" layoutX="20.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Filter By Paper" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="169.0" />
+            <JFXComboBox fx:id="paper" focusColor="#9b9b9e" labelFloat="true" layoutX="177.0" layoutY="268.0" prefHeight="29.0" prefWidth="135.0" promptText="Select Paper" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="20.0" />
+            <JFXCheckBox fx:id="honours" layoutX="46.0" layoutY="411.0" text="Honours" textFill="WHITE" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="212.0" />
+            <JFXCheckBox fx:id="pass" layoutX="182.0" layoutY="411.0" prefHeight="18.0" prefWidth="68.0" text="Pass" textFill="WHITE" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="85.0" />
+            <CheckBox fx:id="filterbydate" layoutX="23.0" layoutY="323.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" text="Filter By Date" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="169.0" />
+            <JFXComboBox fx:id="date" focusColor="#9b9b9e" labelFloat="true" layoutX="174.0" layoutY="316.0" prefHeight="29.0" prefWidth="145.0" promptText="Select Date" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="20.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</fx:root>

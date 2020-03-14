@@ -21,6 +21,8 @@ public interface ClassDetailsDao {
     public abstract boolean delete(ClassDetails details);
 
     public abstract List<ClassDetails> findAll();
+    
+    public abstract List<ClassDetails> findAllFiltered();
 
     public abstract ClassDetails findById(String id);
 
