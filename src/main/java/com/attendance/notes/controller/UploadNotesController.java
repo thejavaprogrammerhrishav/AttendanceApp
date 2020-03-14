@@ -109,22 +109,22 @@ public class UploadNotesController extends View {
     }
 
     private void txt(ActionEvent evt) {
-        FileChooserController.show("all", FileChooserUtils.ALL, c -> path.setText(c));
+        FileChooserController.show("all", FileChooserUtils.TXT, c -> path.setText(c));
 
     }
 
     private void excel(ActionEvent evt) {
-        FileChooserController.show("all", FileChooserUtils.ALL, c -> path.setText(c));
+        FileChooserController.show("all", FileChooserUtils.EXCEL, c -> path.setText(c));
 
     }
 
     private void word(ActionEvent evt) {
-        FileChooserController.show("all", FileChooserUtils.ALL, c -> path.setText(c));
+        FileChooserController.show("all", FileChooserUtils.DOCUMENT, c -> path.setText(c));
 
     }
 
     private void ppt(ActionEvent evt) {
-        FileChooserController.show("all", FileChooserUtils.ALL, c -> path.setText(c));
+        FileChooserController.show("all", FileChooserUtils.PPT, c -> path.setText(c));
 
     }
 
