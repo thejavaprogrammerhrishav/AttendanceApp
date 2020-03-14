@@ -30,4 +30,5 @@ public class AppView {
     public static final String FORGOT_PASSWORD_VIEW = "Forgot Password";
     public static final String SECURITY_QUESTION_VIEW = "Security Question View";
     public static final String RESET_PASSWORD_VIEW = "Reset Password";
+    public static final String CLASS_DETAILS_VIEW = "Class Details";
 }

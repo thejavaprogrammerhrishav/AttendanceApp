@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.attendance.student.attendance;
+package com.attendance.student.attendance.controller;
 
 import com.attendance.papers.model.Paper;
 import com.attendance.papers.service.PapersService;

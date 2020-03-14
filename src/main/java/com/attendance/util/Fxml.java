@@ -166,4 +166,21 @@ public class Fxml {
     public static FXMLLoader getNotesFilterFxml() {
         return new FXMLLoader(Fxml.class.getResource(path+"notesfiler.fxml"));
     }
+    
+    public static FXMLLoader getClassDetailsNodeControllerFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"classdetailsnode.fxml"));
+    }
+    
+    public static FXMLLoader getClassDetailsFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"classdetails.fxml"));
+    }
+    
+    public static FXMLLoader getClassDetailsFilterFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"classdetailsfilter.fxml"));
+    }
+    
+    public static FXMLLoader getCompleteClassDetailsFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"completeclassdetails.fxml"));
+    }
+    
 }

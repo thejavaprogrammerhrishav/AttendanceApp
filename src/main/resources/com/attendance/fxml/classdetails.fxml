@@ -47,20 +47,33 @@
       <AnchorPane prefHeight="111.0" prefWidth="335.0" style="-fx-background-color: linear-gradient(  rgba(0,173,239,1) 92.1% );" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="85.0" layoutY="28.0" prefHeight="29.0" prefWidth="166.0" style="-fx-font-size: 24; -fx-font-weight: bold;" text="Class Details" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="28.0" />
-            <JFXButton fx:id="back" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="35.0" minWidth="45.0" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: white; -fx-min-height: 30; -fx-min-width: 30; -fx-padding: 0;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="25.0" />
-            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="28.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="32.0">
-               <image>
-                  <Image url="@icons8-go-back-100.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="filter" contentDisplay="GRAPHIC_ONLY" layoutX="274.0" layoutY="30.0" minWidth="45.0" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: white; -fx-min-height: 30; -fx-min-width: 30; -fx-padding: 0;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="25.0" />
-            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="285.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="31.0">
-               <image>
-                  <Image url="@icons8-filter-100.png" />
-               </image>
-            </ImageView>
+            <JFXButton fx:id="back" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="35.0" minWidth="45.0" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: white; -fx-min-height: 30; -fx-min-width: 30; -fx-padding: 0;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="25.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-go-back-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="filter" contentDisplay="GRAPHIC_ONLY" layoutX="282.0" layoutY="25.0" minWidth="45.0" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: white; -fx-min-height: 30; -fx-min-width: 30; -fx-padding: 0;" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="25.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-filter-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
             <Label layoutX="20.0" layoutY="71.0" prefHeight="18.0" prefWidth="86.0" text="Department :" AnchorPane.leftAnchor="20.0" />
             <Label fx:id="department" layoutX="104.0" layoutY="71.0" prefHeight="18.0" prefWidth="214.0" text="Ecology &amp; Enviromental Science" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="refresh" contentDisplay="GRAPHIC_ONLY" layoutX="233.0" layoutY="26.0" minWidth="45.0" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: white; -fx-min-height: 30; -fx-min-width: 30; -fx-padding: 0;" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="26.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-update-left-rotation-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </AnchorPane>
    </top>

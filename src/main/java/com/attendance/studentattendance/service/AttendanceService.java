@@ -6,6 +6,7 @@
 package com.attendance.studentattendance.service;
 
 import com.attendance.student.attendance.model.ClassDetails;
+import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.util.ExceptionDialog;
 import java.util.List;
 import javafx.scene.Parent;
@@ -22,6 +23,8 @@ public interface AttendanceService {
     public abstract boolean deleteAttendance(ClassDetails details);
 
     public abstract List<ClassDetails> findAll();
+    
+    public abstract List<MyClassDetails> findAllFiltered();
 
     public abstract ClassDetails findById(String id);
 
@@ -44,6 +47,8 @@ public interface AttendanceService {
     public abstract List<ClassDetails> findByDepartmentAndSemesterAndPaperCodeAndYear(String department, String semester, String papercode, int year);
 
     public abstract List<ClassDetails> findByDepartment(String department);
+    
+    public abstract List<MyClassDetails> findByDepartmentFiltered(String department);
 
     public abstract List<ClassDetails> findByDepartmentAndSemesterAndYear(String department, String semester, int year);
 

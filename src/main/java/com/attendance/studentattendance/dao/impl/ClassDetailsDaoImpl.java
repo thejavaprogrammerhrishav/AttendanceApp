@@ -7,6 +7,7 @@ package com.attendance.studentattendance.dao.impl;
 
 
 import com.attendance.student.attendance.model.ClassDetails;
+import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.studentattendance.dao.ClassDetailsDao;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -188,9 +189,12 @@ public class ClassDetailsDaoImpl implements ClassDetailsDao {
     }
 
     @Override
-    public List<ClassDetails> findAllFiltered() {
-           return hibernateTemplate.findByNamedParam("select new com.attendance.student.attendance.model.MyClassDetails(classId,facultyName,subjectTaught,date,time,semester,year,paper,academicyear,department,coursetype) from ClassDetails", paramName, this);
+    public List<MyClassDetails> findAllFiltered() {
+           return (List<MyClassDetails>) hibernateTemplate.findByNamedParam("select new com.attendance.student.attendance.model.MyClassDetails(classId,facultyName,subjectTaught,date,time,semester,year,paper,academicyear,department,coursetype) from ClassDetails", "", null);
     }
     
-    
+    @Override
+    public List<MyClassDetails> findByDepartmentFiltered(String department) {
+           return (List<MyClassDetails>) hibernateTemplate.findByNamedParam("select new com.attendance.student.attendance.model.MyClassDetails(classId,facultyName,subjectTaught,date,time,semester,year,paper,academicyear,department,coursetype) from ClassDetails where department = :department", "department", department);
+    }
 }

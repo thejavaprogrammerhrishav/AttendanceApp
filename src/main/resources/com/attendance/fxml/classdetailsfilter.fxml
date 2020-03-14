@@ -36,6 +36,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -83,14 +85,14 @@
             <CheckBox fx:id="filterbyctype" layoutX="20.0" layoutY="374.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="159.0" text="Filter By Course Type" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="152.0" />
             <JFXComboBox fx:id="academicyear" focusColor="#9b9b9e" labelFloat="true" layoutX="22.0" layoutY="118.0" prefHeight="29.0" prefWidth="293.0" promptText="Select Academic Year" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="20.0" />
             <JFXComboBox fx:id="semester" focusColor="#9b9b9e" labelFloat="true" layoutX="180.0" layoutY="167.0" prefHeight="29.0" prefWidth="135.0" promptText="Select Semester" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="20.0" />
-            <JFXComboBox fx:id="facultyname" focusColor="#9b9b9e" labelFloat="true" layoutX="22.0" layoutY="39.0" prefHeight="29.0" prefWidth="293.0" promptText="Select Faculty Name" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="20.0" />
             <JFXComboBox fx:id="year" focusColor="#9b9b9e" labelFloat="true" layoutX="180.0" layoutY="217.0" prefHeight="29.0" prefWidth="135.0" promptText="Select Year" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="20.0" />
             <CheckBox fx:id="filterbypaper" layoutX="20.0" layoutY="269.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" text="Filter By Paper" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="169.0" />
             <JFXComboBox fx:id="paper" focusColor="#9b9b9e" labelFloat="true" layoutX="177.0" layoutY="268.0" prefHeight="29.0" prefWidth="135.0" promptText="Select Paper" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="20.0" />
             <JFXCheckBox fx:id="honours" layoutX="46.0" layoutY="411.0" text="Honours" textFill="WHITE" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="212.0" />
             <JFXCheckBox fx:id="pass" layoutX="182.0" layoutY="411.0" prefHeight="18.0" prefWidth="68.0" text="Pass" textFill="WHITE" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="85.0" />
             <CheckBox fx:id="filterbydate" layoutX="23.0" layoutY="323.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" text="Filter By Date" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="169.0" />
-            <JFXComboBox fx:id="date" focusColor="#9b9b9e" labelFloat="true" layoutX="174.0" layoutY="316.0" prefHeight="29.0" prefWidth="145.0" promptText="Select Date" style="-fx-text-fill: white; -fx-prompt-text-fill: grey;" unFocusColor="WHITE" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="20.0" />
+            <JFXTextField fx:id="facultyname" layoutX="20.0" layoutY="38.0" prefHeight="25.0" prefWidth="294.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXDatePicker fx:id="date" layoutX="150.0" layoutY="324.0" />
          </children>
       </AnchorPane>
    </center>

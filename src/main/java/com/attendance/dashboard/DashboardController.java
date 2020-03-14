@@ -5,6 +5,8 @@
  */
 package com.attendance.dashboard;
 
+import com.attendance.notes.controller.DownloadNotesController;
+import com.attendance.notes.controller.UploadNotesController;
 import com.attendance.student.service.StudentService;
 import com.attendance.user.service.LoginService;
 import com.attendance.util.AppView;
@@ -107,18 +109,37 @@ public class DashboardController extends View {
         date.setText("Date: " + DateTime.now().toString(DateTimeFormat.forPattern("EEEEE, dd MMMMM yyyy")));
         timer();
         counter();
-        account.setOnAction(e->{
+        account.setOnAction(e -> {
             SystemUtils.getApplication().switchView(AppView.PROFILE_VIEW);
         });
-        activity.setOnAction(e->{
+        activity.setOnAction(e -> {
             SystemUtils.getApplication().switchView(AppView.LOGIN_ACTIVITY_VIEW);
         });
-        student.setOnAction(e->{
+        student.setOnAction(e -> {
             SystemUtils.getApplication().switchView(AppView.STUDENT_DETAILS_VIEW);
         });
-        faculty.setOnAction(e->{
+        faculty.setOnAction(e -> {
             SystemUtils.getApplication().switchView(AppView.FACULTY_DETAILS_VIEW);
         });
+
+        notes.setOnAction(e -> {
+            SystemUtils.getApplication().switchView(AppView.NOTES_DASHBOARD_VIEW);
+        });
+
+        upload.setOnAction(e -> {
+            UploadNotesController.parent = "notes dashboard";
+            SystemUtils.getApplication().switchView(AppView.UPLOAD_NOTES_VIEW);
+        });
+
+        download.setOnAction(e -> {
+            DownloadNotesController.parent = "notes dashboard";
+            SystemUtils.getApplication().switchView(AppView.DOWNLOAD_NOTES_VIEW);
+        });
+
+        classdetails.setOnAction(e -> {
+            SystemUtils.getApplication().switchView(AppView.CLASS_DETAILS_VIEW);
+        });
+
     }
 
     private void timer() {
@@ -142,7 +163,7 @@ public class DashboardController extends View {
         year.getItems().addAll(studentservice.findAllYear());
         year.getSelectionModel().selectedItemProperty().addListener((ol, o, n) -> {
             if (n != null) {
-                int c1=0,c2=0,c3=0;
+                int c1 = 0, c2 = 0, c3 = 0;
                 if (n.equals("All")) {
                     c1 = studentservice.countStudents("1st", SystemUtils.getDepartment());
                     c2 = studentservice.countStudents("2nd", SystemUtils.getDepartment());
@@ -153,8 +174,8 @@ public class DashboardController extends View {
                     c3 = studentservice.countStudents("3rd", Integer.parseInt(n), SystemUtils.getDepartment());
                 }
                 first.setText("" + c1);
-                second.setText(""+c2);
-                third.setText(""+c3);
+                second.setText("" + c2);
+                third.setText("" + c3);
             }
         });
     }

@@ -7,6 +7,7 @@ package com.attendance.main;
 
 import com.attendance.util.AppView;
 import static com.attendance.util.AppView.ATTENDANCE_VIEW;
+import static com.attendance.util.AppView.CLASS_DETAILS_VIEW;
 import static com.attendance.util.AppView.DASHBOARD_VIEW;
 import static com.attendance.util.AppView.DOWNLOAD_NOTES_VIEW;
 import static com.attendance.util.AppView.EDIT_PROFILE_VIEW;
@@ -51,7 +52,12 @@ public class Start extends MobileApplication{
         addViewFactory(FACULTY_DETAILS_VIEW, ()->SystemUtils.getResolver().getFacultyDetailsView()); 
         addViewFactory(FORGOT_PASSWORD_VIEW, ()->SystemUtils.getResolver().getForgotPasswordView()); 
         addViewFactory(SECURITY_QUESTION_VIEW, ()->SystemUtils.getResolver().getSecurityQuestionView()); 
-        addViewFactory(RESET_PASSWORD_VIEW, ()->SystemUtils.getResolver().getResetPasswordView()); 
+        addViewFactory(RESET_PASSWORD_VIEW, ()->SystemUtils.getResolver().getResetPasswordView());
+        
+        addViewFactory(NOTES_DASHBOARD_VIEW, ()->SystemUtils.getResolver().getNotesDashboardView()); 
+        addViewFactory(CLASS_DETAILS_VIEW, ()->SystemUtils.getResolver().getClassDetailsView()); 
+       
+        
         
         SystemUtils.setApplication(this);
         applicationInit();

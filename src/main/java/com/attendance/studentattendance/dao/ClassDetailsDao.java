@@ -6,6 +6,7 @@
 package com.attendance.studentattendance.dao;
 
 import com.attendance.student.attendance.model.ClassDetails;
+import com.attendance.student.attendance.model.MyClassDetails;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public interface ClassDetailsDao {
 
     public abstract List<ClassDetails> findAll();
     
-    public abstract List<ClassDetails> findAllFiltered();
+    public abstract List<MyClassDetails> findAllFiltered();
 
     public abstract ClassDetails findById(String id);
 
@@ -45,6 +46,8 @@ public interface ClassDetailsDao {
     public abstract List<ClassDetails> findByDepartmentAndSemesterAndPaperCodeAndYear(String department, String semester, String papercode, int year);
 
     public abstract List<ClassDetails> findByDepartment(String department);
+    
+    public abstract List<MyClassDetails> findByDepartmentFiltered(String department);
 
     public abstract List<ClassDetails> findByDepartmentAndSemesterAndYear(String department, String semester, int year);
 

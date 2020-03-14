@@ -6,6 +6,7 @@
 package com.attendance.service.impl;
 
 import com.attendance.student.attendance.model.ClassDetails;
+import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.studentattendance.dao.ClassDetailsDao;
 import com.attendance.studentattendance.service.AttendanceService;
 import com.attendance.util.ExceptionConverter;
@@ -83,6 +84,17 @@ public class AttendanceServiceImpl implements AttendanceService {
     public List<ClassDetails> findAll() {
         try {
             return dao.findAll();
+        } catch (Exception e) {
+            ex.showError(parent, header, ExceptionConverter.getException(e));
+
+            return new ArrayList<>();
+        }
+    }
+    
+     @Override
+    public List<MyClassDetails> findAllFiltered() {
+        try {
+            return dao.findAllFiltered();
         } catch (Exception e) {
             ex.showError(parent, header, ExceptionConverter.getException(e));
 
@@ -204,6 +216,17 @@ public class AttendanceServiceImpl implements AttendanceService {
     public List<ClassDetails> findByDepartment(String department) {
         try {
             return dao.findByDepartment(department);
+        } catch (Exception e) {
+            ex.showError(parent, header, ExceptionConverter.getException(e));
+
+            return new ArrayList<>();
+        }
+    }
+    
+     @Override
+    public List<MyClassDetails> findByDepartmentFiltered(String department) {
+        try {
+            return dao.findByDepartmentFiltered(department);
         } catch (Exception e) {
             ex.showError(parent, header, ExceptionConverter.getException(e));
 

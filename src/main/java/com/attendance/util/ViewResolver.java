@@ -20,7 +20,8 @@ import com.gluonhq.charm.glisten.mvc.View;
 import com.attendance.notes.controller.DownloadNotesController;
 import com.attendance.notes.controller.NotesDashboardController;
 import com.attendance.notes.controller.UploadNotesController;
-import com.attendance.student.attendance.LoadStudentController;
+import com.attendance.student.attendance.controller.ClassDetailsController;
+import com.attendance.student.attendance.controller.LoadStudentController;
 import com.attendance.student.controller.ViewStudentsController;
 
 /**
@@ -95,6 +96,10 @@ public class ViewResolver {
     
     public View getResetPasswordView() {
         return new ResetPasswordController();
+    }
+    
+    public View getClassDetailsView() {
+        return new ClassDetailsController();
     }
     
 }
