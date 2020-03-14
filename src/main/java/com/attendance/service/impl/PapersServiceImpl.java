@@ -21,9 +21,6 @@ import javafx.scene.Parent;
 public class PapersServiceImpl implements PapersService {
 
     private PapersDao dao;
-
-    private final String header = "Paper Information Error";
-
     private ExceptionDialog ex;
     private Parent parent;
 
@@ -52,7 +49,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.save(p);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return -1l;
         }
@@ -63,7 +60,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.update(p);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
@@ -74,7 +71,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.delete(p);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
@@ -85,7 +82,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.findByCode(code);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new Paper();
         }
@@ -96,7 +93,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.findAll();
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -107,7 +104,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.findBySemester(sem);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -118,7 +115,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.updatePaperId(newID, oldID);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return false;
         }
@@ -129,7 +126,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.findByDepartment(Department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -140,7 +137,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.findByCourseType(courseType);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -151,7 +148,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.findByDepartmentAndCourseType(department, courseType);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -162,7 +159,7 @@ public class PapersServiceImpl implements PapersService {
         try {
             return dao.exists(code);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return false;
         }

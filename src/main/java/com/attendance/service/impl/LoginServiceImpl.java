@@ -21,9 +21,6 @@ import javafx.scene.Parent;
 public class LoginServiceImpl implements LoginService {
 
     private Login dao;
-
-    private final String header = "Login Information Error";
-
     private ExceptionDialog ex;
     private Parent parent;
 
@@ -52,7 +49,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.save(user);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return -1;
@@ -64,7 +61,7 @@ public class LoginServiceImpl implements LoginService {
             return dao.update(user);
         } catch (Exception e) {
             e.printStackTrace();
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
@@ -75,7 +72,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.delete(user);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
@@ -86,7 +83,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.findById(userId);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new User();
         }
@@ -97,7 +94,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.findByUsername(username);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new User();
         }
@@ -108,7 +105,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.findAll();
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -119,7 +116,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.findByDepartment(department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -130,7 +127,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.findByType(type);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -141,7 +138,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.findByUsernameDepartmentType(username, department, type);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new User();
         }
@@ -152,7 +149,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.findByStatus(status);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -163,7 +160,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.findByStatusAndDepartment(status, department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -174,7 +171,7 @@ public class LoginServiceImpl implements LoginService {
         try {
             return dao.count(sql);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return -1;
         }
@@ -190,7 +187,7 @@ public class LoginServiceImpl implements LoginService {
                 }
             }
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
@@ -199,14 +196,12 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public boolean isUsernameExists(String username) {
         try {
-            return dao.isUsernameExists(username)==0;
+            return dao.isUsernameExists(username) == 0;
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
     }
-    
-    
 
 }

@@ -21,9 +21,6 @@ import javafx.scene.Parent;
 public class NotesServiceImpl implements NotesService {
 
     private NotesDao dao;
-
-    private final String header = "Notes Information Error";
-
     private ExceptionDialog ex;
     private Parent parent;
 
@@ -52,7 +49,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.save(notes);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
         }
         return -1;
     }
@@ -62,7 +59,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.update(notes);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
@@ -73,7 +70,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.delete(notes);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
@@ -84,7 +81,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.findAll();
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -95,7 +92,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.findByFaculty(facultyName);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -106,7 +103,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.findByDate(uploadDate);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -117,7 +114,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.findByFileName(fileName);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -128,7 +125,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.findByDateSorted(uploadDate, order);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -139,7 +136,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.sortBydate(order);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -150,7 +147,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.sortByFileSize(order);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -161,7 +158,7 @@ public class NotesServiceImpl implements NotesService {
         try {
             return dao.findByDepartment(Department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }

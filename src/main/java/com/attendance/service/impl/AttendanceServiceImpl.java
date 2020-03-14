@@ -22,9 +22,6 @@ import javafx.scene.Parent;
 public class AttendanceServiceImpl implements AttendanceService {
 
     private ClassDetailsDao dao;
-
-    private final String header = "Attendance Error";
-
     private ExceptionDialog ex;
     private Parent parent;
 
@@ -53,7 +50,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.save(details);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
         }
         return "";
     }
@@ -63,7 +60,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.update(details);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
         }
         return false;
@@ -74,7 +71,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.delete(details);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return false;
         }
@@ -85,18 +82,18 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findAll();
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
     }
-    
-     @Override
+
+    @Override
     public List<MyClassDetails> findAllFiltered() {
         try {
             return dao.findAllFiltered();
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -107,7 +104,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return findById(id);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ClassDetails();
         }
@@ -118,7 +115,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByFacultyName(facultyname);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -129,7 +126,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDate(date);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -140,7 +137,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByTime(time);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -151,7 +148,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findBySemester(semester);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -162,7 +159,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByAcadamicYear(acadamicYear);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -173,7 +170,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByYear(year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -184,7 +181,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findBySemesterAndYear(semester, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -195,7 +192,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return findByAcadamicYearAndYear(acadamicYear, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -206,7 +203,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartmentAndSemesterAndPaperCodeAndYear(department, semester, papercode, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -217,18 +214,18 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartment(department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
     }
-    
-     @Override
+
+    @Override
     public List<MyClassDetails> findByDepartmentFiltered(String department) {
         try {
             return dao.findByDepartmentFiltered(department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -239,7 +236,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartmentAndSemesterAndYear(department, semester, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -250,7 +247,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartmentAndAcadamicYearAndYear(department, acadamicYear, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -261,7 +258,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartmentAndCourseType(department, courseType);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -272,7 +269,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartmentAndCourseTypeAndYear(department, courseType, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -283,7 +280,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartmentAndCourseTypeAndAcadamicYearAndYear(department, courseType, acadamicYear, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -294,7 +291,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartmentAndCourseTypeAndSemesterAndYear(department, courseType, semester, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -305,7 +302,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByFacultyAndDepartmentAndCourseTypeAndSemesterAndYear(faculty, department, courseType, semester, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -316,7 +313,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByFacultyAndDepartmentAndCourseTypeAndAcadamicAndYear(faculty, department, courseType, acadamicYear, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -327,7 +324,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findAll(department, acadamicYear, semester, year, papercode, coursetype);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return new ArrayList<>();
         }
@@ -338,7 +335,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.updateClassId(oldId, newId);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
 
             return false;
         }

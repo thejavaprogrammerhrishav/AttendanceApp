@@ -22,9 +22,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class StudentServiceImpl implements StudentService {
 
     private StudentDao dao;
-
-    private final String header = "Student Information Error";
-
     private ExceptionDialog ex;
     private Parent parent;
 
@@ -60,7 +57,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.saveStudent(s);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return "";
         }
     }
@@ -70,7 +67,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return update(s, ns);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
         }
         return false;
     }
@@ -80,7 +77,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.deleteStudent(s);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
         }
         return false;
     }
@@ -91,8 +88,7 @@ public class StudentServiceImpl implements StudentService {
             return dao.findById(id);
         } catch (Exception e) {
             if (e.getMessage().contains("JBDCConnectionExecption")) {
-
-                ex.showError(parent, header, ExceptionConverter.getException(e));
+                ex.showError(parent, ExceptionConverter.getException(e));
             }
             return new Student();
         }
@@ -106,7 +102,7 @@ public class StudentServiceImpl implements StudentService {
         } catch (Exception e) {
             if (e.getMessage().contains("JBDCConnectionExecption")) {
 
-                ex.showError(parent, header, ExceptionConverter.getException(e));
+                ex.showError(parent, ExceptionConverter.getException(e));
             }
             return new ArrayList<>();
         }
@@ -117,7 +113,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findByAcadamicYear(acadamicyear);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
         }
         return new ArrayList<>();
     }
@@ -127,7 +123,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findByGender(gender);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<>();
         }
     }
@@ -137,7 +133,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findAll();
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<>();
         }
     }
@@ -148,7 +144,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findByRollNumber(rollno);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<>();
         }
     }
@@ -159,7 +155,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findByName(name);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<>();
         }
     }
@@ -170,7 +166,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findByAcadamicYearAndYear(acadamicyear, year);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<>();
         }
     }
@@ -181,7 +177,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.updateStudentId(newId, oldId);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
         }
         return false;
     }
@@ -191,7 +187,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.get(query, t);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<T>();
         }
     }
@@ -201,7 +197,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.countStudents(acadamicyear, department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
         }
         return 0;
     }
@@ -211,7 +207,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.countStudents(acadamicyear, "" + year, department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
         }
         return 0;
     }
@@ -221,7 +217,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findByCourseType(courseType);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<>();
         }
     }
@@ -231,7 +227,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findByDepartment(department);
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<>();
         }
     }
@@ -241,7 +237,7 @@ public class StudentServiceImpl implements StudentService {
         try {
             return dao.findAllYears();
         } catch (Exception e) {
-            ex.showError(parent, header, ExceptionConverter.getException(e));
+            ex.showError(parent, ExceptionConverter.getException(e));
             return new ArrayList<>();
         }
     }
