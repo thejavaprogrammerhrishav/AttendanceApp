@@ -60,7 +60,7 @@ public class LoginActivityController extends View {
     @FXML
     private void initialize() {
         dialog = SystemUtils.getDialog();
-        service = (LoginActivityService) SystemUtils.getContext().getBean("loginservice");
+        service = (LoginActivityService) SystemUtils.getContext().getBean("loginactivityservice");
         back.setOnAction(this::back);
 
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, eh -> {

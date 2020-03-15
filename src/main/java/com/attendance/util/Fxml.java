@@ -16,7 +16,7 @@ public class Fxml {
     private static String path = "/com/attendance/fxml/";
 
     public static FXMLLoader getSplashFxml() {
-        return new FXMLLoader(Fxml.class.getResource(path + "welcome"));
+        return new FXMLLoader(Fxml.class.getResource(path + "welcome.fxml"));
     }
 
     public static FXMLLoader getLoginFxml() {

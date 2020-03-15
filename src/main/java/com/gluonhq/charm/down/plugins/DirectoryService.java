@@ -14,6 +14,4 @@ import java.util.List;
 public interface DirectoryService {
     
     public abstract List<String> getRootDirs();
-    
-    public abstract String privateDirectory();
 }

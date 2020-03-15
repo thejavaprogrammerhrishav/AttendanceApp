@@ -6,6 +6,7 @@
 package com.attendance.util;
 
 import com.attendance.dashboard.DashboardController;
+import com.attendance.department.SelectDepartmentController;
 import com.attendance.faculty.controller.ViewFacultyListController;
 import com.attendance.login.forgot.ForgotPassword1Controller;
 import com.attendance.login.forgot.ResetPasswordController;
@@ -56,8 +57,8 @@ public class ViewResolver {
     }
     
     public View getSelectDepartmentView() {
-        //return new SelectDepartmentController();
-        return null;
+        return new SelectDepartmentController();
+
     }
     
     public View getSelectLoginView() {

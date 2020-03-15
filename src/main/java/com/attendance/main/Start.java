@@ -27,6 +27,7 @@ import static com.attendance.util.AppView.UPLOAD_NOTES_VIEW;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.DirectoryService;
+import com.gluonhq.charm.down.plugins.StorageService;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import java.io.File;
 import java.io.FileInputStream;
@@ -50,8 +51,10 @@ public class Start extends MobileApplication {
 
     @Override
     public void init() throws Exception {
+        SystemUtils.init();
         loadSettings();
-        addViewFactory(AppView.SPLASH_VIEW, () -> SystemUtils.getResolver().getSplashView());
+        SystemUtils.setApplication(this);
+        addViewFactory(AppView.HOME, () -> SystemUtils.getResolver().getSplashView());
         addViewFactory(DASHBOARD_VIEW, () -> SystemUtils.getResolver().getDashboardView());
         addViewFactory(NOTES_DASHBOARD_VIEW, () -> SystemUtils.getResolver().getNotesDashboardView());
         addViewFactory(ATTENDANCE_VIEW, () -> SystemUtils.getResolver().getAttendanceView());
@@ -68,13 +71,12 @@ public class Start extends MobileApplication {
         addViewFactory(SECURITY_QUESTION_VIEW, () -> SystemUtils.getResolver().getSecurityQuestionView());
         addViewFactory(RESET_PASSWORD_VIEW, () -> SystemUtils.getResolver().getResetPasswordView());
 
-        addViewFactory(NOTES_DASHBOARD_VIEW, () -> SystemUtils.getResolver().getNotesDashboardView());
         addViewFactory(CLASS_DETAILS_VIEW, () -> SystemUtils.getResolver().getClassDetailsView());
 
         addViewFactory(SETTINGS_VIEW, () -> SystemUtils.getResolver().getSettingsView());
         addViewFactory(ABOUT_US_VIEW, () -> SystemUtils.getResolver().getAboutUsView());
 
-        SystemUtils.setApplication(this);
+        
         applicationInit();
         SystemUtils.setContext(app);
 
@@ -96,13 +98,16 @@ public class Start extends MobileApplication {
     private static void loadSettings() {
 
         try {
-            Services.get(DirectoryService.class).ifPresent(c -> {
-                f = new File(c + "settings.sys");
+            Services.get(StorageService.class).ifPresent(c -> {
+                c.getPrivateStorage().ifPresent(cx -> {
+                    f = new File(cx.getAbsolutePath() + "/settings.sys");
+                });
+
             });
-            
+
             Properties prop = new Properties();
             prop.load(new FileInputStream(f));
-            
+
             System.setProperty("db.url", prop.getProperty("db.url"));
             System.setProperty("db.name", prop.getProperty("db.name"));
             System.setProperty("db.username", prop.getProperty("db.username"));
@@ -110,7 +115,12 @@ public class Start extends MobileApplication {
             System.setProperty("db.driver.class.name", prop.getProperty("db.driver.class.name"));
             System.setProperty("db.host", prop.getProperty("db.host"));
         } catch (IOException ex) {
-            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
+//            System.setProperty("db.driver.class.name","com.mysql.cj.jdbc.Driver");
+//            System.setProperty("db.name", "attendance");
+//            System.setProperty("db.username", "hrishav");
+//            System.setProperty("db.password", "hrishav");
+//            System.setProperty("db.url", "jdbc:mysql://192.168.2.6:3306/attendance?createDatabaseIfNotExist=true");
+//            System.setProperty("db.host", "192.168.1.6");
         }
     }
 }

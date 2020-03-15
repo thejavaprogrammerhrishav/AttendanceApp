@@ -6,16 +6,16 @@
 package com.attendance.settings;
 
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.down.Services;
-import com.gluonhq.charm.down.plugins.DirectoryService;
-import com.gluonhq.charm.glisten.control.TextField;
+import com.gluonhq.charm.down.plugins.StorageService;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -25,6 +25,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -64,6 +65,7 @@ public class SettingsController extends View {
 
     private FXMLLoader fxml;
     private File file;
+    private ExceptionDialog dialog;
 
     public SettingsController() {
         fxml = Fxml.getSettingsFxml();
@@ -78,8 +80,12 @@ public class SettingsController extends View {
 
     @FXML
     private void initialize() {
-        Services.get(DirectoryService.class).ifPresent(c -> {
-            file = new File(c + "settings.sys");
+        dialog = SystemUtils.getDialog();
+        Services.get(StorageService.class).ifPresent(c -> {
+            c.getPrivateStorage().ifPresent(cx -> {
+                file = new File(cx.getAbsolutePath() + "/settings.sys");
+            });
+
         });
         back.setOnAction(this::back);
         save.setOnAction(this::save);
@@ -100,8 +106,9 @@ public class SettingsController extends View {
                 fout = new FileOutputStream(file);
                 prop.store(fout, null);
                 fout.close();
+                dialog.showSuccess(this, "Settings Saved Successfully");
             } else {
-
+                dialog.showSuccess(this, "Passwords Doesn't Match");
             }
         } catch (IOException ex) {
             Logger.getLogger(SettingsController.class.getName()).log(Level.SEVERE, null, ex);
@@ -132,6 +139,12 @@ public class SettingsController extends View {
     }
 
     private void back(ActionEvent evt) {
-        SystemUtils.getApplication().switchView(AppView.SPLASH_VIEW);
+        SystemUtils.getApplication().switchView(AppView.HOME);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+
 }

@@ -12,7 +12,6 @@ import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -25,6 +24,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
 /**
@@ -32,8 +32,7 @@ import javafx.scene.paint.Color;
  * @author pc
  */
 public class LoginController extends View {
-    
-    
+
     @FXML
     private Label department;
 
@@ -54,7 +53,7 @@ public class LoginController extends View {
 
     @FXML
     private JFXButton back;
-    
+
     private FXMLLoader fxml;
     private String type;
     private LoginService service;
@@ -71,30 +70,32 @@ public class LoginController extends View {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     private void initialize() {
         dialog = SystemUtils.getDialog();
         back.setOnAction(this::back);
-        this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, e->{
+        this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, e -> {
             SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW);
         });
-        
-        service = (LoginService) SystemUtils.getContext().getBean("loginservice");
-        login.setOnAction(this::login);
-        
+
         department.setText("Department: " + SystemUtils.getDepartment());
         usertype.setText("User Type: " + type);
+
+        service = (LoginService) SystemUtils.getContext().getBean("loginservice");
+        service.setParent(this);
+        login.setOnAction(this::login);
+
     }
-    
+
     private void back(ActionEvent evt) {
-        SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW);       
+        SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW);
     }
-    
-    private void login(ActionEvent evt){
+
+    private void login(ActionEvent evt) {
         SystemUtils.setType(type);
         boolean log = service.login(username.getText(), password.getText(), type);
-        if(log) {
+        if (log) {
             status.setText("Login Success");
             status.setTextFill(Color.GREEN);
             SystemUtils.setUser(service.findByUsernameDepartmentType(username.getText(), SystemUtils.getDepartment(), type));
@@ -104,19 +105,20 @@ public class LoginController extends View {
             status.setTextFill(Color.RED);
         }
     }
-    
+
     private void redirect() {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                byte count = 3;
-                while(count!= 0){
-                    final byte abc = count;
-                    Platform.runLater(()->status.setText("Dashboard in "+ abc+" Sec."));
-                    count--;
+                for (int i = 1; i <= 3; i++) {
+                    final int abc = i;
+                    Platform.runLater(() -> status.setText("Dashboard in " + abc + " Sec."));
+
                     Thread.sleep(700);
                 }
-                SystemUtils.getApplication().switchView(AppView.DASHBOARD_VIEW);
+                Platform.runLater(() -> {
+                    SystemUtils.getApplication().switchView(AppView.DASHBOARD_VIEW);
+                });
                 return null;
             }
         };
@@ -128,6 +130,5 @@ public class LoginController extends View {
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);
     }
-    
-    
+
 }

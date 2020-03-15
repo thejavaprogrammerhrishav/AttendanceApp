@@ -24,10 +24,4 @@ public class AndroidDirectoryService implements DirectoryService {
         return Arrays.asList(dirs).stream().map(File::getAbsolutePath).map(p->p.substring(0,p.indexOf("Android"))).collect(Collectors.toList());
 
     }
-
-    @Override
-    public String privateDirectory() {
-       return "";
-    }
-
 }

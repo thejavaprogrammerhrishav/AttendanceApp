@@ -8,6 +8,7 @@ package com.attendance.splash;
 import com.attendance.util.AppView;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -42,12 +43,18 @@ public class AboutUsController extends View{
     }
     
     @FXML
-    private void intialize() {
+    private void initialize() {
         back.setOnAction(this::back);
     }
     
     private void back(ActionEvent evt) {
-        SystemUtils.getApplication().switchView(AppView.SPLASH_VIEW);
+        SystemUtils.getApplication().switchView(AppView.HOME);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
     
 }
