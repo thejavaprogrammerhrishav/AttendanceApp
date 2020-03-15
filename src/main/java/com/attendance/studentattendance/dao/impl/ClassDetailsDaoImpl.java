@@ -5,11 +5,12 @@
  */
 package com.attendance.studentattendance.dao.impl;
 
-
 import com.attendance.student.attendance.model.ClassDetails;
 import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.studentattendance.dao.ClassDetailsDao;
+import com.attendance.util.CDUtils;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.transaction.annotation.Transactional;
@@ -173,28 +174,32 @@ public class ClassDetailsDaoImpl implements ClassDetailsDao {
 
     @Override
     public List<ClassDetails> findAll(String department, String acadamicYear, String semester, int year, String papercode, String coursetype) {
-        return (List<ClassDetails>) hibernateTemplate.find("from ClassDetails where department=? and acadamicyear=? and semester=? and year=? and paper=? and coursetype=?", department,acadamicYear,semester,year,papercode,coursetype);
+        return (List<ClassDetails>) hibernateTemplate.find("from ClassDetails where department=? and acadamicyear=? and semester=? and year=? and paper=? and coursetype=?", department, acadamicYear, semester, year, papercode, coursetype);
     }
 
     @Override
     @Transactional
     public boolean updateClassId(String oldId, String newId) {
         jdbcTemplate.update("set foreign_key_checks=0");
-        int p =jdbcTemplate.update("update classdetails set classId ='"+newId+"' where classId ='"+oldId+"'");
-        int c =jdbcTemplate.update("update attendance set classId ='"+newId+"' where classId ='"+oldId+"'");
+        int p = jdbcTemplate.update("update classdetails set classId ='" + newId + "' where classId ='" + oldId + "'");
+        int c = jdbcTemplate.update("update attendance set classId ='" + newId + "' where classId ='" + oldId + "'");
         jdbcTemplate.update("set foreign_key_checks=1");
-        System.out.println("p="+p);
-        System.out.println("c="+c);
-        return (p==1) && (c>0);
+        System.out.println("p=" + p);
+        System.out.println("c=" + c);
+        return (p == 1) && (c > 0);
     }
 
     @Override
+    @Transactional
     public List<MyClassDetails> findAllFiltered() {
-           return (List<MyClassDetails>) hibernateTemplate.findByNamedParam("select new com.attendance.student.attendance.model.MyClassDetails(classId,facultyName,subjectTaught,date,time,semester,year,paper,academicyear,department,coursetype) from ClassDetails", "", null);
+        List<ClassDetails> all = findAll();
+        return all.stream().map(CDUtils::getDetails).collect(Collectors.toList());
     }
-    
+
     @Override
+    @Transactional
     public List<MyClassDetails> findByDepartmentFiltered(String department) {
-           return (List<MyClassDetails>) hibernateTemplate.findByNamedParam("select new com.attendance.student.attendance.model.MyClassDetails(classId,facultyName,subjectTaught,date,time,semester,year,paper,academicyear,department,coursetype) from ClassDetails where department = :department", "department", department);
+        List<ClassDetails> all = findByDepartment(department);
+        return all.stream().map(CDUtils::getDetails).collect(Collectors.toList());
     }
 }

@@ -14,7 +14,6 @@ import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.attendance.util.ValidationUtils;
-import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;

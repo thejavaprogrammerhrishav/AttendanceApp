@@ -63,7 +63,10 @@ public class ViewStudentNodeController extends AnchorPane {
     }
     
     private void view(ActionEvent evt) {
-        ViewStudentDetailsController.show(student);
+        System.out.println("View ........................");
+        SystemUtils.getApplication().removeViewFactory("StudentDetails");
+        SystemUtils.getApplication().addViewFactory("StudentDetails", () -> new ViewStudentDetailsController(student));
+        SystemUtils.getApplication().switchView("StudentDetails");
     }
     
     public Student getStudent() {

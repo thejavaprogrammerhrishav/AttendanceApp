@@ -11,7 +11,6 @@ import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.Dialog;
-import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
@@ -20,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -56,11 +56,10 @@ public class ViewStudentDetailsController extends View {
 
     private FXMLLoader fxml;
     private Student student;
-    
-    private static Dialog<Void> dialog;
+
     private ExceptionDialog exdialog;
 
-    protected ViewStudentDetailsController(Student student) {
+    public ViewStudentDetailsController(Student student) {
         this.student = student;
         fxml = Fxml.getViewStudentsDetailsFxml();
         fxml.setController(this);
@@ -77,30 +76,22 @@ public class ViewStudentDetailsController extends View {
         exdialog = SystemUtils.getDialog();
         studentname.setText(student.getName());
         contact.setText(student.getContact());
-        rollno.setText(""+student.getRollno());
+        rollno.setText("" + student.getRollno());
         acadamicyear.setText(student.getAcadamicyear());
-        yearofadmission.setText(""+student.getYear());
+        yearofadmission.setText("" + student.getYear());
         coursetype.setText(student.getCourseType());
-        if(student.getGender().equalsIgnoreCase("Male")) {
+        if (student.getGender().equalsIgnoreCase("Male")) {
             male.setSelected(true);
-        }else {
+        } else {
             female.setSelected(true);
         }
-        
-        close.setOnAction(e->dialog.hide());
-    }
-    
-    public static void show(Student student) {
-        dialog = new Dialog<>(true);
-        dialog.setContent(new ViewStudentDetailsController(student));
-        dialog.showAndWait();
+
+        close.setOnAction(e -> SystemUtils.getApplication().switchToPreviousView());
     }
 
     @Override
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);
     }
-    
-    
 
 }

@@ -24,6 +24,7 @@ import static com.attendance.util.AppView.SELECT_LOGIN_VIEW;
 import static com.attendance.util.AppView.SETTINGS_VIEW;
 import static com.attendance.util.AppView.STUDENT_DETAILS_VIEW;
 import static com.attendance.util.AppView.UPLOAD_NOTES_VIEW;
+import com.attendance.util.ImageUtils;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.DirectoryService;
@@ -51,6 +52,7 @@ public class Start extends MobileApplication {
 
     @Override
     public void init() throws Exception {
+        ImageUtils.init();
         SystemUtils.init();
         loadSettings();
         SystemUtils.setApplication(this);

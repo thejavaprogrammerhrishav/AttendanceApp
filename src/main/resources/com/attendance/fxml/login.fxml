@@ -40,7 +40,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/login.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/login.css" type="View" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane BorderPane.alignment="CENTER">
          <children>
@@ -49,8 +49,8 @@
             <Label fx:id="usertype" layoutX="20.0" layoutY="100.0" styleClass="head3" text="User Type: HOD" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <Label layoutX="20.0" layoutY="145.0" prefHeight="44.0" prefWidth="105.0" styleClass="head2" text="Login" AnchorPane.leftAnchor="20.0" />
             <Label layoutX="20.0" layoutY="197.0" styleClass="head3" text="Please login with your credentials to access the features" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <TextField fx:id="username" layoutX="20.0" layoutY="251.0" prefHeight="44.0" prefWidth="295.0" promptText="Enter Username" styleClass="txt" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <PasswordField fx:id="password" layoutX="20.0" layoutY="317.0" prefHeight="44.0" prefWidth="295.0" promptText="Enter Password" styleClass="pwd" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <TextField fx:id="username" layoutX="20.0" layoutY="251.0" prefHeight="44.0" prefWidth="295.0" promptText="Enter Username" styleClass="txt" text="cshod" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <PasswordField fx:id="password" layoutX="20.0" layoutY="317.0" prefHeight="44.0" prefWidth="295.0" promptText="Enter Password" styleClass="pwd" text="Principal@123" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <Label fx:id="status" alignment="CENTER" layoutX="20.0" layoutY="401.0" styleClass="result" text="You Account Status Is Not Active" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <JFXButton fx:id="login" buttonType="RAISED" layoutX="20.0" layoutY="450.0" prefHeight="50.0" prefWidth="295.0" ripplerFill="BLACK" styleClass="login" text="Login to my account" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <JFXButton fx:id="back" buttonType="RAISED" layoutX="20.0" layoutY="521.0" prefHeight="46.0" prefWidth="295.0" ripplerFill="BLACK" styleClass="back" text="Back" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />

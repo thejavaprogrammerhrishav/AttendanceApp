@@ -12,10 +12,8 @@ import com.attendance.util.AppView;
 import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
-import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -28,8 +26,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeField;
 import org.joda.time.format.DateTimeFormat;
 
 /**
@@ -118,7 +116,9 @@ public class LoadStudentController extends View {
         d.setSubject(subject.getText());
         d.setTime(classtime.getValue().format(DateTimeFormatter.ofPattern("hh : mm : ss a")));
         
-        
+        SystemUtils.getApplication().removeViewFactory("attendance");
+        SystemUtils.getApplication().addViewFactory("attendance",()->new UpdateAttendanceController(d));
+        SystemUtils.getApplication().switchView("attendance");
         
     }
 

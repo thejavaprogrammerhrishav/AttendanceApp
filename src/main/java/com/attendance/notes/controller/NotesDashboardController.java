@@ -5,7 +5,6 @@
  */
 package com.attendance.notes.controller;
 
-import com.attendance.file.chooser.controller.util.FileChooserUtils;
 import static com.attendance.file.chooser.controller.util.FileChooserUtils.IMAGE_FORMATS;
 import com.attendance.notes.model.Notes;
 import com.attendance.notes.service.NotesService;
@@ -14,7 +13,6 @@ import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -26,7 +24,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.TextField;
 
 /**
  *

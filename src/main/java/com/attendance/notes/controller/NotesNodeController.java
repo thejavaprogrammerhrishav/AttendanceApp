@@ -102,6 +102,7 @@ public class NotesNodeController extends AnchorPane{
     
     private void proceed(ActionEvent evt){
         consumer.accept(notes);
+        SystemUtils.getApplication().switchToPreviousView();
     }
     
 }

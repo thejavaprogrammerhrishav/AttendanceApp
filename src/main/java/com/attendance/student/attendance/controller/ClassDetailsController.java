@@ -69,7 +69,12 @@ public class ClassDetailsController extends View {
     private void initialize() {
         dialog = SystemUtils.getDialog();
         service = (AttendanceService) SystemUtils.getContext().getBean("attendanceservice");
-        load((ActionEvent)null); 
+        service.setParent(this);
+        
+        department.setText(SystemUtils.getDepartment());
+        
+        load(new ActionEvent()); 
+        
         refresh.setOnAction(this::load);
         filter.setOnAction(this::filter);
         back.setOnAction(this::back);
@@ -78,7 +83,7 @@ public class ClassDetailsController extends View {
     private void load(ActionEvent evt) {
         List<MyClassDetails> all = service.findByDepartmentFiltered(SystemUtils.getDepartment());
         List<ClassDetailsNodeController> nodes = all.stream().map(m->{
-            ClassDetailsNodeController cd = new ClassDetailsNodeController(m, this);
+            ClassDetailsNodeController cd = new ClassDetailsNodeController(m, ClassDetailsController.this);
             return cd;
         }).collect(Collectors.toList());
         load(nodes);

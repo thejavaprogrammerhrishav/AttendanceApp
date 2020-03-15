@@ -6,11 +6,6 @@
 package com.attendance.file.chooser.controller;
 
 import com.attendance.file.chooser.controller.util.FileChooserUtils;
-import static com.attendance.file.chooser.controller.util.FileChooserUtils.ALL;
-import static com.attendance.file.chooser.controller.util.FileChooserUtils.AUDIO;
-import static com.attendance.file.chooser.controller.util.FileChooserUtils.IMAGE;
-import static com.attendance.file.chooser.controller.util.FileChooserUtils.PDF;
-import static com.attendance.file.chooser.controller.util.FileChooserUtils.VIDEO;
 import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;

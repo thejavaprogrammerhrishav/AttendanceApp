@@ -13,29 +13,17 @@ import org.hibernate.validator.constraints.Range;
  * @author pc
  */
 public class MyClassDetails {
-    
-    
-    
+
     private String classId;
-   
     private String facultyName;
-    
     private String subjectTaught;
-    
     private String date;
-    
     private String time;
-    
     private String semester;
-    
     private int year;
-    
     private String paper;
-    
     private String acadamicyear;
-    
     private String department;
-    
     private String coursetype;
 
     public MyClassDetails() {
@@ -142,6 +130,5 @@ public class MyClassDetails {
     public void setCoursetype(String coursetype) {
         this.coursetype = coursetype;
     }
-    
-    
+
 }

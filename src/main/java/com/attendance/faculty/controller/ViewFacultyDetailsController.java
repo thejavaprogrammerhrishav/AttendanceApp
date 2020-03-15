@@ -10,8 +10,6 @@ import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.Dialog;
-import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
@@ -20,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -53,10 +52,9 @@ public class ViewFacultyDetailsController extends View {
 
     private FXMLLoader fxml;
     private User user;
-    private static Dialog<Void> dialog;
     private ExceptionDialog exdialog;
     
-    protected ViewFacultyDetailsController(User user) {
+    public ViewFacultyDetailsController(User user) {
         this.user = user;
         fxml = Fxml.getVIewFacultyDetailsFxml();
         fxml.setController(this);
@@ -81,15 +79,9 @@ public class ViewFacultyDetailsController extends View {
             female.setSelected(true);
         }
         
-        close.setOnAction(e->dialog.hide());
+        close.setOnAction(e->SystemUtils.getApplication().switchToPreviousView());
     }
     
-    public static void show(User user) {
-        dialog = new Dialog<>(true);
-        dialog.setContent(new ViewFacultyDetailsController(user));
-        dialog.showAndWait();
-    }
-
     @Override
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);

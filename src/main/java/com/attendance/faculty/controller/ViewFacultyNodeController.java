@@ -25,20 +25,20 @@ import javafx.scene.layout.AnchorPane;
  * @author pc
  */
 public class ViewFacultyNodeController extends AnchorPane {
-    
+
     @FXML
     private ImageView image;
-    
+
     @FXML
     private Label name;
-    
+
     @FXML
     private Label department;
-    
+
     private FXMLLoader fxml;
     private User user;
     private ExceptionDialog dialog;
-    
+
     public ViewFacultyNodeController(User user) {
         this.user = user;
         fxml = Fxml.getViewFacultyNodeFxml();
@@ -50,17 +50,19 @@ public class ViewFacultyNodeController extends AnchorPane {
             Logger.getLogger(ViewFacultyNodeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     private void initialize() {
         dialog = SystemUtils.getDialog();
         name.setText(user.getDetails().getName());
         department.setText(user.getDepartment());
         image.setImage(new Image(new ByteArrayInputStream(user.getImage())));
-        
-        image.setOnMouseClicked(e->{
-            
+
+        image.setOnMouseClicked(e -> {
+            SystemUtils.getApplication().removeViewFactory("FacultyDetails");
+            SystemUtils.getApplication().addViewFactory("FacultyDetails", () -> new ViewFacultyDetailsController(user));
+            SystemUtils.getApplication().switchView("FacultyDetails");
         });
     }
-    
+
 }

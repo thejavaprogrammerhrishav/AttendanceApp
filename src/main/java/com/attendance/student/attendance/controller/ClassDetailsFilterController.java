@@ -7,7 +7,6 @@ package com.attendance.student.attendance.controller;
 
 import com.attendance.papers.model.Paper;
 import com.attendance.papers.service.PapersService;
-import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.student.service.StudentService;
 import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;

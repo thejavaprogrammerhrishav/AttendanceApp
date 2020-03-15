@@ -62,6 +62,9 @@ public class UpdateAttendanceController extends View{
     @FXML
     private JFXButton back;
     
+    @FXML
+    private JFXButton load;
+    
     private FXMLLoader fxml;
     private Details details;
     private PapersService service;
@@ -109,9 +112,10 @@ public class UpdateAttendanceController extends View{
         
         back.setOnAction(this::back);
         update.setOnAction(this::update);
+        load.setOnAction(this::load);
     }
     
-    private void load() {
+    private void load(ActionEvent evt) {
         List<Student> list = studentService.findByDepartment(details.getDepartment());
         List<Student> students = list.stream().filter(f->f.getYear()== Integer.parseInt(details.getYear())).filter(f->f.getAcadamicyear().equals(details.getAcademicyear()))
                 .filter(f->f.getCourseType().equals(details.getCoursetype())).collect(Collectors.toList());
@@ -130,7 +134,7 @@ public class UpdateAttendanceController extends View{
         if(t.contains("PM")) {
             t = t.replace(" PM", "");
         }
-        DateTime parse = DateTime.parse(details.getDate(),DateTimeFormat.forPattern("EEEEE dd MMMMM yyyy"));
+        DateTime parse = DateTime.parse(details.getDate(),DateTimeFormat.forPattern("EEEEE, dd MMMMM yyyy"));
         String classid = details.getDepartment()+"/"+parse.toString(DateTimeFormat.forPattern("dd-MM-yyyy"))
                 +"@"+t+"#"+details.getAcademicyear()+"__"+semester.getSelectionModel().getSelectedItem()
                 +"_"+details.getYear()+"&"+details.getCoursetype().charAt(0);

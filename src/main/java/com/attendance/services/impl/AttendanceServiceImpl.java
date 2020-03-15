@@ -225,10 +225,10 @@ public class AttendanceServiceImpl implements AttendanceService {
         try {
             return dao.findByDepartmentFiltered(department);
         } catch (Exception e) {
-            ex.showError(parent, ExceptionConverter.getException(e));
-
-            return new ArrayList<>();
+            System.out.println(e==null);
+            ex.showError(parent, ExceptionConverter.getException(e));   
         }
+        return new ArrayList<>();
     }
 
     @Override

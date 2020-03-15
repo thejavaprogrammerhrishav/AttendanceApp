@@ -145,6 +145,9 @@ public class DashboardController extends View {
             SystemUtils.getApplication().switchView(AppView.CLASS_DETAILS_VIEW);
         });
 
+        update.setOnAction(e->{
+             SystemUtils.getApplication().switchView(AppView.ATTENDANCE_VIEW);
+        });
     }
 
     private void timer() {
@@ -189,7 +192,4 @@ public class DashboardController extends View {
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);
     }
-    
-    
-
 }

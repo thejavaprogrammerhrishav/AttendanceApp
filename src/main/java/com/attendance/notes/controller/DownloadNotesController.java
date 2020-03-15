@@ -7,7 +7,6 @@ package com.attendance.notes.controller;
 
 import com.attendance.file.chooser.controller.FileChooserController;
 import com.attendance.file.chooser.controller.util.FileChooserUtils;
-import static com.attendance.notes.controller.UploadNotesController.parent;
 import com.attendance.notes.model.Notes;
 import com.attendance.notes.service.NotesService;
 import com.attendance.util.AppView;
@@ -16,10 +15,8 @@ import com.attendance.util.Fxml;
 import com.attendance.util.ImageUtils;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -29,6 +26,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 /**
@@ -99,9 +97,9 @@ public class DownloadNotesController extends View {
     }
 
     private void browse(ActionEvent evt) {
-        SystemUtils.getApplication().removeViewFactory("download notes");
-        SystemUtils.getApplication().addViewFactory("download notes", () -> new NotesController(c -> load(c), 1));
-        SystemUtils.getApplication().switchView("download notes");
+        SystemUtils.getApplication().removeViewFactory("downloadnotes");
+        SystemUtils.getApplication().addViewFactory("downloadnotes", () -> new NotesController(c -> load(c), 1));
+        SystemUtils.getApplication().switchView("downloadnotes");
     }
 
     private void pathbrowse(ActionEvent evt) {

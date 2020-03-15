@@ -11,6 +11,8 @@ package com.attendance.util;
  */
 public class ExceptionConverter {
     public static String getException(Exception ex) {
+        ex.printStackTrace();
+        System.out.println("Exception......................... "+(ex.getMessage()==null));
         if(ex.getMessage().contains("ConstraintViolationException")) {
             return "Data Already Exists";
         }else if(ex.getMessage().contains("JDBCConnectionException")) {

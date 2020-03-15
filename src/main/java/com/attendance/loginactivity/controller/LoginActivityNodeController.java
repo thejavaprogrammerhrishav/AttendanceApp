@@ -25,8 +25,8 @@ import javafx.scene.layout.AnchorPane;
  */
 public class LoginActivityNodeController extends AnchorPane {
 
-    private static final Image ACTIVE = new Image(LoginActivityNodeController.class.getResourceAsStream("/com/attendance/fxml/images/thumbs-up-icon-66.png"));
-    private static final Image NOT_ACTIVE = new Image(LoginActivityNodeController.class.getResourceAsStream("/com/attendance/fxml/images/icons8-cancel-100.png"));
+    private static final Image ACTIVE = new Image(LoginActivityNodeController.class.getResourceAsStream("/com/attendance/images/success.png"));
+    private static final Image NOT_ACTIVE = new Image(LoginActivityNodeController.class.getResourceAsStream("/com/attendance/images/fail.png"));
 
     @FXML
     private Label name;

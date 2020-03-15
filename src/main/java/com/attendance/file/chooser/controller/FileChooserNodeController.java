@@ -5,7 +5,6 @@
  */
 package com.attendance.file.chooser.controller;
 
-import com.attendance.file.chooser.controller.util.FileChooserUtils;
 import static com.attendance.file.chooser.controller.util.FileChooserUtils.VIDEO_FORMATS;
 import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
