@@ -183,4 +183,12 @@ public class Fxml {
         return new FXMLLoader(Fxml.class.getResource(path+"completeclassdetails.fxml"));
     }
     
+    public static FXMLLoader getSettingsFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"serversettings.fxml"));
+    }
+    
+    public static FXMLLoader getAboutUsFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"aboutus.fxml"));
+    }
+    
 }

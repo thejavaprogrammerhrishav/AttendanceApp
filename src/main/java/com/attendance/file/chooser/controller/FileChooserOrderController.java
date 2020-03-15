@@ -5,7 +5,10 @@
  */
 package com.attendance.file.chooser.controller;
 
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -34,6 +37,8 @@ public class FileChooserOrderController extends View {
 
     private FileChooserController controller;
     private Runnable r;
+    
+    private ExceptionDialog dialog;
 
     public FileChooserOrderController(FileChooserController controller,Runnable r) {
         this.controller = controller;
@@ -50,6 +55,7 @@ public class FileChooserOrderController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         name.setOnAction(this::name);
         modified.setOnAction(this::modified);
         size.setOnAction(this::size);
@@ -69,5 +75,12 @@ public class FileChooserOrderController extends View {
        controller.order("size");
         r.run();
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

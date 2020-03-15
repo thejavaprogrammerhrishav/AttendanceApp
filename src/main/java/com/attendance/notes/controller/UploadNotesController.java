@@ -10,10 +10,12 @@ import com.attendance.file.chooser.controller.util.FileChooserUtils;
 import com.attendance.notes.model.Notes;
 import com.attendance.notes.service.NotesService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -70,6 +72,7 @@ public class UploadNotesController extends View {
 
     private NotesService service;
     public static String parent;
+    private ExceptionDialog dialog;
 
     public UploadNotesController() {
         fxml = Fxml.getUploadNotesFxml();
@@ -84,6 +87,7 @@ public class UploadNotesController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (NotesService) SystemUtils.getContext().getBean("notesservice");
 
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, this::back);
@@ -147,9 +151,9 @@ public class UploadNotesController extends View {
                 notes.setUploadDate(DateTime.now().toString(DateTimeFormat.forPattern("dd-MM-yyyy")));
                 Integer saveNotes = service.saveNotes(notes);
                 if(saveNotes>0) {
-                    
+                    dialog.showSuccess(this,"Notes Uploaded Successfully");
                 }else {
-                    
+                    dialog.showError(this,"Notes Upload Failed");
                 }
             } catch (IOException ex) {
                 Logger.getLogger(UploadNotesController.class.getName()).log(Level.SEVERE, null, ex);
@@ -171,5 +175,12 @@ public class UploadNotesController extends View {
             SystemUtils.getApplication().switchView(AppView.NOTES_DASHBOARD_VIEW);
         }
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

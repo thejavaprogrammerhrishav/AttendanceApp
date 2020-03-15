@@ -7,12 +7,14 @@ package com.attendance.login.forgot;
 
 import com.attendance.user.service.LoginService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.Password;
 import com.attendance.util.SystemUtils;
 import com.attendance.util.ValidationUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -60,6 +62,8 @@ public class ResetPasswordController extends View{
     
     private FXMLLoader fxml;
     private LoginService service;
+    
+    private ExceptionDialog dialog;
 
     public ResetPasswordController() {
         fxml = Fxml.getResetPasswordFxml();
@@ -75,6 +79,7 @@ public class ResetPasswordController extends View{
     
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service =  (LoginService) SystemUtils.getContext().getBean("loginservice");
         department.setText(SystemUtils.getDepartment());
         usertype.setText(SystemUtils.getUser().getType());
@@ -119,6 +124,7 @@ public class ResetPasswordController extends View{
                     SystemUtils.getApplication().removeViewFactory("Password Result");
                     SystemUtils.getApplication().addViewFactory("Password Result", ()->new ResetPasswordResultController("Success"));
                     SystemUtils.getApplication().switchView("Password Result");
+                    
                 }else {
                     SystemUtils.getApplication().removeViewFactory("Password Result");
                     SystemUtils.getApplication().addViewFactory("Password Result", ()->new ResetPasswordResultController("Failed"));
@@ -126,12 +132,12 @@ public class ResetPasswordController extends View{
                 }
             }else {
                 validate.stream().forEach(c->{
-                    
+                    dialog.showError(this, c.getMessage());
                 });
             }
         }
         else {
-            
+            dialog.showError(this, "Passwords doesn't match");
         }
     }
     
@@ -142,5 +148,13 @@ public class ResetPasswordController extends View{
             SystemUtils.getApplication().switchView(AppView.FORGOT_PASSWORD_VIEW);
         }
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+
+        appBar.setVisible(false);
+    }
+    
+    
     
 }

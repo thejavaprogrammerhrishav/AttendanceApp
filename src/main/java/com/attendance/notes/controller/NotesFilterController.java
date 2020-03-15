@@ -5,7 +5,10 @@
  */
 package com.attendance.notes.controller;
 
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -67,6 +70,7 @@ public class NotesFilterController extends View {
     
     private NotesController controller;
     private Runnable run;
+    private ExceptionDialog dialog;
     
 
     public NotesFilterController(NotesController controller,Runnable run) {
@@ -84,6 +88,7 @@ public class NotesFilterController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         uploader.disableProperty().bind(filterbyuname.selectedProperty().not());
         date.disableProperty().bind(filterbydate.selectedProperty().not());
         filename.disableProperty().bind(filterbyfname.selectedProperty().not());
@@ -129,5 +134,12 @@ public class NotesFilterController extends View {
            controller.image();
            run.run();
        }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+       
+       
  
 }

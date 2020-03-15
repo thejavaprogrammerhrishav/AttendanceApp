@@ -5,7 +5,10 @@
  */
 package com.attendance.file.chooser.controller;
 
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.File;
@@ -35,6 +38,7 @@ public class FileChooserViewController extends View {
 
     private FileChooserController controller;
     private Runnable r;
+    private ExceptionDialog dialog;
 
     public FileChooserViewController(FileChooserController controller, Runnable r) {
         this.controller = controller;
@@ -51,6 +55,7 @@ public class FileChooserViewController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         all.setOnAction(this::all);
         showfolder.setOnAction(this::showfolder);
         showfiles.setOnAction(this::showfiles);
@@ -73,5 +78,12 @@ public class FileChooserViewController extends View {
         controller.refresh(new File(controller.path()));
         r.run();
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

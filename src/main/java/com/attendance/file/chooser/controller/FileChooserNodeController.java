@@ -7,6 +7,7 @@ package com.attendance.file.chooser.controller;
 
 import com.attendance.file.chooser.controller.util.FileChooserUtils;
 import static com.attendance.file.chooser.controller.util.FileChooserUtils.VIDEO_FORMATS;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.ImageUtils;
 import com.attendance.util.ImageUtils.Icons;
@@ -42,6 +43,7 @@ public class FileChooserNodeController extends AnchorPane {
     private Label date;
 
     private FXMLLoader fxml;
+    private ExceptionDialog dialog;
 
     private FileChooserController controller;
     private String path;
@@ -66,6 +68,7 @@ public class FileChooserNodeController extends AnchorPane {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         FileChooserNodeController.this.setStyle("-fx-background-color: transparent;");
         String path = controller.path() + "/" + this.path;
         lastModified = new File(path).lastModified();
@@ -152,4 +155,6 @@ public class FileChooserNodeController extends AnchorPane {
         FileChooserNodeController.this.date.setStyle("-fx-text-fill: lime; -fx-font-size: 12px;");
         FileChooserNodeController.this.size.setStyle("-fx-text-fill: lime; -fx-font-size: 12px;");
     }
+    
+    
 }

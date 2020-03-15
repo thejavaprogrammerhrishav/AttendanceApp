@@ -6,8 +6,10 @@
 package com.attendance.login.forgot;
 
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -53,6 +55,7 @@ public class ResetPasswordResultController extends View {
 
     private FXMLLoader fxml;
     private String type;
+    private ExceptionDialog dialog;
 
     public ResetPasswordResultController(String type) {
         this.type = type;
@@ -68,6 +71,7 @@ public class ResetPasswordResultController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         department.setText(SystemUtils.getDepartment());
         usertype.setText(SystemUtils.getType());
 
@@ -97,4 +101,11 @@ public class ResetPasswordResultController extends View {
             SystemUtils.getApplication().switchView(AppView.RESET_PASSWORD_VIEW);
         }
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+        
 }

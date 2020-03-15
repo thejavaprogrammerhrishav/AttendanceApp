@@ -6,10 +6,12 @@
 package com.attendance.user.controller;
 
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -60,6 +62,7 @@ public class ProfileController extends View {
     private ImageView image;
 
     private FXMLLoader fxml;
+    private ExceptionDialog dialog;
 
     public ProfileController() {
         fxml = Fxml.getProfileFxml();
@@ -74,6 +77,7 @@ public class ProfileController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         name.setText(SystemUtils.getUser().getDetails().getName());
         contact.setText(SystemUtils.getUser().getDetails().getContact());
         email.setText(SystemUtils.getUser().getDetails().getEmailId());
@@ -99,4 +103,10 @@ public class ProfileController extends View {
         SystemUtils.getApplication().switchView(AppView.DASHBOARD_VIEW);
     }
 
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+
+    
 }

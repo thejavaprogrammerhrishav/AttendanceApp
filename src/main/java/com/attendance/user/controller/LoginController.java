@@ -7,9 +7,11 @@ package com.attendance.user.controller;
 
 import com.attendance.user.service.LoginService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -56,6 +58,7 @@ public class LoginController extends View {
     private FXMLLoader fxml;
     private String type;
     private LoginService service;
+    private ExceptionDialog dialog;
 
     public LoginController(String type) {
         this.type = type;
@@ -71,6 +74,7 @@ public class LoginController extends View {
     
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         back.setOnAction(this::back);
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, e->{
             SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW);
@@ -119,4 +123,11 @@ public class LoginController extends View {
         Thread t = new Thread(task);
         t.start();
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 }

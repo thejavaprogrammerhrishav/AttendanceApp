@@ -6,7 +6,9 @@
 package com.attendance.student.attendance.controller;
 
 import com.attendance.student.model.Student;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
 import com.jfoenix.controls.JFXCheckBox;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -38,6 +40,7 @@ public class AttendanceNodeController extends AnchorPane{
     private FXMLLoader fxml;
     
     private Student student;
+    private ExceptionDialog dialog;
 
     public AttendanceNodeController(Student student) {
         this.student = student;
@@ -53,6 +56,7 @@ public class AttendanceNodeController extends AnchorPane{
     
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         name.setText(student.getName());
         rollno.setText(""+student.getRollno());
         present.selectedProperty().addListener((ol,o,n)-> {

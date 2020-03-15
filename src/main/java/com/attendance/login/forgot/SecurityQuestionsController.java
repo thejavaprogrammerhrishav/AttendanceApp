@@ -7,10 +7,12 @@ package com.attendance.login.forgot;
 
 import com.attendance.user.model.SecurityQuestion;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -62,6 +64,8 @@ public class SecurityQuestionsController extends View {
     private Label faculty;
 
     private FXMLLoader fxml;
+    
+    private ExceptionDialog dialog;
 
     public SecurityQuestionsController() {
         fxml = Fxml.getSecurityQuestionsFxml();
@@ -76,6 +80,7 @@ public class SecurityQuestionsController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         question1.getItems().setAll(getQuestions1());
         question2.getItems().setAll(getQuestion2());
         question3.getItems().setAll(getQuestion3());
@@ -183,4 +188,11 @@ public class SecurityQuestionsController extends View {
         }
 
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 }

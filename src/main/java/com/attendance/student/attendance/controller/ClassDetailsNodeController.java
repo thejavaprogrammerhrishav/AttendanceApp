@@ -7,6 +7,7 @@ package com.attendance.student.attendance.controller;
 
 import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.jfoenix.controls.JFXButton;
@@ -43,6 +44,7 @@ public class ClassDetailsNodeController extends AnchorPane {
     private FXMLLoader fxml;
     private MyClassDetails details;
     private ClassDetailsController controller;
+    private ExceptionDialog dialog;
 
     public ClassDetailsNodeController(MyClassDetails details,ClassDetailsController controller) {
         this.details = details;
@@ -59,6 +61,7 @@ public class ClassDetailsNodeController extends AnchorPane {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         name.setText(details.getFacultyName());
         date.setText(details.getDate());
         semester.setText(details.getSemester());

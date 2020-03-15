@@ -6,7 +6,9 @@
 package com.attendance.faculty.controller;
 
 import com.attendance.user.model.User;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -35,6 +37,7 @@ public class ViewFacultyNodeController extends AnchorPane {
     
     private FXMLLoader fxml;
     private User user;
+    private ExceptionDialog dialog;
     
     public ViewFacultyNodeController(User user) {
         this.user = user;
@@ -50,6 +53,7 @@ public class ViewFacultyNodeController extends AnchorPane {
     
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         name.setText(user.getDetails().getName());
         department.setText(user.getDepartment());
         image.setImage(new Image(new ByteArrayInputStream(user.getImage())));

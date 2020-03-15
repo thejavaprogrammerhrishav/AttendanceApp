@@ -10,8 +10,10 @@ import static com.attendance.file.chooser.controller.util.FileChooserUtils.IMAGE
 import com.attendance.notes.model.Notes;
 import com.attendance.notes.service.NotesService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -61,6 +63,7 @@ public class NotesDashboardController extends View {
 
     private FXMLLoader fxml;
     private NotesService service;
+    private ExceptionDialog dialog;
 
     public NotesDashboardController() {
         fxml = Fxml.getNotesDashboardFxml();
@@ -75,6 +78,7 @@ public class NotesDashboardController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (NotesService) SystemUtils.getContext().getBean("notesservice");
         user.setText("User: " + SystemUtils.getUser().getDetails().getName());
         department.setText("Department: " + SystemUtils.getDepartment());
@@ -118,5 +122,12 @@ public class NotesDashboardController extends View {
         SystemUtils.getApplication().addViewFactory("download notes", () -> new NotesController(c -> {}, 0));
         SystemUtils.getApplication().switchView("download notes");
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

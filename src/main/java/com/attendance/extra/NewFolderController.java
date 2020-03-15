@@ -5,7 +5,9 @@
  */
 package com.attendance.extra;
 
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.control.Dialog;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -36,6 +38,7 @@ public class NewFolderController extends AnchorPane {
     private FXMLLoader fxml;
     private static String value;
     private static Dialog<String> dialog;
+    private ExceptionDialog exdialog;
 
     protected NewFolderController() {
         fxml = Fxml.getNewFolderFxml();
@@ -50,6 +53,7 @@ public class NewFolderController extends AnchorPane {
     
     @FXML
     private void initialize() {
+        exdialog = SystemUtils.getDialog();
         ok.setOnAction(this::ok);
         cancel.setOnAction(this::cancel);
     }

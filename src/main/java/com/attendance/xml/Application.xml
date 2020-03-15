@@ -14,10 +14,10 @@
     <bean id = "dialog" class = "com.attendance.util.ExceptionDialog"/>
     
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://192.168.1.10:3306/attendance"/>
-        <property name="username" value="hrishav"/>
-        <property name="password" value="hrishav"/>
+        <property name="driverClassName" value="${systemProperties['db.driver.class.name']}"/>
+        <property name="url" value="${systemProperties['db.url']}"/>
+        <property name="username" value="${systemProperties['db.username']}"/>
+        <property name="password" value="${systemProperties['db.password']}"/>
     </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">

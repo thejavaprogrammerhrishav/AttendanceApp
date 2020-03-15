@@ -8,10 +8,12 @@ package com.attendance.notes.controller;
 import com.attendance.notes.model.Notes;
 import com.attendance.notes.service.NotesService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -55,6 +57,7 @@ public class NotesController extends View {
     private Consumer<Notes> consumer;
     private int mode;
     private NotesService service;
+    private ExceptionDialog dialog;
 
     public NotesController(Consumer<Notes> consumer, int mode) {
         this.mode = mode;
@@ -71,6 +74,7 @@ public class NotesController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (NotesService) SystemUtils.getContext().getBean("notesservice");
         back.setOnAction(this::back);
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, this::back);
@@ -145,4 +149,11 @@ public class NotesController extends View {
         }).collect(Collectors.toList());
         set(collect);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 }

@@ -6,7 +6,9 @@
 package com.attendance.loginactivity.controller;
 
 import com.attendance.login.activity.model.LoginActivity;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,6 +48,7 @@ public class LoginActivityNodeController extends AnchorPane {
 
     private FXMLLoader fxml;
     private LoginActivity activity;
+    private ExceptionDialog dialog;
 
     public LoginActivityNodeController(LoginActivity activity) {
         this.activity = activity;
@@ -61,6 +64,7 @@ public class LoginActivityNodeController extends AnchorPane {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         name.setText(activity.getName());
         date.setText(activity.getLogindate());
         ttime.setText(activity.getLogintime());

@@ -9,10 +9,12 @@ import com.attendance.student.attendance.model.Details;
 import com.attendance.student.service.StudentService;
 import com.attendance.studentattendance.service.AttendanceService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -69,6 +71,7 @@ public class LoadStudentController extends View {
     private FXMLLoader fxml;
     private StudentService studentservice;
     private AttendanceService service;
+    private ExceptionDialog dialog;
 
     public LoadStudentController() {
         fxml = Fxml.getLoadStudentFxml();
@@ -83,6 +86,7 @@ public class LoadStudentController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (AttendanceService) SystemUtils.getContext().getBean("attendanceservice");
         studentservice = (StudentService) SystemUtils.getContext().getBean("studentservice");
         academicyear.getItems().setAll("1st", "2nd", "3rd");
@@ -117,5 +121,12 @@ public class LoadStudentController extends View {
         
         
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
  
 }

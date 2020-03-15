@@ -121,6 +121,8 @@ public class SystemUtils {
         return type;
     }
      
-     
+     public static ExceptionDialog getDialog() {
+         return (ExceptionDialog) SystemUtils.getContext().getBean("dialog");
+     }
 
 }

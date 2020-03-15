@@ -8,8 +8,10 @@ package com.attendance.student.attendance.controller;
 import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.studentattendance.service.AttendanceService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -50,6 +52,7 @@ public class ClassDetailsController extends View {
     private AttendanceService service;
     
     private SidePopupView view;
+    private ExceptionDialog dialog;
 
     public ClassDetailsController() {
         fxml = Fxml.getClassDetailsFxml();
@@ -64,6 +67,7 @@ public class ClassDetailsController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (AttendanceService) SystemUtils.getContext().getBean("attendanceservice");
         load((ActionEvent)null); 
         refresh.setOnAction(this::load);
@@ -98,4 +102,11 @@ public class ClassDetailsController extends View {
     public List<ClassDetailsNodeController> getList(){
         return list.getChildren().stream().map(m->(ClassDetailsNodeController)m).collect(Collectors.toList());
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 }

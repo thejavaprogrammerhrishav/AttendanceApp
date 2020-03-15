@@ -10,11 +10,13 @@ import com.attendance.user.model.PersonalDetails;
 import com.attendance.user.model.User;
 import com.attendance.user.service.LoginService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.attendance.util.ValidationUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.ByteArrayInputStream;
@@ -86,6 +88,7 @@ public class EditProfileController extends View{
     private FXMLLoader fxml;
     private boolean changed;
     private LoginService service;
+    private ExceptionDialog dialog;
 
     public EditProfileController() {
         fxml = Fxml.getEditProfileFxml();
@@ -101,6 +104,7 @@ public class EditProfileController extends View{
     
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (LoginService) SystemUtils.getContext().getBean("loginservice");
         
         init();
@@ -215,12 +219,13 @@ public class EditProfileController extends View{
             boolean updateUser = service.updateUser(user);
             if(updateUser) {
                 SystemUtils.setUser(user);
+                dialog.showSuccess(this, "Profile Updated Successfully");
             }else {
-                
+                dialog.showError(this, "Profile Updation Failed");
             }
         }else {
             validate.stream().forEach(c->{
-                
+                dialog.showError(this, c.getMessage());
             });
         }
     }
@@ -228,4 +233,11 @@ public class EditProfileController extends View{
     private void back(ActionEvent evt) {
         SystemUtils.getApplication().switchView(AppView.PROFILE_VIEW);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 }

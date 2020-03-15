@@ -6,7 +6,10 @@
 package com.attendance.student.controller;
 
 import com.attendance.student.model.Student;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.Dialog;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
@@ -55,6 +58,7 @@ public class ViewStudentDetailsController extends View {
     private Student student;
     
     private static Dialog<Void> dialog;
+    private ExceptionDialog exdialog;
 
     protected ViewStudentDetailsController(Student student) {
         this.student = student;
@@ -70,6 +74,7 @@ public class ViewStudentDetailsController extends View {
 
     @FXML
     private void initialize() {
+        exdialog = SystemUtils.getDialog();
         studentname.setText(student.getName());
         contact.setText(student.getContact());
         rollno.setText(""+student.getRollno());
@@ -90,5 +95,12 @@ public class ViewStudentDetailsController extends View {
         dialog.setContent(new ViewStudentDetailsController(student));
         dialog.showAndWait();
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

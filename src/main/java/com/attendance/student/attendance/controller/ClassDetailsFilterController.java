@@ -9,8 +9,10 @@ import com.attendance.papers.model.Paper;
 import com.attendance.papers.service.PapersService;
 import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.student.service.StudentService;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
@@ -92,6 +94,7 @@ public class ClassDetailsFilterController extends View {
     private ClassDetailsController controller;
     private StudentService service;
     private PapersService pservice;
+    private ExceptionDialog dialog;
 
     public ClassDetailsFilterController(ClassDetailsController controller) {
         this.controller = controller;
@@ -107,6 +110,7 @@ public class ClassDetailsFilterController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (StudentService) SystemUtils.getContext().getBean("studentservice");
         service.setParent(this);
         pservice = (PapersService) SystemUtils.getContext().getBean("paperservice");
@@ -200,5 +204,13 @@ public class ClassDetailsFilterController extends View {
         controller.load(list);
 
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
+    
 
 }

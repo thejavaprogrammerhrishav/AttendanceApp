@@ -6,10 +6,12 @@
 package com.attendance.department;
 
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -104,6 +106,9 @@ public class SelectDepartmentController extends View {
     private Button statistics;
 
     private FXMLLoader fxml;
+    
+    private ExceptionDialog dialog;
+    
 
     public SelectDepartmentController() {
         fxml = Fxml.getSelectDepartmentFxml();
@@ -118,6 +123,7 @@ public class SelectDepartmentController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         back.setOnAction(this::back);
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, e -> SystemUtils.getApplication().switchView(AppView.SELECT_LOGIN_VIEW));
         anthropology.setOnAction(this::anthropology);
@@ -276,4 +282,11 @@ public class SelectDepartmentController extends View {
         SystemUtils.setDepartment("Statistics");
         SystemUtils.getApplication().switchView(AppView.SELECT_LOGIN_VIEW);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 }

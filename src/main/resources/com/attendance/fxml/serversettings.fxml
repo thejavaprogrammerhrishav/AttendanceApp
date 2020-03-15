@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(   rgba(34,34,34,1) 8.3%, rgba(0,40,60,1) 41.6%, rgba(0,143,213,1) 93.4% );" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="TOP_LEFT" layoutX="65.0" layoutY="33.0" prefHeight="24.0" prefWidth="250.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Server Settings" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="24.0" layoutY="79.0" prefHeight="20.0" prefWidth="295.0" style="-fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 14;" text="Driver Class Name" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="24.0" layoutY="141.0" prefHeight="18.0" prefWidth="86.0" style="-fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 14;" text="Host" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" />
+            <TextField fx:id="host" layoutX="20.0" layoutY="163.0" prefHeight="26.0" prefWidth="295.0" promptText="Enter Host" style="-fx-text-fill: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="24.0" layoutY="200.0" prefHeight="18.0" prefWidth="55.0" style="-fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 14;" text="URL" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" />
+            <TextField fx:id="url" layoutX="20.0" layoutY="222.0" prefHeight="26.0" prefWidth="298.0" promptText="Enter URL" style="-fx-text-fill: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="22.0" layoutY="260.0" prefHeight="18.0" prefWidth="136.0" style="-fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 14;" text="Database Name" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" />
+            <TextField fx:id="database" layoutX="20.0" layoutY="283.0" prefHeight="26.0" prefWidth="302.0" promptText="Enter Database Name" style="-fx-text-fill: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="24.0" layoutY="321.0" prefHeight="18.0" prefWidth="136.0" style="-fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 14;" text="Username" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="24.0" layoutY="381.0" prefHeight="18.0" prefWidth="136.0" style="-fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 14;" text="New Password" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" />
+            <TextField fx:id="username" layoutX="20.0" layoutY="344.0" prefHeight="26.0" prefWidth="302.0" promptText="Enter Username" style="-fx-text-fill: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <PasswordField fx:id="password" layoutX="20.0" layoutY="403.0" prefHeight="26.0" prefWidth="301.0" promptText="Enter New Password" style="-fx-text-fill: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <PasswordField fx:id="confirmpassword" layoutX="20.0" layoutY="464.0" prefHeight="26.0" prefWidth="299.0" promptText="Confirm Password" style="-fx-text-fill: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <HBox alignment="CENTER" layoutX="20.0" layoutY="536.9000244140625" spacing="35.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <JFXButton fx:id="save" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: green; -fx-font-family: arial; -fx-font-size: 14;" text="Save" />
+                  <JFXButton fx:id="load" contentDisplay="CENTER" prefHeight="32.0" prefWidth="119.0" style="-fx-background-color: red; -fx-font-fill: arial; -fx-font-size: 14;" text="Load Default" />
+               </children>
+            </HBox>
+            <Label layoutX="24.0" layoutY="440.0" prefHeight="18.0" prefWidth="136.0" style="-fx-text-fill: white; -fx-font-family: arial; -fx-font-size: 14;" text="Confirm Password" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="back" contentDisplay="GRAPHIC_ONLY" layoutX="27.0" layoutY="29.0" minWidth="46.0" prefHeight="32.0" prefWidth="33.0" style="-fx-padding: 0; -fx-background-color: #0b85a4; -fx-min-height: 20; -fx-min-width: 20;" AnchorPane.leftAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-go-back-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <TextField fx:id="driver" layoutX="20.0" layoutY="103.0" prefHeight="26.0" prefWidth="295.0" promptText="Enter Driver Class Name" style="-fx-text-fill: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</fx:root>

@@ -11,9 +11,11 @@ import static com.attendance.notes.controller.UploadNotesController.parent;
 import com.attendance.notes.model.Notes;
 import com.attendance.notes.service.NotesService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.ImageUtils;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -69,6 +71,7 @@ public class DownloadNotesController extends View {
     private NotesService service;
     public static String parent;
     private Notes notes;
+    private ExceptionDialog dialog;
 
     public DownloadNotesController() {
         fxml = Fxml.getDownloadNotesFxml();
@@ -83,6 +86,7 @@ public class DownloadNotesController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (NotesService) SystemUtils.getContext().getBean("notesservice");
         
         reset();
@@ -111,6 +115,7 @@ public class DownloadNotesController extends View {
             fout.write(notes.getFile());
             fout.flush();
             fout.close();
+            dialog.showSuccess(this, "Notes Downloaded Successfully");
         } catch (IOException ex) {
             Logger.getLogger(DownloadNotesController.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -172,5 +177,12 @@ public class DownloadNotesController extends View {
         image.setImage(null);
 
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

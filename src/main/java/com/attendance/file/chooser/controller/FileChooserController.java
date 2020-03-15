@@ -11,7 +11,9 @@ import static com.attendance.file.chooser.controller.util.FileChooserUtils.AUDIO
 import static com.attendance.file.chooser.controller.util.FileChooserUtils.IMAGE;
 import static com.attendance.file.chooser.controller.util.FileChooserUtils.PDF;
 import static com.attendance.file.chooser.controller.util.FileChooserUtils.VIDEO;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.DirectoryService;
 import com.gluonhq.charm.glisten.application.MobileApplication;
@@ -72,6 +74,8 @@ public class FileChooserController extends View {
     private JFXButton cancel;
 
     private SidePopupView view;
+    
+    private ExceptionDialog exdialog;
 
     private FXMLLoader fxml;
     private DirectoryService service;
@@ -104,6 +108,7 @@ public class FileChooserController extends View {
 
     @FXML
     private void initialize() {
+        exdialog = SystemUtils.getDialog();
         this.getApplication().getAppBar().setVisible(false);
         this.getApplication().setSwatch(null);
         Services.get(DirectoryService.class).ifPresent(c -> {

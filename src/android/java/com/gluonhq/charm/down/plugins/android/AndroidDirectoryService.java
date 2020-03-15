@@ -25,4 +25,9 @@ public class AndroidDirectoryService implements DirectoryService {
 
     }
 
+    @Override
+    public String privateDirectory() {
+       return "";
+    }
+
 }

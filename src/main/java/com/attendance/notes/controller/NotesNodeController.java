@@ -6,9 +6,11 @@
 package com.attendance.notes.controller;
 
 import com.attendance.notes.model.Notes;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.ImageUtils;
 import com.attendance.util.ImageUtils.Icons;
+import com.attendance.util.SystemUtils;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.util.function.Consumer;
@@ -49,6 +51,7 @@ public class NotesNodeController extends AnchorPane{
     private FXMLLoader fxml;
     private Notes notes;
     private Consumer<Notes> consumer;
+    private ExceptionDialog dialog;
     
     public NotesNodeController(Notes notes,Consumer<Notes> consumer) {
         this.notes = notes;
@@ -65,6 +68,7 @@ public class NotesNodeController extends AnchorPane{
     
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         name.setText(notes.getFileName());
         size.setText(notes.getFileSize()+" MB");
         String ext = notes.getFileName().substring(notes.getFileName().lastIndexOf(".")+1);

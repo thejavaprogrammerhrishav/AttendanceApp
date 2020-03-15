@@ -6,9 +6,11 @@
 package com.attendance.user.controller;
 
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -35,6 +37,7 @@ public class LoginTypeController extends View {
     private Button faculty;
     
     private FXMLLoader fxml;
+    private ExceptionDialog dialog;
 
     public LoginTypeController() {
         fxml = Fxml.getSelectLoginFxml();
@@ -49,6 +52,7 @@ public class LoginTypeController extends View {
     
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         back.setOnAction(this::back);
         hod.setOnAction(this::hod);
         faculty.setOnAction(this::faculty);
@@ -72,5 +76,12 @@ public class LoginTypeController extends View {
         SystemUtils.getApplication().addViewFactory(AppView.LOGIN_VIEW,()->new LoginController("faculty"));
         SystemUtils.getApplication().switchView(AppView.LOGIN_VIEW);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

@@ -6,7 +6,10 @@
 package com.attendance.faculty.controller;
 
 import com.attendance.user.model.User;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.Dialog;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
@@ -51,6 +54,7 @@ public class ViewFacultyDetailsController extends View {
     private FXMLLoader fxml;
     private User user;
     private static Dialog<Void> dialog;
+    private ExceptionDialog exdialog;
     
     protected ViewFacultyDetailsController(User user) {
         this.user = user;
@@ -66,6 +70,7 @@ public class ViewFacultyDetailsController extends View {
 
     @FXML
     private void initialize() {
+        exdialog = SystemUtils.getDialog();
         facultyname.setText(user.getDetails().getName());
         contact.setText(user.getDetails().getContact());
         email.setText(user.getDetails().getEmailId());
@@ -84,5 +89,12 @@ public class ViewFacultyDetailsController extends View {
         dialog.setContent(new ViewFacultyDetailsController(user));
         dialog.showAndWait();
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

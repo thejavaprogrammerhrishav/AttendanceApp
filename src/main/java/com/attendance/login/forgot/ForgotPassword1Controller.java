@@ -8,9 +8,11 @@ package com.attendance.login.forgot;
 import com.attendance.user.model.User;
 import com.attendance.user.service.LoginService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -48,6 +50,7 @@ public class ForgotPassword1Controller extends View {
 
     private FXMLLoader fxml;
     private LoginService service;
+    private ExceptionDialog dialog;
 
     public ForgotPassword1Controller() {
         fxml = Fxml.getForgotPassword1Fxml();
@@ -62,6 +65,7 @@ public class ForgotPassword1Controller extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         department.setText(SystemUtils.getDepartment());
         usertype.setText(SystemUtils.getType());
         
@@ -96,5 +100,12 @@ public class ForgotPassword1Controller extends View {
             }
         }
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+        
 
 }

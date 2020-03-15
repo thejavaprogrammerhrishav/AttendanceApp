@@ -7,8 +7,10 @@ package com.attendance.student.attendance.controller;
 
 import com.attendance.student.attendance.model.MyClassDetails;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -64,6 +66,8 @@ public class CompleteClassDetailsController extends View {
     private FXMLLoader fxml;
     private MyClassDetails details;
     
+    private ExceptionDialog dialog;
+    
 
     public CompleteClassDetailsController(MyClassDetails details) {
         this.details = details;
@@ -79,6 +83,7 @@ public class CompleteClassDetailsController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         name.setText(details.getFacultyName());
         classid.setText(details.getClassId());
         subject.setText(details.getSubjectTaught());
@@ -98,5 +103,12 @@ public class CompleteClassDetailsController extends View {
     private void back(ActionEvent evt) {
         SystemUtils.getApplication().switchToPreviousView();
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

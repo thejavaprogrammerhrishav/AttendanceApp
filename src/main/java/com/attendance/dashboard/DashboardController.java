@@ -10,8 +10,10 @@ import com.attendance.notes.controller.UploadNotesController;
 import com.attendance.student.service.StudentService;
 import com.attendance.user.service.LoginService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -89,6 +91,8 @@ public class DashboardController extends View {
     private StudentService studentservice;
     private LoginService service;
     private FXMLLoader fxml;
+    
+    private ExceptionDialog dialog;
 
     public DashboardController() {
         fxml = Fxml.getDashboardFxml();
@@ -103,6 +107,7 @@ public class DashboardController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         logout.setOnAction(e -> SystemUtils.getApplication().switchView(AppView.SELECT_DEPARTMENT_VIEW));
         service = (LoginService) SystemUtils.getContext().getBean("loginservice");
         studentservice = (StudentService) SystemUtils.getContext().getBean("studentservice");
@@ -179,5 +184,12 @@ public class DashboardController extends View {
             }
         });
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

@@ -5,7 +5,10 @@
  */
 package com.attendance.student.controller;
 
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -65,6 +68,7 @@ public class ViewStudentFilterController extends View {
 
     private FXMLLoader fxml;
     private ViewStudentsController controller;
+    private ExceptionDialog dialog;
 
     public ViewStudentFilterController(ViewStudentsController controller) {
         this.controller = controller;
@@ -80,6 +84,7 @@ public class ViewStudentFilterController extends View {
 
     @FXML
     private void intialize() {
+        dialog = SystemUtils.getDialog();
         student.disableProperty().bind(filterbyid.selectedProperty().not());
         studentname.disableProperty().bind(filterbyname.selectedProperty().not());
         year.disableProperty().bind(filterbyyear.selectedProperty().not());
@@ -119,5 +124,12 @@ public class ViewStudentFilterController extends View {
         
         controller.load(list);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 
 }

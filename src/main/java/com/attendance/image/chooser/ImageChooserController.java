@@ -5,7 +5,9 @@
  */
 package com.attendance.image.chooser;
 
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.down.Services;
 import com.gluonhq.charm.down.plugins.PicturesService;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
@@ -33,6 +35,7 @@ public class ImageChooserController extends AnchorPane {
 
     private FXMLLoader fxml;
     private static Dialog<Image> dialog;
+    private ExceptionDialog exdialog;
     
 
     protected ImageChooserController() {
@@ -49,6 +52,7 @@ public class ImageChooserController extends AnchorPane {
 
     @FXML
     private void initialize() {
+        exdialog = SystemUtils.getDialog();
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, e->{
             dialog.hide();
         });

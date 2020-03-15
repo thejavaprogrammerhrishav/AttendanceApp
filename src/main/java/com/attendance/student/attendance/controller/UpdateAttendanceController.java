@@ -15,10 +15,12 @@ import com.attendance.student.model.Student;
 import com.attendance.student.service.StudentService;
 import com.attendance.studentattendance.service.AttendanceService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.attendance.util.ValidationUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -65,6 +67,7 @@ public class UpdateAttendanceController extends View{
     private PapersService service;
     private AttendanceService attendanceService;
     private StudentService studentService;
+    private ExceptionDialog dialog;
 
     public UpdateAttendanceController(Details details) {
         this.details = details;
@@ -80,6 +83,7 @@ public class UpdateAttendanceController extends View{
     
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service  = (PapersService) SystemUtils.getContext().getBean("papersservice");
         attendanceService =  (AttendanceService) SystemUtils.getContext().getBean("attendanceservice");
         studentService = (StudentService) SystemUtils.getContext().getBean("studentservice");
@@ -178,18 +182,19 @@ public class UpdateAttendanceController extends View{
             if(validate1.isEmpty()) {
                 String cid = attendanceService.saveAttendance(cd);
                 if(cid == null || cid.isEmpty()) {
-                    
+                    dialog.showError(this, "Attendance Saving Failed");
                 }else {
                     update.setDisable(true);
+                    dialog.showSuccess(this, "Attendance Saved Successfully");
                 }
             }else {
                 validate1.stream().forEach(c->{
-                    
+                    dialog.showError(this, c.getMessage());
                 });
             }
         }else {
             validate.stream().forEach(c->{
-                
+                dialog.showError(this, c.getMessage());
             });
         }
     }
@@ -197,5 +202,12 @@ public class UpdateAttendanceController extends View{
     private void back(ActionEvent evt) {
         SystemUtils.getApplication().switchView(AppView.ATTENDANCE_VIEW);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
      
 }

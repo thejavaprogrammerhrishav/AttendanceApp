@@ -8,10 +8,12 @@ package com.attendance.loginactivity.controller;
 import com.attendance.login.activity.model.LoginActivity;
 import com.attendance.login.activity.service.LoginActivityService;
 import com.attendance.util.AppView;
+import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -42,6 +44,7 @@ public class LoginActivityController extends View {
     private FXMLLoader fxml;
 
     private LoginActivityService service;
+    private ExceptionDialog dialog;
 
     public LoginActivityController() {
         fxml = Fxml.getLoginActivityFxml();
@@ -56,6 +59,7 @@ public class LoginActivityController extends View {
 
     @FXML
     private void initialize() {
+        dialog = SystemUtils.getDialog();
         service = (LoginActivityService) SystemUtils.getContext().getBean("loginservice");
         back.setOnAction(this::back);
 
@@ -82,4 +86,10 @@ public class LoginActivityController extends View {
         
     }
 
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+
+    
 }
