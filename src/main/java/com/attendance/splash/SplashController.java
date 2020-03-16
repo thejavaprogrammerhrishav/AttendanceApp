@@ -9,6 +9,7 @@ import com.attendance.util.AppView;
 import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
@@ -36,6 +37,7 @@ public class SplashController extends View {
     
     private FXMLLoader fxml;
     private ExceptionDialog dialog;
+    
 
     public SplashController() {
         fxml = Fxml.getSplashFxml();
@@ -67,4 +69,11 @@ public class SplashController extends View {
     private void about(ActionEvent evt){
         SystemUtils.getApplication().switchView(AppView.ABOUT_US_VIEW);
     }
+
+    @Override
+    protected void updateAppBar(AppBar appBar) {
+        appBar.setVisible(false);
+    }
+    
+    
 }

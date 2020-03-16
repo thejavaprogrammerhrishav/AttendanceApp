@@ -5,6 +5,10 @@
  */
 package com.attendance.user.controller;
 
+import com.attendance.login.activity.model.LoginActivity;
+import com.attendance.login.activity.service.LoginActivityService;
+import com.attendance.user.model.PersonalDetails;
+import com.attendance.user.model.User;
 import com.attendance.user.service.LoginService;
 import com.attendance.util.AppView;
 import com.attendance.util.ExceptionDialog;
@@ -26,6 +30,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 
 /**
  *
@@ -58,6 +64,8 @@ public class LoginController extends View {
     private String type;
     private LoginService service;
     private ExceptionDialog dialog;
+    private LoginActivity activity;
+    private LoginActivityService activityservice;
 
     public LoginController(String type) {
         this.type = type;
@@ -84,6 +92,9 @@ public class LoginController extends View {
 
         service = (LoginService) SystemUtils.getContext().getBean("loginservice");
         service.setParent(this);
+        
+        activityservice = (LoginActivityService) SystemUtils.getContext().getBean("loginactivityservice");
+        activityservice.setParent(this);
         login.setOnAction(this::login);
 
     }
@@ -93,12 +104,19 @@ public class LoginController extends View {
     }
 
     private void login(ActionEvent evt) {
+        User user;
+        PersonalDetails details;
         SystemUtils.setType(type);
         boolean log = service.login(username.getText(), password.getText(), type);
         if (log) {
             status.setText("Login Success");
             status.setTextFill(Color.GREEN);
             SystemUtils.setUser(service.findByUsernameDepartmentType(username.getText(), SystemUtils.getDepartment(), type));
+            user = SystemUtils.getUser();
+            details = user.getDetails();
+            activity = new LoginActivity(details.getName(),user.getUsername(),type,"Active",DateTime.now().toString(DateTimeFormat.forPattern("dd-MM-yyyy")),DateTime.now().toString(DateTimeFormat.forPattern("hh:mm:ss a")),"",SystemUtils.getDepartment());
+            activityservice.saveactivity(activity);
+            SystemUtils.setActivity(activity);
             redirect();
         } else {
             status.setText("Login Failed");
@@ -110,7 +128,7 @@ public class LoginController extends View {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                for (int i = 1; i <= 3; i++) {
+                for (int i = 3; i <= 1; i--) {
                     final int abc = i;
                     Platform.runLater(() -> status.setText("Dashboard in " + abc + " Sec."));
 

@@ -53,7 +53,7 @@ public class Start extends MobileApplication {
     @Override
     public void init() throws Exception {
         ImageUtils.init();
-        SystemUtils.init();
+        
         loadSettings();
         SystemUtils.setApplication(this);
         addViewFactory(AppView.HOME, () -> SystemUtils.getResolver().getSplashView());
@@ -81,6 +81,7 @@ public class Start extends MobileApplication {
         
         applicationInit();
         SystemUtils.setContext(app);
+        SystemUtils.init();
 
     }
 

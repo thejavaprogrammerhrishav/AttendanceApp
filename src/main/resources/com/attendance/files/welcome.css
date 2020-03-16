@@ -2,7 +2,7 @@
      src: url("ABeeZee-Regular.ttf");
 }
 
-.root{
+.main{
 	-fx-background-color: linear-gradient(#0f0c29,#302b63,#24243e);
 }
 

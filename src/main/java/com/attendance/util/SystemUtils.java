@@ -5,6 +5,8 @@
  */
 package com.attendance.util;
 
+import com.attendance.login.activity.model.LoginActivity;
+import com.attendance.login.activity.service.LoginActivityService;
 import com.attendance.user.model.User;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import java.awt.image.BufferedImage;
@@ -17,6 +19,8 @@ import java.util.logging.Logger;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javax.imageio.ImageIO;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -35,11 +39,14 @@ public class SystemUtils {
     private static User user;
     private static String department;
     private static String type;
+    private static LoginActivity activity;
+    private static LoginActivityService act;
 
     public static void init() {
         if (resolver == null) {
             resolver = new ViewResolver();
         }
+        act = (LoginActivityService) context.getBean("loginactivityservice");
     }
 
     public static ViewResolver getResolver() {
@@ -124,5 +131,25 @@ public class SystemUtils {
      public static ExceptionDialog getDialog() {
          return (ExceptionDialog) SystemUtils.getContext().getBean("dialog");
      }
+
+    public static void setActivity(LoginActivity activity) {
+        SystemUtils.activity = activity;
+    }
+
+    public static LoginActivity getActivity() {
+        return activity;
+    }
+    
+    public static void logout(LoginActivity activity) {
+            activity.setStatus("NotActive");
+        activity.setLogouttime(DateTime.now().toString(DateTimeFormat.forPattern("hh:mm:ss a")));
+        act.updateactivity(activity);
+        
+        SystemUtils.setDepartment("");
+        SystemUtils.setActivity(null);
+        SystemUtils.getApplication().switchView(AppView.HOME);
+    }
+     
+     
 
 }

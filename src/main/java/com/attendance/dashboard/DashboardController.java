@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -148,6 +149,8 @@ public class DashboardController extends View {
         update.setOnAction(e->{
              SystemUtils.getApplication().switchView(AppView.ATTENDANCE_VIEW);
         });
+        
+        logout.setOnAction(this::logout);
     }
 
     private void timer() {
@@ -186,10 +189,15 @@ public class DashboardController extends View {
                 third.setText("" + c3);
             }
         });
+        year.getSelectionModel().select(0);
     }
 
     @Override
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);
+    }
+    
+    private void logout(ActionEvent evt) {
+        SystemUtils.logout(SystemUtils.getActivity());
     }
 }
