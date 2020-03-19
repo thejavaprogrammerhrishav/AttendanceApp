@@ -45,10 +45,7 @@ public class NotesDashboardController extends View {
     private Label img;
 
     @FXML
-    private TextField path;
-
-    @FXML
-    private JFXButton search;
+    private JFXButton back;
 
     @FXML
     private JFXButton upload;
@@ -80,9 +77,11 @@ public class NotesDashboardController extends View {
         service = (NotesService) SystemUtils.getContext().getBean("notesservice");
         user.setText("User: " + SystemUtils.getUser().getDetails().getName());
         department.setText("Department: " + SystemUtils.getDepartment());
+        count();
         download.setOnAction(this::download);
         upload.setOnAction(this::upload);
         view.setOnAction(this::view);
+        back.setOnAction(this::back);
 
     }
 
@@ -106,19 +105,19 @@ public class NotesDashboardController extends View {
     }
 
     private void download(ActionEvent evt) {
-        DownloadNotesController.parent = "notes dashboard";
+        DownloadNotesController.parent = "notesdashboard";
         SystemUtils.getApplication().switchView(AppView.DOWNLOAD_NOTES_VIEW);
     }
 
     private void upload(ActionEvent evt) {
-        UploadNotesController.parent = "notes dashboard";
+        UploadNotesController.parent = "notesdashboard";
         SystemUtils.getApplication().switchView(AppView.UPLOAD_NOTES_VIEW);
     }
 
     private void view(ActionEvent evt) {
-        SystemUtils.getApplication().removeViewFactory("download notes");
-        SystemUtils.getApplication().addViewFactory("download notes", () -> new NotesController(c -> {}, 0));
-        SystemUtils.getApplication().switchView("download notes");
+        SystemUtils.getApplication().removeViewFactory("downloadnotes");
+        SystemUtils.getApplication().addViewFactory("downloadnotes", () -> new NotesController(null, 0));
+        SystemUtils.getApplication().switchView("downloadnotes");
     }
 
     @Override
@@ -126,6 +125,8 @@ public class NotesDashboardController extends View {
         appBar.setVisible(false);
     }
     
-    
+    private void back(ActionEvent evt) {
+        SystemUtils.getApplication().switchView(AppView.DASHBOARD_VIEW);
+    }
 
 }

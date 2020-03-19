@@ -6,14 +6,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="321.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="321.0" style="-fx-background-color: white;" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="name" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="261.0" style="-fx-font-size: 16;" text="Student's Name" />
-      <Label layoutX="12.0" layoutY="33.0" prefHeight="17.0" prefWidth="35.0" text="Year :" />
-      <Label layoutX="115.0" layoutY="33.0" prefHeight="17.0" prefWidth="96.0" text="Academic Year :" />
-      <Label fx:id="year" layoutX="52.0" layoutY="33.0" prefHeight="17.0" prefWidth="46.0" text="2000" />
-      <Label fx:id="academicyear" layoutX="212.0" layoutY="33.0" prefHeight="17.0" prefWidth="46.0" text="3rd sem" />
-      <JFXButton fx:id="view" contentDisplay="GRAPHIC_ONLY" layoutX="274.0" layoutY="16.0">
+      <Label fx:id="name" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="261.0" style="-fx-font-size: 16;" text="Student's Name" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0" />
+      <Label layoutX="12.0" layoutY="33.0" prefHeight="17.0" prefWidth="35.0" text="Year :" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+      <Label layoutX="115.0" layoutY="33.0" prefHeight="17.0" prefWidth="96.0" text="Academic Year :" AnchorPane.bottomAnchor="10.0" />
+      <Label fx:id="year" layoutX="45.0" layoutY="34.0" prefHeight="17.0" prefWidth="46.0" text="2000" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="45.0" />
+      <Label fx:id="academicyear" layoutX="212.0" layoutY="33.0" prefHeight="17.0" prefWidth="46.0" text="3rd sem" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="45.0" />
+      <JFXButton fx:id="view" contentDisplay="GRAPHIC_ONLY" layoutX="274.0" layoutY="16.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="13.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>

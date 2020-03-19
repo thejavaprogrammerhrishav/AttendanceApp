@@ -9,6 +9,8 @@ import com.attendance.util.AppView;
 import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.down.Services;
+import com.gluonhq.charm.down.plugins.LifecycleService;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
@@ -35,6 +37,9 @@ public class SplashController extends View {
     @FXML
     private JFXButton about;
     
+    @FXML
+    private JFXButton exit;
+    
     private FXMLLoader fxml;
     private ExceptionDialog dialog;
     
@@ -56,6 +61,7 @@ public class SplashController extends View {
         proceed.setOnAction(this::proceed);
         settings.setOnAction(this::settings);
         about.setOnAction(this::about);
+        exit.setOnAction(this::exit);
     }
     
     private void proceed(ActionEvent evt) {
@@ -73,6 +79,10 @@ public class SplashController extends View {
     @Override
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);
+    }
+    
+    private void exit(ActionEvent evt) {
+        Services.get(LifecycleService.class).ifPresent(c->c.shutdown());
     }
     
     

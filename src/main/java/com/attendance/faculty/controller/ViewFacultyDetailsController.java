@@ -73,6 +73,7 @@ public class ViewFacultyDetailsController extends View {
         contact.setText(user.getDetails().getContact());
         email.setText(user.getDetails().getEmailId());
         date.setText(user.getDate());
+        department.setText(user.getDepartment());
         if(user.getDetails().getGender().equalsIgnoreCase("Male")) {
             male.setSelected(true);
         }else {

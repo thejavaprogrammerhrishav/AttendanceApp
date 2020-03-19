@@ -18,10 +18,12 @@ import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -91,11 +93,29 @@ public class NotesController extends View {
     }
 
     private void load(ActionEvent evt) {
-        List<Notes> all = service.findByDepartment(SystemUtils.getDepartment());
-        List<NotesNodeController> nodes = all.stream().map(m -> {
-            return new NotesNodeController(m, consumer);
-        }).collect(Collectors.toList());
-        list.getChildren().setAll(nodes);
+        Task<List<NotesNodeController>> task = new Task<List<NotesNodeController>>() {
+            @Override
+            protected List<NotesNodeController> call() throws Exception {
+                List<Notes> all = service.findByDepartment(SystemUtils.getDepartment());
+                List<NotesNodeController> nodes = all.stream().map(m -> {
+                    return new NotesNodeController(m, consumer);
+                }).collect(Collectors.toList());
+                return nodes;
+            }
+        };
+        task.setOnRunning(e->{
+            
+        });
+        
+        task.setOnSucceeded(e->{
+            try {
+                list.getChildren().setAll(task.get());
+            } catch (InterruptedException | ExecutionException ex) {
+                Logger.getLogger(NotesController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        
+
     }
 
     private void filter(ActionEvent evt) {
@@ -151,6 +171,5 @@ public class NotesController extends View {
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);
     }
-    
-    
+
 }

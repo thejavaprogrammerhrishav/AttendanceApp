@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,7 +18,7 @@
       <Label fx:id="size" layoutX="15.0" layoutY="71.0" prefHeight="20.0" prefWidth="84.0" styleClass="selected-label" text="192.68 MB" wrapText="true" AnchorPane.leftAnchor="15.0" />
       <Label fx:id="date" alignment="CENTER" layoutX="88.0" layoutY="71.0" prefHeight="20.0" prefWidth="150.0" styleClass="selected-label" text="23 - 08 - 2020" wrapText="true" AnchorPane.rightAnchor="62.0" />
       <Label fx:id="by" layoutX="15.0" layoutY="99.0" prefHeight="20.0" prefWidth="267.0" styleClass="selected-label" text="By : Hrishav Dhawaj Purkayastha" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-      <JFXButton fx:id="proceed" contentDisplay="GRAPHIC_ONLY" layoutX="245.0" layoutY="61.0" prefHeight="65.0" prefWidth="46.0">
+      <JFXButton fx:id="proceed" contentDisplay="GRAPHIC_ONLY" layoutX="245.0" layoutY="61.0" prefHeight="65.0" prefWidth="46.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="61.0">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -27,4 +28,7 @@
          </graphic>
       </JFXButton>
    </children>
+   <effect>
+      <DropShadow color="#b9b9b9" />
+   </effect>
 </fx:root>

@@ -11,9 +11,9 @@ import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
 import com.gluonhq.charm.glisten.control.AppBar;
-import com.gluonhq.charm.glisten.control.TextField;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +21,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
@@ -81,6 +83,7 @@ public class ProfileController extends View {
         email.setText(SystemUtils.getUser().getDetails().getEmailId());
         username.setText(SystemUtils.getUser().getUsername());
         usertype.setText(SystemUtils.getUser().getType());
+        image.setImage(new Image(new ByteArrayInputStream(SystemUtils.getUser().getImage())));
         if(SystemUtils.getUser().getDetails().getGender().equalsIgnoreCase("Male")) {
             male.setSelected(true);
         }else {
@@ -106,5 +109,8 @@ public class ProfileController extends View {
         appBar.setVisible(false);
     }
 
+    private void init() {
+        
+    }
     
 }

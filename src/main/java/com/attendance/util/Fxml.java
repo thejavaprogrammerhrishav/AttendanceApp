@@ -164,7 +164,7 @@ public class Fxml {
     }
     
     public static FXMLLoader getNotesFilterFxml() {
-        return new FXMLLoader(Fxml.class.getResource(path+"notesfiler.fxml"));
+        return new FXMLLoader(Fxml.class.getResource(path+"notesfilter.fxml"));
     }
     
     public static FXMLLoader getClassDetailsNodeControllerFxml() {

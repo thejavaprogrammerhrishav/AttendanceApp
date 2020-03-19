@@ -61,7 +61,7 @@
             <Label layoutX="63.0" layoutY="20.0" prefHeight="28.0" prefWidth="208.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Login Activity" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="20.0" />
             <HBox layoutX="279.8999938964844" layoutY="16.899999618530273" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="20.0">
                <children>
-                  <JFXButton fx:id="refresh" contentDisplay="GRAPHIC_ONLY" prefHeight="33.0" prefWidth="36.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0; -fx-background-color: blue;">
+                  <JFXButton fx:id="refresh" contentDisplay="GRAPHIC_ONLY" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: transparent; -fx-padding: 0;">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -73,7 +73,7 @@
                </children>
             </HBox>
             <HBox layoutX="14.0" layoutY="24.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-            <JFXButton fx:id="back" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="20.0" prefHeight="33.0" prefWidth="36.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0; -fx-background-color: Blue;">
+            <JFXButton fx:id="back" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="20.0" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: transparent; -fx-padding: 0;">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>

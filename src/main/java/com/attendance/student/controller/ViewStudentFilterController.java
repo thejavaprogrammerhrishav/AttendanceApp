@@ -83,7 +83,7 @@ public class ViewStudentFilterController extends View {
     }
 
     @FXML
-    private void intialize() {
+    private void initialize() {
         dialog = SystemUtils.getDialog();
         student.disableProperty().bind(filterbyid.selectedProperty().not());
         studentname.disableProperty().bind(filterbyname.selectedProperty().not());

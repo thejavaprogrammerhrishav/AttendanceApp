@@ -16,6 +16,7 @@ import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,6 +62,8 @@ public class LoginActivityController extends View {
         dialog = SystemUtils.getDialog();
         service = (LoginActivityService) SystemUtils.getContext().getBean("loginactivityservice");
         back.setOnAction(this::back);
+        
+        load(null);
 
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, eh -> {
             SystemUtils.getApplication().switchView(AppView.DASHBOARD_VIEW);
@@ -76,6 +79,7 @@ public class LoginActivityController extends View {
 
     private void load(ActionEvent evt) {
         List<LoginActivity> list = service.findByDepartment(SystemUtils.getDepartment());
+        Collections.reverse(list);
         if (SystemUtils.getUser().getType().equalsIgnoreCase("faculty")) {
             list = list.stream().filter(f->f.getName().equals(SystemUtils.getUser().getDetails().getName())).collect(Collectors.toList());
         }

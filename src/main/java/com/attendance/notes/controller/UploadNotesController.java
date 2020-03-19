@@ -87,11 +87,13 @@ public class UploadNotesController extends View {
         service = (NotesService) SystemUtils.getContext().getBean("notesservice");
 
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, this::back);
+        
+        path.setEditable(false);
 
         pdf.setOnAction(this::pdf);
         ppt.setOnAction(this::ppt);
         ward.setOnAction(this::word);
-        txt.setOnAction(this::txt);
+        file.setOnAction(this::file);
         excel.setOnAction(this::excel);
         txt.setOnAction(this::txt);
         upload.setOnAction(this::upload);
@@ -167,7 +169,7 @@ public class UploadNotesController extends View {
         if (parent.equalsIgnoreCase("dashboard")) {
             SystemUtils.getApplication().switchView(AppView.DASHBOARD_VIEW);
         }
-        if (parent.equalsIgnoreCase("notes dashboard")) {
+        if (parent.equalsIgnoreCase("notesdashboard")) {
             SystemUtils.getApplication().switchView(AppView.NOTES_DASHBOARD_VIEW);
         }
     }
@@ -177,6 +179,4 @@ public class UploadNotesController extends View {
         appBar.setVisible(false);
     }
     
-    
-
-}
+ }

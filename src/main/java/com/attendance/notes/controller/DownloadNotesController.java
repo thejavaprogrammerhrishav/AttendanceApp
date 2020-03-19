@@ -88,6 +88,7 @@ public class DownloadNotesController extends View {
         service = (NotesService) SystemUtils.getContext().getBean("notesservice");
         
         reset();
+        path.setEditable(false);
 
         browse.setOnAction(this::browse);
         pathbrowse.setOnAction(this::pathbrowse);
@@ -129,7 +130,7 @@ public class DownloadNotesController extends View {
         if (parent.equalsIgnoreCase("dashboard")) {
             SystemUtils.getApplication().switchView(AppView.DASHBOARD_VIEW);
         }
-        if (parent.equalsIgnoreCase("notes dashboard")) {
+        if (parent.equalsIgnoreCase("notesdashboard")) {
             SystemUtils.getApplication().switchView(AppView.NOTES_DASHBOARD_VIEW);
         }
     }

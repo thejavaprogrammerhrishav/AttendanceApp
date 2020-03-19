@@ -17,9 +17,11 @@ import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,7 +40,7 @@ public class ClassDetailsController extends View {
 
     @FXML
     private JFXButton filter;
-    
+
     @FXML
     private JFXButton refresh;
 
@@ -50,7 +52,7 @@ public class ClassDetailsController extends View {
 
     private FXMLLoader fxml;
     private AttendanceService service;
-    
+
     private SidePopupView view;
     private ExceptionDialog dialog;
 
@@ -70,48 +72,66 @@ public class ClassDetailsController extends View {
         dialog = SystemUtils.getDialog();
         service = (AttendanceService) SystemUtils.getContext().getBean("attendanceservice");
         service.setParent(this);
-        
+
         department.setText(SystemUtils.getDepartment());
-        
-        load(new ActionEvent()); 
-        
+
+        load(new ActionEvent());
+
         refresh.setOnAction(this::load);
         filter.setOnAction(this::filter);
         back.setOnAction(this::back);
     }
-    
+
     private void load(ActionEvent evt) {
-        List<MyClassDetails> all = service.findByDepartmentFiltered(SystemUtils.getDepartment());
-        List<ClassDetailsNodeController> nodes = all.stream().map(m->{
-            ClassDetailsNodeController cd = new ClassDetailsNodeController(m, ClassDetailsController.this);
-            return cd;
-        }).collect(Collectors.toList());
-        load(nodes);
+        Task<List<ClassDetailsNodeController>> task = new Task<List<ClassDetailsNodeController>>() {
+            @Override
+            protected List<ClassDetailsNodeController> call() throws Exception {
+
+                List<MyClassDetails> all = service.findByDepartmentFiltered(SystemUtils.getDepartment());
+                List<ClassDetailsNodeController> nodes = all.stream().map(m -> {
+                    ClassDetailsNodeController cd = new ClassDetailsNodeController(m, ClassDetailsController.this);
+                    return cd;
+                }).collect(Collectors.toList());
+                return nodes;
+            }
+        };
+        
+        task.setOnRunning(e->{
+           
+        });
+        
+        task.setOnSucceeded(e->{
+            try {
+                load(task.get());
+            } catch (InterruptedException | ExecutionException ex) {
+                Logger.getLogger(ClassDetailsController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        
     }
-    
+
     private void filter(ActionEvent evt) {
         view = new SidePopupView(new ClassDetailsFilterController(this), Side.RIGHT, Boolean.TRUE);
         view.setAutoHide(true);
         view.show();
     }
-    
+
     public void load(List<ClassDetailsNodeController> list) {
         this.list.getChildren().clear();
         this.list.getChildren().setAll(list);
     }
-    
+
     private void back(ActionEvent evt) {
         SystemUtils.getApplication().switchView(AppView.DASHBOARD_VIEW);
     }
 
-    public List<ClassDetailsNodeController> getList(){
-        return list.getChildren().stream().map(m->(ClassDetailsNodeController)m).collect(Collectors.toList());
+    public List<ClassDetailsNodeController> getList() {
+        return list.getChildren().stream().map(m -> (ClassDetailsNodeController) m).collect(Collectors.toList());
     }
 
     @Override
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);
     }
-    
-    
+
 }

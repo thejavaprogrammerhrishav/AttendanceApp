@@ -116,8 +116,8 @@
             </ImageView>
             <HBox layoutX="19.0" layoutY="136.89999389648438" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <TextField fx:id="name" prefHeight="26.0" prefWidth="270.0" HBox.hgrow="ALWAYS" />
-                  <JFXButton fx:id="editname" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+                  <TextField fx:id="name" prefHeight="26.0" prefWidth="270.0" style="-fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="editname" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0; -fx-background-color: transparent;" text="Button">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -130,8 +130,8 @@
             </HBox>
             <HBox layoutX="19.0" layoutY="197.89999389648438" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <TextField fx:id="contact" prefHeight="26.0" prefWidth="270.0" HBox.hgrow="ALWAYS" />
-                  <JFXButton fx:id="editcontact" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+                  <TextField fx:id="contact" prefHeight="26.0" prefWidth="270.0" style="-fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="editcontact" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0; -fx-background-color: transparent;" text="Button">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -144,8 +144,8 @@
             </HBox>
             <HBox layoutX="20.0" layoutY="256.8999938964844" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <TextField fx:id="email" prefHeight="26.0" prefWidth="270.0" HBox.hgrow="ALWAYS" />
-                  <JFXButton fx:id="editemail" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+                  <TextField fx:id="email" prefHeight="26.0" prefWidth="270.0" style="-fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="editemail" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0; -fx-background-color: transparent;" text="Button">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -158,8 +158,8 @@
             </HBox>
             <HBox layoutX="19.0" layoutY="369.8999938964844" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <children>
-                  <TextField fx:id="username" prefHeight="26.0" prefWidth="270.0" HBox.hgrow="ALWAYS" />
-                  <JFXButton fx:id="editusername" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+                  <TextField fx:id="username" prefHeight="26.0" prefWidth="270.0" style="-fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="editusername" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="25.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0; -fx-background-color: transparent;" text="Button">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -170,7 +170,7 @@
                   </JFXButton>
                </children>
             </HBox>
-            <JFXButton fx:id="editimage" contentDisplay="GRAPHIC_ONLY" layoutX="72.0" layoutY="74.0" prefHeight="30.0" prefWidth="30.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0;" text="Button">
+            <JFXButton fx:id="editimage" contentDisplay="GRAPHIC_ONLY" layoutX="72.0" layoutY="74.0" prefHeight="30.0" prefWidth="30.0" style="-fx-min-height: 20; -fx-min-width: 20; -fx-padding: 0; -fx-background-color: transparent;" text="Button">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -178,7 +178,7 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <Label fx:id="usertype" layoutX="18.0" layoutY="443.0" prefHeight="32.0" prefWidth="274.0" style="-fx-text-fill: black;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label fx:id="usertype" layoutX="18.0" layoutY="443.0" prefHeight="32.0" prefWidth="274.0" style="-fx-text-fill: white;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
          </children>
       </AnchorPane>
    </center>

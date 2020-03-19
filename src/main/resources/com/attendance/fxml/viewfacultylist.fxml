@@ -7,13 +7,13 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="321.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="image" fitHeight="33.0" fitWidth="33.0" layoutX="12.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="33.0" fitWidth="33.0" layoutX="12.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="14.0">
          <image>
             <Image url="@../images/35778-200.png" />
          </image>
       </ImageView>
-      <Label fx:id="name" layoutX="61.0" layoutY="10.0" prefHeight="25.0" prefWidth="250.0" style="-fx-font-size: 16;" text="Hrishav Dhawaj Purkayashtya" />
+      <Label fx:id="name" layoutX="61.0" layoutY="10.0" prefHeight="25.0" prefWidth="250.0" style="-fx-font-size: 16;" text="Hrishav Dhawaj Purkayashtya" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="10.0" />
       <Label layoutX="62.0" layoutY="33.0" text="Department :" />
-      <Label fx:id="department" layoutX="135.0" layoutY="33.0" prefHeight="17.0" prefWidth="175.0" text="Ecology &amp; Enviromental Science" />
+      <Label fx:id="department" layoutX="135.0" layoutY="33.0" prefHeight="17.0" prefWidth="175.0" text="Ecology &amp; Enviromental Science" AnchorPane.leftAnchor="132.0" AnchorPane.topAnchor="34.0" />
    </children>
 </fx:root>

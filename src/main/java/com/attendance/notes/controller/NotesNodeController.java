@@ -89,6 +89,11 @@ public class NotesNodeController extends AnchorPane{
         }
         date.setText(notes.getUploadDate());
         by.setText("By: "+notes.getFacultyName());
+        
+        if(consumer == null)    {
+            proceed.setVisible(false);
+        }
+        
         proceed.setOnAction(this::proceed);
         
     }
@@ -96,10 +101,7 @@ public class NotesNodeController extends AnchorPane{
     public Notes getNotes() {
         return notes;
     }
-    
-    
-    
-    
+      
     private void proceed(ActionEvent evt){
         consumer.accept(notes);
         SystemUtils.getApplication().switchToPreviousView();

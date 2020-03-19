@@ -8,10 +8,10 @@
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="322.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="name" layoutX="77.0" layoutY="9.0" prefHeight="30.0" prefWidth="233.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Hrishav Dhawaj Purkayastha" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="12.0" />
-      <Label fx:id="ttime" layoutX="77.0" layoutY="54.0" prefHeight="23.0" prefWidth="73.0" text="11:32:17 AM" />
-      <Label fx:id="date" layoutX="200.0" layoutY="35.0" prefHeight="23.0" prefWidth="73.0" text="23-06-2019" />
-      <Label fx:id="ftime" layoutX="199.0" layoutY="54.0" prefHeight="23.0" prefWidth="73.0" text="12:32:17 PM" />
-      <ImageView fx:id="image" fitHeight="65.0" fitWidth="60.0" layoutX="9.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+      <Label fx:id="ttime" layoutX="77.0" layoutY="54.0" prefHeight="23.0" prefWidth="111.0" text="11:32:17 AM" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="130.0" />
+      <Label fx:id="date" layoutX="200.0" layoutY="35.0" prefHeight="23.0" prefWidth="111.0" text="23-06-2019" AnchorPane.rightAnchor="12.0" />
+      <Label fx:id="ftime" layoutX="199.0" layoutY="54.0" prefHeight="23.0" prefWidth="111.0" text="12:32:17 PM" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="12.0" />
+      <ImageView fx:id="image" fitHeight="65.0" fitWidth="60.0" layoutX="9.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="11.0">
          <image>
             <Image url="@../images/thumbs-up-icon-66.png" />
          </image>
