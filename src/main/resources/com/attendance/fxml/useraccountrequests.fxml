@@ -47,11 +47,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" layoutX="51.0" layoutY="25.0" prefHeight="27.0" prefWidth="209.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="75.0">
-               <children>
-                  <Label prefHeight="27.0" prefWidth="218.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="User Account Requests" />
-               </children>
-            </HBox>
+            <Label layoutX="52.0" layoutY="24.0" prefHeight="27.0" prefWidth="218.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="User Account Requests" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="65.0" />
             <JFXButton fx:id="back" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="12.0" layoutY="20.0" minWidth="37.0" prefHeight="32.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-min-height: 20; -fx-min-width: 20;" AnchorPane.leftAnchor="12.0">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -67,20 +63,11 @@
                   <Label fx:id="department" prefHeight="18.0" prefWidth="204.0" text="Ecology &amp; Enviromental Science" />
                </children>
             </HBox>
-            <JFXButton fx:id="refresh" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="291.0" layoutY="21.0" minWidth="37.0" prefHeight="32.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-min-height: 20; -fx-min-width: 20;" text="Button" AnchorPane.rightAnchor="7.0">
+            <JFXButton fx:id="refresh" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="274.0" layoutY="21.0" minWidth="37.0" prefHeight="32.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-min-height: 20; -fx-min-width: 20;" text="Button" AnchorPane.rightAnchor="22.0">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons8-update-left-rotation-100.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="filter" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="249.0" layoutY="21.0" minWidth="37.0" prefHeight="32.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-min-height: 20; -fx-min-width: 20;" AnchorPane.rightAnchor="49.0">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons8-filter-100.png" />
                      </image>
                   </ImageView>
                </graphic>

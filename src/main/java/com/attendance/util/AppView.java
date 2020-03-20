@@ -28,9 +28,11 @@ public class AppView {
     public static final String STUDENT_DETAILS_VIEW = "Student Details";
     public static final String FACULTY_DETAILS_VIEW = "Faculty Details";
     public static final String FORGOT_PASSWORD_VIEW = "Forgot Password";
-    public static final String SECURITY_QUESTION_VIEW = "Security Question View";
+    public static final String SECURITY_QUESTION_VIEW = "Security Question ";
     public static final String RESET_PASSWORD_VIEW = "Reset Password";
     public static final String CLASS_DETAILS_VIEW = "Class Details";
     public static final String SETTINGS_VIEW = "Settings";
     public static final String ABOUT_US_VIEW = "About us";
+    public static final String USER_ACCOUNT_REQUEST_VIEW = "User Account Request";
+    public static final String ROUTINE_MANAGEMENT_VIEW = "Routine Management";
 }

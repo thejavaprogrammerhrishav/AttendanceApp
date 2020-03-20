@@ -21,11 +21,13 @@ import com.gluonhq.charm.glisten.mvc.View;
 import com.attendance.notes.controller.DownloadNotesController;
 import com.attendance.notes.controller.NotesDashboardController;
 import com.attendance.notes.controller.UploadNotesController;
+import com.attendance.routine.RoutineManagement;
 import com.attendance.settings.SettingsController;
 import com.attendance.splash.AboutUsController;
 import com.attendance.student.attendance.controller.ClassDetailsController;
 import com.attendance.student.attendance.controller.LoadStudentController;
 import com.attendance.student.controller.ViewStudentsController;
+import com.attendance.user.request.UserAccountRequest;
 
 /**
  *
@@ -111,5 +113,13 @@ public class ViewResolver {
     
     public View getAboutUsView() {
         return new AboutUsController();
+    }
+    
+    public View getUserAccountRequestView() {
+        return new UserAccountRequest();
+    }
+    
+    public View getRoutineManagementView() {
+        return new RoutineManagement();
     }
 }

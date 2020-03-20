@@ -11,6 +11,7 @@ import com.attendance.util.AppView;
 import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
+import com.gluonhq.charm.glisten.control.Alert;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
@@ -26,6 +27,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
@@ -52,6 +54,7 @@ public class ClassDetailsController extends View {
 
     private FXMLLoader fxml;
     private AttendanceService service;
+    private Alert alert;
 
     private SidePopupView view;
     private ExceptionDialog dialog;
@@ -72,7 +75,7 @@ public class ClassDetailsController extends View {
         dialog = SystemUtils.getDialog();
         service = (AttendanceService) SystemUtils.getContext().getBean("attendanceservice");
         service.setParent(this);
-
+        initalert();
         department.setText(SystemUtils.getDepartment());
 
         load(new ActionEvent());
@@ -95,19 +98,26 @@ public class ClassDetailsController extends View {
                 return nodes;
             }
         };
-        
-        task.setOnRunning(e->{
-           
+
+        task.setOnRunning(e -> {
+            alert.showAndWait();
         });
-        
-        task.setOnSucceeded(e->{
+
+        task.setOnSucceeded(e -> {
             try {
+                alert.hide();
                 load(task.get());
             } catch (InterruptedException | ExecutionException ex) {
                 Logger.getLogger(ClassDetailsController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
         
+        SystemUtils.getService().submit(task);
+    }
+
+    private void initalert() {
+        alert = new Alert(AlertType.NONE, "Loading...");
+        alert.getButtons().clear();
     }
 
     private void filter(ActionEvent evt) {

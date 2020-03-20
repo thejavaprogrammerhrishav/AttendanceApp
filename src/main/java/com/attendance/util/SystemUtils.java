@@ -14,6 +14,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.embed.swing.SwingFXUtils;
@@ -149,7 +151,9 @@ public class SystemUtils {
         SystemUtils.setActivity(null);
         SystemUtils.getApplication().switchView(AppView.HOME);
     }
-     
-     
+
+    public static ExecutorService getService() {
+        return Executors.newSingleThreadExecutor();
+    }
 
 }

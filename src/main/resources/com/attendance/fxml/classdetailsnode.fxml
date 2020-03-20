@@ -8,9 +8,9 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="67.0" prefWidth="321.0" style="-fx-background-color: white;" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="name" layoutX="15.0" layoutY="10.0" prefHeight="25.0" prefWidth="264.0" style="-fx-font-size: 16;" text="Hrishav Dhawaj Purkayashtya" />
-      <Label fx:id="date" layoutX="14.0" layoutY="39.0" prefHeight="17.0" prefWidth="115.0" text="23-September-2019" />
-      <Label fx:id="semester" layoutX="138.0" layoutY="39.0" prefHeight="17.0" prefWidth="80.0" text="1st Semester" />
+      <Label fx:id="name" layoutX="15.0" layoutY="10.0" prefHeight="25.0" prefWidth="264.0" style="-fx-font-size: 16;" text="Hrishav Dhawaj Purkayashtya" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0" />
+      <Label fx:id="date" layoutX="14.0" layoutY="39.0" prefHeight="17.0" prefWidth="115.0" text="23-September-2019" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="10.0" />
+      <Label fx:id="semester" layoutX="138.0" layoutY="39.0" prefHeight="17.0" prefWidth="80.0" text="1st Semester" AnchorPane.bottomAnchor="12.0" />
       <JFXButton fx:id="proceed" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="285.0" layoutY="18.0" prefHeight="51.0" style="-fx-background-color: white; -fx-padding: 0; -fx-pref-height: 30; -fx-pref-width: 30;" AnchorPane.rightAnchor="6.0">
          <graphic>
             <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
@@ -20,6 +20,6 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <Label fx:id="coursetype" layoutX="225.0" layoutY="38.0" prefHeight="17.0" prefWidth="52.0" text="Honours" />
+      <Label fx:id="coursetype" layoutX="225.0" layoutY="38.0" prefHeight="17.0" prefWidth="52.0" text="Honours" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="44.0" />
    </children>
 </fx:root>

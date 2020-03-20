@@ -150,6 +150,14 @@ public class DashboardController extends View {
              SystemUtils.getApplication().switchView(AppView.ATTENDANCE_VIEW);
         });
         
+        home.setOnAction(e->{
+             SystemUtils.getApplication().switchView(AppView.USER_ACCOUNT_REQUEST_VIEW);
+        });
+        
+        settings.setOnAction(e->{
+             SystemUtils.getApplication().switchView(AppView.ROUTINE_MANAGEMENT_VIEW);
+        });
+        
         logout.setOnAction(this::logout);
     }
 

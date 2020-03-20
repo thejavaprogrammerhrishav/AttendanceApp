@@ -12,6 +12,7 @@ import com.attendance.util.ExceptionDialog;
 import com.attendance.util.Fxml;
 import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.application.MobileApplication.MobileEvent;
+import com.gluonhq.charm.glisten.control.Alert;
 import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
 import com.gluonhq.charm.glisten.mvc.View;
@@ -30,6 +31,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
 import javafx.scene.Node;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
 
 /**
@@ -57,6 +59,7 @@ public class NotesController extends View {
     private int mode;
     private NotesService service;
     private ExceptionDialog dialog;
+    private Alert alert;
 
     public NotesController(Consumer<Notes> consumer, int mode) {
         this.mode = mode;
@@ -78,6 +81,7 @@ public class NotesController extends View {
         back.setOnAction(this::back);
         this.addEventHandler(MobileEvent.BACK_BUTTON_PRESSED, this::back);
         load(null);
+        initalert();
         refresh.setOnAction(this::load);
         filter.setOnAction(this::filter);
     }
@@ -104,18 +108,24 @@ public class NotesController extends View {
             }
         };
         task.setOnRunning(e->{
-            
+            alert.showAndWait();
         });
         
         task.setOnSucceeded(e->{
             try {
+                alert.hide();
                 list.getChildren().setAll(task.get());
             } catch (InterruptedException | ExecutionException ex) {
                 Logger.getLogger(NotesController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
-        
-
+       
+        SystemUtils.getService().submit(task);
+    }
+    
+    private void initalert() {
+        alert = new Alert(AlertType.NONE,"Loading...");
+        alert.getButtons().clear();
     }
 
     private void filter(ActionEvent evt) {

@@ -5,7 +5,10 @@
  */
 package com.attendance.routine;
 
+import com.attendance.routine.service.RoutineService;
+import com.attendance.routines.model.Routine;
 import com.attendance.util.Fxml;
+import com.attendance.util.SystemUtils;
 import com.gluonhq.charm.glisten.mvc.View;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
@@ -13,6 +16,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Orientation;
@@ -20,14 +24,18 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeField;
+import org.joda.time.format.DateTimeFormat;
 
 /**
  *
  * @author pc
  */
-public class RoutineManagement extends View{
+public class RoutineManagement extends View {
     
-    
+    private final Image img = new Image(RoutineManagement.class.getResourceAsStream("/com/attendance/images/noroutinefound.png"));
+
     @FXML
     private JFXButton back;
 
@@ -42,20 +50,22 @@ public class RoutineManagement extends View{
 
     @FXML
     private JFXButton plus;
-    
+
     private FXMLLoader fxml;
-    
+
     private Routine routine;
 
     private Image source;
-    
+
+    private RoutineService service;
+
     private double initx;
     private double inity;
     private int height;
     private int width;
     private double offSetX, offSetY, zoomlvl;
 
-    public RoutineManagement(Routine routine) {
+    public RoutineManagement() {
         this.routine = routine;
         fxml = Fxml.getRoutineManagementFxml();
         fxml.setController(this);
@@ -66,7 +76,7 @@ public class RoutineManagement extends View{
             Logger.getLogger(RoutineManagement.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     private void initialize() {
         zoom.setMin(1.0);
@@ -76,14 +86,26 @@ public class RoutineManagement extends View{
         source = new Image(new ByteArrayInputStream(routine.getImage()));
         image.setImage(source);
         initView();
-        
-    }
-    
-    public void initView() {
 
-       
-        image.setPreserveRatio(true);
-        
+        plus.setOnAction(this::plus);
+        minus.setOnAction(this::minus);
+
+    }
+
+    public void initView() {
+        service = (RoutineService) SystemUtils.getContext().getBean("routineservice");
+        service.setParent(this);
+
+        if (service.hasActiveRoutine(SystemUtils.getDepartment(), Integer.parseInt(DateTime.now().toString(DateTimeFormat.forPattern("yyyy")))) == 1) {
+            routine = service.findByDepartmentAndDateAndStatus(SystemUtils.getDepartment(), DateTime.now().toString(DateTimeFormat.forPattern("yyyy")), "Active");
+        } else {
+            routine = new Routine();
+            byte[] nor = SystemUtils.getByteArrayFromImage(img);
+            routine.setImage(nor);
+        }
+
+        image.setPreserveRatio(false);
+
         height = (int) source.getHeight();
         width = (int) source.getWidth();
 
@@ -129,7 +151,7 @@ public class RoutineManagement extends View{
             }
             image.setViewport(new Rectangle2D(offSetX - ((width / newValue) / 2), offSetY - ((height / newValue) / 2), width / newValue, height / newValue));
         });
-        
+
         zoom.valueProperty().addListener(e -> {
             zoomlvl = zoom.getValue();
             double newValue = (double) ((int) (zoomlvl * 10)) / 10;
@@ -166,5 +188,13 @@ public class RoutineManagement extends View{
         });
 
     }
-    
+
+    private void plus(ActionEvent evt) {
+        zoom.setValue(zoomlvl + 0.10);
+    }
+
+    private void minus(ActionEvent evt) {
+        zoom.setValue(zoomlvl - 0.10);
+    }
+
 }

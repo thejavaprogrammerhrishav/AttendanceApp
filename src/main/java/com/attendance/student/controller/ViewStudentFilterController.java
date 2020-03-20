@@ -69,8 +69,10 @@ public class ViewStudentFilterController extends View {
     private FXMLLoader fxml;
     private ViewStudentsController controller;
     private ExceptionDialog dialog;
+    private Runnable run; 
 
-    public ViewStudentFilterController(ViewStudentsController controller) {
+    public ViewStudentFilterController(ViewStudentsController controller,Runnable run) {
+        this.run = run;
         this.controller = controller;
         fxml = Fxml.getViewStudentsFilterFxml();
         fxml.setController(this);
@@ -123,6 +125,7 @@ public class ViewStudentFilterController extends View {
         }
         
         controller.load(list);
+        run.run();
     }
 
     @Override

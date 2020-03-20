@@ -19,6 +19,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 
 /**
  *
@@ -63,7 +65,8 @@ public class ClassDetailsNodeController extends AnchorPane {
     private void initialize() {
         dialog = SystemUtils.getDialog();
         name.setText(details.getFacultyName());
-        date.setText(details.getDate());
+        String dt = DateTime.parse(details.getDate(),DateTimeFormat.forPattern("EEEEE, dd MMMMM yyyy")).toString(DateTimeFormat.forPattern("dd-MM-yyyy"));
+        date.setText(dt);
         semester.setText(details.getSemester());
         coursetype.setText(details.getCoursetype());
         

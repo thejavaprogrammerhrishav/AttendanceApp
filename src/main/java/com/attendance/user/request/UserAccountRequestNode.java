@@ -70,6 +70,12 @@ public class UserAccountRequestNode extends AnchorPane {
         name.setText(user.getDetails().getName());
         email.setText(user.getDetails().getEmailId());
         date.setText(user.getDate());
+        
+        disable();
+        result.setVisible(false);
+        accept.setOnAction(this::accept);
+        decline.setOnAction(this::decline);
+        onhold.setOnAction(this::onhold);
     }
 
     private void accept(ActionEvent evt) {
@@ -124,7 +130,7 @@ public class UserAccountRequestNode extends AnchorPane {
         onhold.setDisable(false);
     }
 
-    private void disable(ActionEvent evt) {
+    private void disable() {
         switch(user.getStatus()) {
             case "Accept" : accept.setDisable(true);
             break;

@@ -95,7 +95,7 @@ public class ViewStudentsController extends View {
     }
     
     private void filter(ActionEvent evt) {
-        view = new SidePopupView(new ViewStudentFilterController(this), Side.RIGHT, Boolean.TRUE);
+        view = new SidePopupView(new ViewStudentFilterController(this,()->view.hide()), Side.RIGHT, Boolean.TRUE);
         view.show();
     }
     
