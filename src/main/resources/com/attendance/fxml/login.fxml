@@ -34,28 +34,48 @@
 
 <?import com.gluonhq.charm.glisten.mvc.View?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" stylesheets="@../files/login.css" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-font-family: 'Lucida Sans', sanserif;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="20.0" layoutY="38.0" styleClass="head1" text="Welcome Back, User" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="38.0" />
-            <Label fx:id="department" layoutX="20.0" layoutY="74.0" styleClass="head3" text="Department: Ecology &amp; Environmental Science" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <Label fx:id="usertype" layoutX="20.0" layoutY="100.0" styleClass="head3" text="User Type: HOD" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <Label layoutX="20.0" layoutY="145.0" prefHeight="44.0" prefWidth="105.0" styleClass="head2" text="Login" AnchorPane.leftAnchor="20.0" />
-            <Label layoutX="20.0" layoutY="197.0" styleClass="head3" text="Please login with your credentials to access the features" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <TextField fx:id="username" layoutX="20.0" layoutY="251.0" prefHeight="44.0" prefWidth="295.0" promptText="Enter Username" styleClass="txt" text="cshod" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <PasswordField fx:id="password" layoutX="20.0" layoutY="317.0" prefHeight="44.0" prefWidth="295.0" promptText="Enter Password" styleClass="pwd" text="Principal@123" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <Label fx:id="status" alignment="CENTER" layoutX="20.0" layoutY="403.0" styleClass="result" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton fx:id="login" buttonType="RAISED" layoutX="20.0" layoutY="450.0" prefHeight="50.0" prefWidth="295.0" ripplerFill="BLACK" styleClass="login" text="Login to my account" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton fx:id="back" buttonType="RAISED" layoutX="20.0" layoutY="521.0" prefHeight="46.0" prefWidth="295.0" ripplerFill="BLACK" styleClass="back" text="Back" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <JFXButton fx:id="forgot" layoutX="168.0" layoutY="151.0" prefHeight="32.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-text-fill: navy; -fx-effect: none;" text="Forgot Password ?" AnchorPane.rightAnchor="28.0" />
+            <Label fx:id="department" alignment="CENTER" layoutX="20.0" layoutY="93.0" style="-fx-text-fill: black;" text="Department: Ecology &amp; Enviromental Science" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <HBox alignment="CENTER" layoutX="20.0" layoutY="20.0" spacing="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/LogoMakr_1wJdNX%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="56.0" prefWidth="205.0" style="-fx-font-size: 20; -fx-text-fill: black; -fx-font-weight: bold;" text="Modern Attendance System" textAlignment="CENTER" wrapText="true" />
+               </children>
+               <padding>
+                  <Insets left="13.0" right="13.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="usertype" alignment="CENTER" contentDisplay="CENTER" layoutX="101.0" layoutY="115.0" prefHeight="18.0" prefWidth="133.0" style="-fx-text-fill: black;" text="Usertype: Faculty" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="101.0" />
+            <JFXButton fx:id="forget" layoutX="183.0" layoutY="380.0" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Forget Password ?" AnchorPane.rightAnchor="20.0" />
+            <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="526.0" prefHeight="32.0" prefWidth="95.0" style="-fx-text-fill: green; -fx-font-size: 15; -fx-font-weight: bold;" text="Login Success" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <HBox alignment="CENTER" layoutX="20.0" layoutY="456.0" prefHeight="36.0" prefWidth="297.0" spacing="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <JFXButton fx:id="login" buttonType="RAISED" contentDisplay="CENTER" prefHeight="36.0" prefWidth="153.0" style="-fx-background-radius: 3; -fx-background-color: linear-gradient(rgb(242, 112, 156), rgb(255, 148, 114));" text="Login" />
+                  <JFXButton fx:id="cancel" buttonType="RAISED" contentDisplay="CENTER" layoutX="40.0" layoutY="10.0" prefHeight="36.0" prefWidth="90.0" style="-fx-background-radius: 3; -fx-background-color: linear-gradient(   rgba(151,10,130,1) 0%, rgba(33,33,33,1) 100.2% );" text="Cancel" />
+               </children>
+            </HBox>
+            <Label alignment="TOP_LEFT" layoutX="20.0" layoutY="168.0" prefHeight="39.0" prefWidth="257.0" style="-fx-font-size: 25; -fx-font-weight: bold;" text="Welcome Back" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <PasswordField fx:id="password" layoutX="20.0" layoutY="338.0" prefHeight="33.0" prefWidth="295.0" promptText="Enter Password" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <Label layoutX="20.0" layoutY="201.0" text="Login to continue" AnchorPane.leftAnchor="20.0" />
+            <TextField fx:id="username" layoutX="20.0" layoutY="260.0" prefHeight="35.0" prefWidth="295.0" promptText="Enter Username" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
          </children>
       </AnchorPane>
    </center>
-</fx:root>
+</View>

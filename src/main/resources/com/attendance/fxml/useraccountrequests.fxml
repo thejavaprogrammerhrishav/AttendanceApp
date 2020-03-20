@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2017, Gluon and/or its affiliates.
+    All rights reserved. Use is subject to license terms.
+
+    This file is available and licensed under the following license:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+   - Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   - Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the distribution.
+   - Neither the name of Oracle Corporation and Gluon nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" type="View" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="51.0" layoutY="25.0" prefHeight="27.0" prefWidth="209.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="75.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="218.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="User Account Requests" />
+               </children>
+            </HBox>
+            <JFXButton fx:id="back" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="12.0" layoutY="20.0" minWidth="37.0" prefHeight="32.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-min-height: 20; -fx-min-width: 20;" AnchorPane.leftAnchor="12.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-go-back-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <HBox alignment="CENTER" layoutX="32.0" layoutY="60.0" prefHeight="18.0" prefWidth="288.0" spacing="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Label text="Department :" />
+                  <Label fx:id="department" prefHeight="18.0" prefWidth="204.0" text="Ecology &amp; Enviromental Science" />
+               </children>
+            </HBox>
+            <JFXButton fx:id="refresh" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="291.0" layoutY="21.0" minWidth="37.0" prefHeight="32.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-min-height: 20; -fx-min-width: 20;" text="Button" AnchorPane.rightAnchor="7.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-update-left-rotation-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="filter" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="249.0" layoutY="21.0" minWidth="37.0" prefHeight="32.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-min-height: 20; -fx-min-width: 20;" AnchorPane.rightAnchor="49.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-filter-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ScrollPane hbarPolicy="NEVER" layoutY="97.0" prefHeight="504.0" prefWidth="335.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <content>
+                  <VBox fx:id="list" alignment="TOP_CENTER" prefHeight="495.0" prefWidth="323.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </center>
+</fx:root>

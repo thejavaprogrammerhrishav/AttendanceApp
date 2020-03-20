@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="321.0" style="-fx-background-color: white;" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="result" layoutX="21.0" layoutY="57.0" prefHeight="33.0" prefWidth="277.0" text="Label" />
+      <Label fx:id="name" layoutX="13.0" layoutY="9.0" prefHeight="25.0" prefWidth="264.0" style="-fx-font-size: 16;" text="Hrishav Dhawaj Purkayashtya" />
+      <Label fx:id="email" layoutX="10.0" layoutY="33.0" prefHeight="17.0" prefWidth="182.0" text="\@hrishavdhawajpurkayashtya" />
+      <Label fx:id="date" layoutX="201.0" layoutY="33.0" prefHeight="17.0" prefWidth="113.0" text="23-September-2020" />
+      <JFXButton fx:id="accept" layoutX="21.0" layoutY="61.0" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: forestgreen; -fx-text-fill: white;" text="Accept" />
+      <JFXButton fx:id="onhold" layoutX="124.0" layoutY="61.0" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: yellow;" text="On Hold" />
+      <JFXButton fx:id="decline" layoutX="224.0" layoutY="61.0" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: red; -fx-text-fill: white;" text="Decline" />
+   </children>
+</fx:root>

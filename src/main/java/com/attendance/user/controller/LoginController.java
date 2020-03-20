@@ -46,10 +46,7 @@ public class LoginController extends View {
     private Label usertype;
 
     @FXML
-    private TextField username;
-
-    @FXML
-    private PasswordField password;
+    private JFXButton forget;
 
     @FXML
     private Label status;
@@ -59,6 +56,12 @@ public class LoginController extends View {
 
     @FXML
     private JFXButton back;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private TextField username;
 
     private FXMLLoader fxml;
     private String type;
@@ -92,10 +95,11 @@ public class LoginController extends View {
 
         service = (LoginService) SystemUtils.getContext().getBean("loginservice");
         service.setParent(this);
-        
+
         activityservice = (LoginActivityService) SystemUtils.getContext().getBean("loginactivityservice");
         activityservice.setParent(this);
         login.setOnAction(this::login);
+        forget.setOnAction(this::forget);
 
     }
 
@@ -114,7 +118,7 @@ public class LoginController extends View {
             SystemUtils.setUser(service.findByUsernameDepartmentType(username.getText(), SystemUtils.getDepartment(), type));
             user = SystemUtils.getUser();
             details = user.getDetails();
-            activity = new LoginActivity(details.getName(),user.getUsername(),type,"Active",DateTime.now().toString(DateTimeFormat.forPattern("dd-MM-yyyy")),DateTime.now().toString(DateTimeFormat.forPattern("hh:mm:ss a")),"",SystemUtils.getDepartment());
+            activity = new LoginActivity(details.getName(), user.getUsername(), type, "Active", DateTime.now().toString(DateTimeFormat.forPattern("dd-MM-yyyy")), DateTime.now().toString(DateTimeFormat.forPattern("hh:mm:ss a")), "", SystemUtils.getDepartment());
             activityservice.saveactivity(activity);
             SystemUtils.setActivity(activity);
             redirect();
@@ -147,6 +151,10 @@ public class LoginController extends View {
     @Override
     protected void updateAppBar(AppBar appBar) {
         appBar.setVisible(false);
+    }
+    
+    private void forget(ActionEvent evt) {
+        SystemUtils.getApplication().switchView(AppView.FORGOT_PASSWORD_VIEW);
     }
 
 }

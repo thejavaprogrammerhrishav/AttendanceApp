@@ -191,4 +191,16 @@ public class Fxml {
         return new FXMLLoader(Fxml.class.getResource(path+"aboutus.fxml"));
     }
     
+    public static FXMLLoader getUserAccountRequestNodexml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"useraccountrequestnode.fxml"));
+    }
+    
+    public static FXMLLoader getUserAccountRequestFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"useraccountrequest.fxml"));
+    }
+    
+    public static FXMLLoader getRoutineManagementFxml() {
+        return new FXMLLoader(Fxml.class.getResource(path+"routinemanagement.fxml"));
+    }
+    
 }
